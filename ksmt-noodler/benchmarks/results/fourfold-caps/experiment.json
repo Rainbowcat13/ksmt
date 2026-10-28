@@ -1,0 +1,27 @@
+{
+  "repo": "C:\\Users\\danii\\smt",
+  "java": "C:\\Program Files\\Java\\jdk-17\\bin\\java.exe",
+  "baseline_run": "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runs\\20261027T172635Z-0654d06e",
+  "source": "C:\\Users\\danii\\smt\\ksmt-test\\testData\\string-data\\37c6cd5d98edb46057f30cef35ba7c7250fe0161",
+  "solver": "noodler-yices",
+  "expected_cases": 752,
+  "expected_runtime_sha256": "836bc18bf33ed98e4e94530946b43d6a030a57ff4467b431615fb60a5048252d",
+  "settings": {
+    "max-automata-states": "400000",
+    "max-automata-storage": "4000000",
+    "max-encoding-constraints": "4000000",
+    "max-preprocessing-units": "4000000",
+    "max-character-positions": "400000"
+  },
+  "unchanged": {
+    "solve-ms": "10000",
+    "startup-parse-ms": "30000",
+    "validation-ms": "10000",
+    "repeats": "1",
+    "max-idle-rounds": "2",
+    "optional-preprocessing": "false",
+    "small-first-search": "false",
+    "adaptive-length-projection": "true"
+  },
+  "verified_runtime_files": 275
+}

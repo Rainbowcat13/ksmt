@@ -31,6 +31,54 @@ abstract class Automaton<N: Node<N>, A: Automaton<N, A>>(
         return visited.intersect(terminal.toSet()).isNotEmpty()
     }
 
+    open fun anyWord(): String? {
+        if (isEmpty()) {
+            return null
+        }
+
+        val startStates = linkedSetOf(start)
+        scanExtraSymbols(startStates)
+        if (startStates.any { it.terminal }) {
+            return ""
+        }
+
+        val queue = ArrayDeque<Pair<Set<N>, String>>()
+        val visited = mutableSetOf<Set<N>>()
+        val startSnapshot = LinkedHashSet(startStates)
+
+        queue.add(startSnapshot to "")
+        visited.add(startSnapshot)
+
+        while (queue.isNotEmpty()) {
+            val (currentStates, word) = queue.removeFirst()
+            val nextByLetter = sortedMapOf<Char, MutableSet<N>>()
+
+            for (state in currentStates) {
+                for ((letter, nextStates) in state.getAllList()) {
+                    if (letter == EPS) {
+                        continue
+                    }
+                    nextByLetter.getOrPut(letter) { LinkedHashSet() }.addAll(nextStates)
+                }
+            }
+
+            for ((letter, nextStates) in nextByLetter) {
+                val reachable = LinkedHashSet(nextStates)
+                scanExtraSymbols(reachable)
+                if (reachable.any { it.terminal }) {
+                    return word + letter
+                }
+
+                val snapshot = LinkedHashSet(reachable)
+                if (visited.add(snapshot)) {
+                    queue.add(snapshot to (word + letter))
+                }
+            }
+        }
+
+        return null
+    }
+
     open fun isEmpty(): Boolean {
         return listNodes(start, { true }).all { !it.terminal}
     }

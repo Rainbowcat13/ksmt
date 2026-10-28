@@ -1,0 +1,137 @@
+{
+  "description": "Exact-byte copies of measured results; no reruns or row substitutions",
+  "files": [
+    {
+      "path": "full-defaults/comparison.png",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/comparison.png",
+      "sha256": "e0fd39f2b4e1eab2c44a3c47a381813bc6501004b0b652131a4a4f331a367f07",
+      "bytes": 295815
+    },
+    {
+      "path": "full-defaults/comparison.csv",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/comparison.csv",
+      "sha256": "132bec547e9291322ef07092ded92d448e77343be507f444496a5950a4592a18",
+      "bytes": 1017
+    },
+    {
+      "path": "full-defaults/source-audit.json",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/source-audit.json",
+      "sha256": "8d92ec81f9f4d4f81c3587b7c78fc07a94f5dd6ba82cc542b01b539952f2856b",
+      "bytes": 682
+    },
+    {
+      "path": "full-defaults/runtime-manifest.json",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runtime-manifest.json",
+      "sha256": "bc17582166cc17694035aff0d15c1603d20b8370599f0811fe2fee0934bf5874",
+      "bytes": 89128
+    },
+    {
+      "path": "fourfold-caps/comparison.png",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/comparison.png",
+      "sha256": "9106ea609fd724d82a4682fea8154c24b261f363ed1761b3056be29c9e13c205",
+      "bytes": 185361
+    },
+    {
+      "path": "fourfold-caps/comparison.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/comparison.csv",
+      "sha256": "a156e4a06d940e911ef41a63528a07a7e71860b0c1864e4a05db4c3fca52372e",
+      "bytes": 569
+    },
+    {
+      "path": "fourfold-caps/comparison.json",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/comparison.json",
+      "sha256": "652130419567137d5801db75ea53e86eb75e0eaea6dc1b0211b274681c262e45",
+      "bytes": 2874
+    },
+    {
+      "path": "fourfold-caps/paired-cases.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/paired-cases.csv",
+      "sha256": "00b72e373c198ba9bd5afc1d5352e3627361f0d76216a14950e9f45c751fbf95",
+      "bytes": 104259
+    },
+    {
+      "path": "fourfold-caps/experiment.json",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/experiment.json",
+      "sha256": "872f0255787957586351ad5fcae6234d7ee54288276d68f6f806c129b9d80e6d",
+      "bytes": 1061
+    },
+    {
+      "path": "fourfold-caps/fourfold-result.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/fourfold-result.csv",
+      "sha256": "42e314d2d29f693ca7fcfa63975bc640752ce214d8b239d7e87f3520f2ae7285",
+      "bytes": 340
+    },
+    {
+      "path": "full-defaults/raw.csv",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/raw.csv",
+      "sha256": "cfe2a2c462744685e9b4cef6c30f012c987d177dc6e8315d7714dd69d245fe36",
+      "bytes": 4130483
+    },
+    {
+      "path": "full-defaults/manifest.csv",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/manifest.csv",
+      "sha256": "3e77a8be3377c6cd3f0e4540d3124db4f7ee9d2c0fd25589c07ab14206c4bcd2",
+      "bytes": 195430
+    },
+    {
+      "path": "full-defaults/metadata.properties",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/metadata.properties",
+      "sha256": "12a63dcecf9f741d3d5d3a7f6b256f18b07fd2e76e49e9a0a9dc150eae7f433c",
+      "bytes": 10649
+    },
+    {
+      "path": "full-defaults/source-list.txt",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/source-list.txt",
+      "sha256": "e40006a1c3f9dec3638e1aa4a76f0a2fd1b10077bd986b90182f5489bd426921",
+      "bytes": 52823
+    },
+    {
+      "path": "full-defaults/summary.md",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/summary.md",
+      "sha256": "c45cf02c00022e8a687145f228f9095b5b90ddb4e76652a3dfd6cecc6ad31d12",
+      "bytes": 4640
+    },
+    {
+      "path": "full-defaults/exclusions.csv",
+      "source": "build/reports/noodler-combined-comparison/full-20261027T172513Z/runs/20261027T172635Z-0654d06e/exclusions.csv",
+      "sha256": "cb5d6227a89b49b1fa0152864ba486cf1b26fd972d1d87908b0850c5bea22d00",
+      "bytes": 46
+    },
+    {
+      "path": "fourfold-caps/raw.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/raw.csv",
+      "sha256": "4042615818ce4d14289701ea8f3cd1f594c531ae27772ada0459ba3390570d2a",
+      "bytes": 1215418
+    },
+    {
+      "path": "fourfold-caps/manifest.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/manifest.csv",
+      "sha256": "3e77a8be3377c6cd3f0e4540d3124db4f7ee9d2c0fd25589c07ab14206c4bcd2",
+      "bytes": 195430
+    },
+    {
+      "path": "fourfold-caps/metadata.properties",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/metadata.properties",
+      "sha256": "d7ad992872c3ead6559b3d82126e426a72070e0f1f51660fbe2a0cef34897536",
+      "bytes": 10618
+    },
+    {
+      "path": "fourfold-caps/source-list.txt",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/source-list.txt",
+      "sha256": "e40006a1c3f9dec3638e1aa4a76f0a2fd1b10077bd986b90182f5489bd426921",
+      "bytes": 52823
+    },
+    {
+      "path": "fourfold-caps/summary.md",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/summary.md",
+      "sha256": "bb954e7617f7af4e6e0d12dded420ecb132d77b3a6884795280dbcf4cc9c14e3",
+      "bytes": 3104
+    },
+    {
+      "path": "fourfold-caps/exclusions.csv",
+      "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/exclusions.csv",
+      "sha256": "cb5d6227a89b49b1fa0152864ba486cf1b26fd972d1d87908b0850c5bea22d00",
+      "bytes": 46
+    }
+  ]
+}

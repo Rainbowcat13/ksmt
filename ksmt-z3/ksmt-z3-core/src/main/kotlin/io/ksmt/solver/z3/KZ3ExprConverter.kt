@@ -605,8 +605,9 @@ open class KZ3ExprConverter(
 
     @Suppress("MemberVisibilityCanBePrivate")
     fun convertStringLiteral(expr: Long): KStringLiteralExpr = with(ctx) {
-        val value = Native.getString(nCtx, expr)
-        mkStringLiteral(value)
+        val contents = IntArray(Native.getStringLength(nCtx, expr))
+        Native.getStringContents(nCtx, expr, contents.size, contents)
+        mkStringLiteral(contents)
     }
 
     @Suppress("MemberVisibilityCanBePrivate")

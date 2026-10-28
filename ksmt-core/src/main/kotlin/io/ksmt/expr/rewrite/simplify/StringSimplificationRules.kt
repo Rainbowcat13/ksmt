@@ -15,6 +15,7 @@ import io.ksmt.sort.KSort
 import io.ksmt.sort.KStringSort
 import io.ksmt.utils.StringUtils
 import io.ksmt.utils.StringUtils.STRING_FROM_CODE_UPPER_BOUND
+import io.ksmt.utils.ArithUtils.bigIntegerValue
 
 /*
 * String concatenation simplification
@@ -188,17 +189,12 @@ inline fun KContext.simplifyStringSingletonSubBasic(
     cont: (KExpr<KStringSort>, KExpr<KIntSort>) -> KExpr<KStringSort>
 ): KExpr<KStringSort> {
     return if (arg0 is KStringLiteralExpr && arg1 is KIntNumExpr) {
-        val str = arg0.value
-        val pos = when (arg1) {
-            is KInt32NumExpr -> arg1.value.toLong()
-            is KInt64NumExpr -> arg1.value
-            is KIntBigNumExpr -> arg1.value.toLong()
-            else -> return cont(arg0, arg1)
-        }
-        val result = if (pos <= Int.MAX_VALUE && pos >= 0 && pos < str.length) {
-            str[pos.toInt()].toString()
+        val str = arg0.codePoints
+        val pos = arg1.bigIntegerValue
+        val result = if (pos.signum() >= 0 && pos < str.size.toBigInteger()) {
+            intArrayOf(str[pos.toInt()])
         } else {
-            ""
+            intArrayOf()
         }
         mkStringLiteral(result)
     } else {
@@ -214,14 +210,14 @@ inline fun KContext.simplifyStringSubBasic(
     cont: (KExpr<KStringSort>, KExpr<KIntSort>, KExpr<KIntSort>) -> KExpr<KStringSort>
 ): KExpr<KStringSort> {
     return if (arg0 is KStringLiteralExpr && arg1 is KIntNumExpr && arg2 is KIntNumExpr) {
-        val str = arg0.value
-        val startPos = arg1.toLongValue()
-        val length = arg2.toLongValue()
-        val result = if (startPos in 0..Int.MAX_VALUE && length in 0..Int.MAX_VALUE && startPos < str.length) {
-            val endPos = minOf(startPos + length, str.length.toLong()).toInt()
-            str.substring(startPos.toInt(), endPos)
+        val str = arg0.codePoints
+        val startPos = arg1.bigIntegerValue
+        val length = arg2.bigIntegerValue
+        val result = if (startPos.signum() >= 0 && length.signum() > 0 && startPos < str.size.toBigInteger()) {
+            val endPos = minOf(startPos + length, str.size.toBigInteger()).toInt()
+            str.copyOfRange(startPos.toInt(), endPos)
         } else {
-            ""
+            intArrayOf()
         }
         mkStringLiteral(result)
     } else {
@@ -239,23 +235,11 @@ inline fun KContext.simplifyStringIndexOfBasic(
 ): KExpr<KIntSort> = with(arg0.ctx) {
 
     if (arg0 is KStringLiteralExpr && arg1 is KStringLiteralExpr && arg2 is KIntNumExpr) {
-        val str = arg0.value
-        val search = arg1.value
-        val startPosLong = arg2.toLongValue()
-        val startPos: Int
-        if (startPosLong <= Int.MAX_VALUE) {
-            startPos = startPosLong.toInt()
-        } else {
-            return cont(arg0, arg1, arg2)
-        }
-
-        val result = if (startPos >= 0 && startPos <= str.length) {
-            if (search.isEmpty()) {
-                startPos
-            } else {
-                val index = str.indexOf(search, startPos)
-                if (index >= 0) index else -1
-            }
+        val str = arg0.codePoints
+        val search = arg1.codePoints
+        val startPos = arg2.bigIntegerValue
+        val result = if (startPos.signum() >= 0 && startPos <= str.size.toBigInteger()) {
+            StringUtils.indexOf(str, search, startPos.toInt())
         } else {
             -1
         }
@@ -348,15 +332,10 @@ inline fun KContext.simplifyStringFromCodeBasic(
     arg: KExpr<KIntSort>,
     cont: (KExpr<KIntSort>) -> KExpr<KStringSort>
 ): KExpr<KStringSort> {
-    val value = when (arg) {
-        is KInt32NumExpr -> arg.value.toLong()
-        is KInt64NumExpr -> arg.value
-        is KIntBigNumExpr -> arg.value.toLong()
-        else -> return cont(arg)
-    }
-
-    return if (value in 0..STRING_FROM_CODE_UPPER_BOUND) {
-        mkStringLiteral(value.toInt().toChar().toString())
+    if (arg !is KIntNumExpr) return cont(arg)
+    val value = arg.bigIntegerValue
+    return if (value.signum() >= 0 && value <= STRING_FROM_CODE_UPPER_BOUND.toBigInteger()) {
+        mkStringLiteral(intArrayOf(value.toInt()))
     } else {
         mkStringLiteral("")
     }
@@ -379,13 +358,9 @@ inline fun KContext.simplifyStringFromIntBasic(
     arg: KExpr<KIntSort>,
     cont: (KExpr<KIntSort>) -> KExpr<KStringSort>
 ): KExpr<KStringSort> {
-    val intValue = when (arg) {
-        is KInt32NumExpr -> arg.value.toLong()
-        is KInt64NumExpr -> arg.value
-        is KIntBigNumExpr -> arg.value.toLong()
-        else -> return cont(arg)
-    }
-    return mkStringLiteral(if (intValue >= 0) intValue.toString() else "")
+    if (arg !is KIntNumExpr) return cont(arg)
+    val intValue = arg.bigIntegerValue
+    return mkStringLiteral(if (intValue.signum() >= 0) intValue.toString() else "")
 }
 
 inline fun <K : KSort> tryEvalStringLiteralOperation(

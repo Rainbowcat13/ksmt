@@ -1,0 +1,96 @@
+{
+  "baseline_run": "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runs\\20261027T172635Z-0654d06e",
+  "new_run": "C:\\Users\\danii\\smt\\build\\reports\\noodler-resource-caps-4x\\fourfold-20261027T222944Z\\runs\\20261027T223146Z-9babb927",
+  "runtime_sha256": "836bc18bf33ed98e4e94530946b43d6a030a57ff4467b431615fb60a5048252d",
+  "manifest_sha256": "3e77a8be3377c6cd3f0e4540d3124db4f7ee9d2c0fd25589c07ab14206c4bcd2",
+  "settings": {
+    "max-automata-states": "400000",
+    "max-automata-storage": "4000000",
+    "max-encoding-constraints": "4000000",
+    "max-preprocessing-units": "4000000",
+    "max-character-positions": "400000"
+  },
+  "unchanged": {
+    "solve-ms": "10000",
+    "startup-parse-ms": "30000",
+    "validation-ms": "10000",
+    "repeats": "1",
+    "max-idle-rounds": "2",
+    "optional-preprocessing": "false",
+    "small-first-search": "false",
+    "adaptive-length-projection": "true"
+  },
+  "summaries": [
+    {
+      "solver": "noodler-yices",
+      "label": "Noodler + Yices",
+      "hybrid_variant": "baseline",
+      "sat": 149,
+      "unsat": 361,
+      "solved": 510,
+      "eligible_trial_slots": 752,
+      "unknown": 240,
+      "timeout": 2,
+      "other": 0,
+      "completed_attempts": 752,
+      "expected_attempts": 752,
+      "complete": true,
+      "source_run": "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runs\\20261027T172635Z-0654d06e",
+      "configuration": "default-1x"
+    },
+    {
+      "solver": "noodler-yices",
+      "label": "Noodler + Yices",
+      "hybrid_variant": "baseline",
+      "sat": 149,
+      "unsat": 363,
+      "solved": 512,
+      "eligible_trial_slots": 752,
+      "unknown": 124,
+      "timeout": 116,
+      "other": 0,
+      "completed_attempts": 752,
+      "expected_attempts": 752,
+      "complete": true,
+      "source_run": "C:\\Users\\danii\\smt\\build\\reports\\noodler-resource-caps-4x\\fourfold-20261027T222944Z\\runs\\20261027T223146Z-9babb927",
+      "configuration": "resources-4x"
+    }
+  ],
+  "gains": [
+    "QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_bad_0_3.smt2",
+    "QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_init_0_3.smt2"
+  ],
+  "losses": [],
+  "transitions": [
+    {
+      "before": "SAT",
+      "after": "SAT",
+      "count": 149
+    },
+    {
+      "before": "TIMEOUT",
+      "after": "TIMEOUT",
+      "count": 2
+    },
+    {
+      "before": "UNKNOWN",
+      "after": "TIMEOUT",
+      "count": 114
+    },
+    {
+      "before": "UNKNOWN",
+      "after": "UNKNOWN",
+      "count": 124
+    },
+    {
+      "before": "UNKNOWN",
+      "after": "UNSAT",
+      "count": 2
+    },
+    {
+      "before": "UNSAT",
+      "after": "UNSAT",
+      "count": 361
+    }
+  ]
+}

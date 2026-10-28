@@ -3,6 +3,7 @@ package io.ksmt.solver.noodler.automaton
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class NFATest {
@@ -85,6 +86,24 @@ class NFATest {
         assertEquals(2, terminals.size)
         assertTrue(terminals.any { it === t1 })
         assertTrue(terminals.any { it === t2 })
+    }
+
+    @Test
+    fun testListNodesHandlesDeepGraphs() {
+        val chainLength = 20_000
+        var current = node(terminal = false)
+        val start = current
+
+        repeat(chainLength - 1) { index ->
+            val next = node(terminal = index == chainLength - 2)
+            current.put('a', next)
+            current = next
+        }
+
+        val nodes = listNodes(start, { true })
+
+        assertEquals(chainLength, nodes.size)
+        assertTrue(nodes.last().terminal)
     }
 
     @Test
@@ -230,6 +249,43 @@ class NFATest {
 
         assertTrue(visited.contains(first))
         assertFalse(visited.contains(second))
+    }
+
+    @Test
+    fun testAnyWordReturnsEmptyStringForEpsilonAcceptedWord() {
+        val terminalNode = node(terminal = true)
+        val start = node(terminal = false)
+        start.put(EPS, terminalNode)
+
+        val nfa = NFA(start = start, alphabet = listOf(EPS, 'a'))
+
+        assertEquals("", nfa.anyWord())
+    }
+
+    @Test
+    fun testAnyWordReturnsWordThroughEpsilonClosure() {
+        val terminalNode = node(terminal = true)
+        val mid = node(terminal = false)
+        val start = node(terminal = false)
+
+        start.put(EPS, mid)
+        mid.put('b', terminalNode)
+        mid.put('a', mid)
+
+        val nfa = NFA(start = start, alphabet = listOf(EPS, 'a', 'b'))
+
+        assertEquals("b", nfa.anyWord())
+    }
+
+    @Test
+    fun testAnyWordReturnsNullWhenNoTerminalIsReachable() {
+        val start = node(terminal = false)
+        start.put(EPS, start)
+        start.put('a', start)
+
+        val nfa = NFA(start = start, alphabet = listOf(EPS, 'a'))
+
+        assertNull(nfa.anyWord())
     }
 
     private fun node(terminal: Boolean): NFANode {

@@ -2018,8 +2018,11 @@ open class KContext(
     /**
      * Create a String value.
      * */
-    fun mkStringLiteral(value: String): KStringLiteralExpr = stringLiteralCache.createIfContextActive {
-        KStringLiteralExpr(this, value)
+    fun mkStringLiteral(value: String): KStringLiteralExpr = mkStringLiteral(value.codePoints().toArray())
+
+    /** Create an SMT-LIB string from character codes in 0..0x2ffff; copies the input. */
+    fun mkStringLiteral(codePoints: IntArray): KStringLiteralExpr = stringLiteralCache.createIfContextActive {
+        KStringLiteralExpr(this, codePoints)
     }
 
     /**
@@ -5551,7 +5554,10 @@ open class KContext(
     fun mkRealNumDecl(value: String): KRealNumDecl = KRealNumDecl(this, value)
 
     // string
-    fun mkStringLiteralDecl(value: String): KStringLiteralDecl = KStringLiteralDecl(this, value)
+    fun mkStringLiteralDecl(value: String): KStringLiteralDecl =
+        mkStringLiteralDecl(value.codePoints().toArray())
+
+    fun mkStringLiteralDecl(codePoints: IntArray): KStringLiteralDecl = KStringLiteralDecl(this, codePoints)
 
     fun mkStringConcatDecl(): KStringConcatDecl = KStringConcatDecl(this)
 

@@ -1,0 +1,6 @@
+solver,label,hybrid_variant,sat,unsat,solved,eligible_trial_slots,unknown,timeout,other,completed_attempts,expected_attempts,complete,source_run
+z3,Z3,,173,145,318,752,0,434,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e
+cvc5,cvc5,,120,184,304,752,0,448,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e
+noodler-z3,Noodler + Z3,,178,351,529,752,0,223,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e
+noodler-cvc5,Noodler + cvc5,,134,355,489,752,0,263,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e
+noodler-yices,Noodler + Yices,baseline,149,361,510,752,240,2,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e

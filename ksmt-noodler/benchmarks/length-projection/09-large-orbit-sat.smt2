@@ -1,0 +1,6 @@
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-fun x () String)
+(assert (str.in_re x (re.union (re.union (re.union (re.union (re.++ (str.to_re "a") (re.* (str.to_re "aaaaaaaaaaa"))) (re.++ (str.to_re "b") (re.* (str.to_re "bbbbbbbbbbbbb")))) (re.++ (str.to_re "c") (re.* (str.to_re "ccccccccccccccccc")))) (re.++ (str.to_re "d") (re.* (str.to_re "ddddddddddddddddddd")))) (re.++ (str.to_re "e") (re.* (str.to_re "eeeeeeeeeeeeeeeeeeeeeee"))))))
+(assert (= (str.len x) 24))
+(check-sat)

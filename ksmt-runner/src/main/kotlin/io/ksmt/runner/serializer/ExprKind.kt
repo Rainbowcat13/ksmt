@@ -183,4 +183,5 @@ enum class ExprKind {
     ExistentialQuantifier,
     UniversalQuantifier,
     UninterpretedSortValue,
+    StringCodePointLiteralExpr,
 }

@@ -1,0 +1,5 @@
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-fun x () String)
+(assert (or (and (str.in_re x (re.* (str.to_re "ab"))) (= (str.len x) 3)) (= x "c")))
+(check-sat)

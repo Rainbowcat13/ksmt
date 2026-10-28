@@ -1260,7 +1260,7 @@ class AstSerializer(
 
     override fun transform(expr: KStringLiteralExpr) = with(expr) {
         transform {
-            writeExpr { writeString(value) }
+            writeExpr { writeIntArray(codePoints) }
         }
     }
 

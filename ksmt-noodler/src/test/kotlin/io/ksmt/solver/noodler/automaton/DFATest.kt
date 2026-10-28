@@ -3,6 +3,7 @@ package io.ksmt.solver.noodler.automaton
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertNull
 
 class DFATest {
 
@@ -53,6 +54,30 @@ class DFATest {
         for (word in samples) {
             assertFalse(complement.check(word), "Expected complement to reject '$word'")
         }
+    }
+
+    @Test
+    fun testAnyWordReturnsShortestReachableAcceptedWord() {
+        val start = node(terminal = false)
+        val accept = node(terminal = true)
+
+        start.put('a', start)
+        start.put('b', accept)
+        accept.put('b', accept)
+
+        val dfa = DFA(start, alphabet = listOf('a', 'b'))
+
+        assertEquals("b", dfa.anyWord())
+    }
+
+    @Test
+    fun testAnyWordReturnsNullForEmptyLanguage() {
+        val start = node(terminal = false)
+        start.put('a', start)
+
+        val dfa = DFA(start, alphabet = listOf('a'))
+
+        assertNull(dfa.anyWord())
     }
 
     private fun node(terminal: Boolean): DFANode {

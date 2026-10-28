@@ -1,0 +1,1424 @@
+[
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-noodler\\build\\classes\\kotlin\\main",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\00-main",
+        "kind":  "directory",
+        "files":  [
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\IdleRoundTracker.class",
+                          "sha256":  "191be9fa9c1e18886deff322b3f1ec18459f58241baa1957a2d5a81955778402",
+                          "bytes":  881
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver$CheckStatistics.class",
+                          "sha256":  "3f6d3fc48f96775672c062fcacc002c2768bf644906b1a7ea754ce0dbc9ebb77",
+                          "bytes":  5240
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver$MutableStatistics.class",
+                          "sha256":  "9f9f7f6d917377be875674f6435fcb98dbd79c6a6cf00f9465239f12d447d2b3",
+                          "bytes":  2859
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver$prepareLemmas$1$result$1.class",
+                          "sha256":  "9a2628ae47f69a366c0905c8108f132e3f36020edb6165347137b27fa6a6b478",
+                          "bytes":  1400
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver$prepareLemmas$1$statements$1.class",
+                          "sha256":  "db6692c12adf16168f6faa7df54bda83518d62252b0f0d1f33c9b0403147af5f",
+                          "bytes":  1408
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver$WhenMappings.class",
+                          "sha256":  "a0b7d5baeec0355465ee7c4ef41f56167870ed80fe6f583fe6ba3eedbb8d4a71",
+                          "bytes":  809
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerSolver.class",
+                          "sha256":  "13a2b5ad848fe1ab753b2a3e75f5208111f3a47cb66a2d18c92e4e973785d162",
+                          "bytes":  18428
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$Assertion.class",
+                          "sha256":  "021709c48bc21e16f9160e6fac35e4634a28500607b02dca420752c923e4e9a0",
+                          "bytes":  3334
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$BranchProgress.class",
+                          "sha256":  "1ac34d9faf79cd82265a445c093f7f2e2e79b6ec65cb86cce73ca63f578ec63b",
+                          "bytes":  2530
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$BranchState.class",
+                          "sha256":  "8b98fb543b268a1a607590f86bc8105728ef899a7af9c3e4225c3f3d9bc7adb6",
+                          "bytes":  5138
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$abstraction$1.class",
+                          "sha256":  "986777c13d7fbedd4d6ec116e70a6821a7b9adfa12b6f1b1eddd4aa8b557ac30",
+                          "bytes":  1526
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$checkCandidate$prepared$1.class",
+                          "sha256":  "8254d018a534a0fd6d04424c30eee9b82a6578767bada6f4530fd8f2c06b6793",
+                          "bytes":  2585
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$optionalBudget$2.class",
+                          "sha256":  "a15a80794d75795073ce6aa21a7f673ee46a0232d51736d39884f6f1052126cd",
+                          "bytes":  1992
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$optionalCheckpoint$1.class",
+                          "sha256":  "456201358ba7d56447985613eca27e4a3228dcbc50fbbe3f5a09b4a37103071a",
+                          "bytes":  1825
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$prepareCandidate$branch$1$1$1.class",
+                          "sha256":  "0e9d63ca40ca55b44fda35fdd6f5bc67ba34ed18663f7967840b529498ca20db",
+                          "bytes":  2235
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$prepareCandidate$branch$1.class",
+                          "sha256":  "aa61cc11ca6eaf037223d680cff6135cff74a43c4b66538d32ba595cc98b8f39",
+                          "bytes":  4517
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$prepareCandidate$checkpoint$1.class",
+                          "sha256":  "1218cb75965595ce67a8006082a36511b601cef8b6e35f33902caa6241158ba5",
+                          "bytes":  1538
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$prepareCandidate$refinement$1.class",
+                          "sha256":  "e33bf17aeadceb76d1e53cb1db41f9219ded06ad1f75ce9f7b76c83765de914d",
+                          "bytes":  3307
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$preprocessing$1.class",
+                          "sha256":  "e7fb921392c97702b7b8fc25155a647f66718ba810629827b08eed313960e9d2",
+                          "bytes":  1530
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$propagateLengths$lemma$1.class",
+                          "sha256":  "6440a7855d5838c41877743932088d5c952f6f822324d33659705b0fa3e531e2",
+                          "bytes":  3136
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$1$2.class",
+                          "sha256":  "1b16c5ce481d960721739c6cba816117b3cb0a351f93d291f90bfde0cd590a24",
+                          "bytes":  1445
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$1.class",
+                          "sha256":  "d7a3e026621d87eca6b043cae63e723421015ccb7975b8ea209399361e8aa55d",
+                          "bytes":  5039
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$lengths$1.class",
+                          "sha256":  "8b1e2492b1a87dd558374239c6b2a3ff1f2162231f6974ebde97f461008c5a34",
+                          "bytes":  2756
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$realizer$1$1.class",
+                          "sha256":  "20e2d91bebbafef32d3ab4e6b5589efd8da207518e57d25811cfc19e099cf57b",
+                          "bytes":  1534
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$realizer$1.class",
+                          "sha256":  "5d98496a1425ace1223a92bffcb23baff80fd045eb59e0d6b81f0949f79f56a0",
+                          "bytes":  6704
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$status$1$result$1.class",
+                          "sha256":  "915cb6ecd25e5c3656c444203f92151be71c32c8290bf4a1ca14922630844c8b",
+                          "bytes":  1811
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$realizeCandidate$status$1.class",
+                          "sha256":  "2f906c24fe9f3f40b3021ec06efbe8db9382842f51ad949a0ca84a1537b625de",
+                          "bytes":  4501
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$regex$1.class",
+                          "sha256":  "35eacf7202bc677478cbe8fd0099d250bf8aae3e52f0b25d971d29fea0e880bf",
+                          "bytes":  1514
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$searchCheck$status$1.class",
+                          "sha256":  "5aca7282cfb06096302206711258be6f6ba064927a8871ac92b115270fc1bec0",
+                          "bytes":  2739
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$seedLength$1.class",
+                          "sha256":  "1c03c9828471b5b26a1fb01fff31bc0551bef120dcf3d1c371d908046d92b52a",
+                          "bytes":  6593
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$seedRegularLengths$1.class",
+                          "sha256":  "2ed33ff607dc5c3af0c03820fc7b9bb14ce8aeec5c003593d0201b56fe20a830",
+                          "bytes":  1828
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$seedRegularLengths$2.class",
+                          "sha256":  "f3a591a2c2cf5c30a918fcabddfd2ab46c71882be279055161b46d6fe6a0886e",
+                          "bytes":  1383
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$solve$skeleton$1.class",
+                          "sha256":  "33307fb8b5482517a880e169fe7608fb09a4b874bf7b1c8d2463dcdb35320704",
+                          "bytes":  4173
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession$WhenMappings.class",
+                          "sha256":  "3760b9fbade6986c1ee49637aaaab21cd17dcfab668ee135286e8d0a55f4057c",
+                          "bytes":  921
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckSession.class",
+                          "sha256":  "93fda54a59ca8ea6d6ae42c68f2a1485d9e078090896a3a628bca2bde3eb919b",
+                          "bytes":  37205
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$CheckStatistics.class",
+                          "sha256":  "d8c2b7abae0715e6b3fbd2325ac6bcc52d225e06fc66ab6b4caefba2d04e3c79",
+                          "bytes":  15008
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$Companion.class",
+                          "sha256":  "3e699c98c23b388dbb56226437092e3c017851c1e1ac7a58d011d06a80887c84",
+                          "bytes":  1675
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$MutableStatistics$Companion.class",
+                          "sha256":  "c451b6054fa862d04d9cdb03b5aefa8c1d611ad27eb8ca275fd352f84a55a8d7",
+                          "bytes":  1020
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$MutableStatistics.class",
+                          "sha256":  "ccf9ae66397e1c954be5a96853aa74bf0f639861257bba2ab8734371a17611a7",
+                          "bytes":  13672
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$nativeCheck$1.class",
+                          "sha256":  "4dda89dd6bd1766ae142d211f0a39016c7f842520bf3095beab732c5fba324c6",
+                          "bytes":  1352
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver$WhenMappings.class",
+                          "sha256":  "0fb5339404a509221e76493447ce5e6607bcdf8703090361e950b118f517f578",
+                          "bytes":  777
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolver.class",
+                          "sha256":  "51a0a8188432c2c4225ac792eddaed4d0472cce08cf281b6ab6ba1a84ca45f97",
+                          "bytes":  33493
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSolverConfiguration.class",
+                          "sha256":  "c9aef6cc447d3f1edf09f662f7b8314456189ed02510f334cfa34c5e3c5d5630",
+                          "bytes":  1929
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\KNoodlerYicesSupportKt.class",
+                          "sha256":  "455e9fe4d9048655d8748b4e6b6e7c9d92cbbd61fd8b9f4fa9a399e9db3098b0",
+                          "bytes":  2113
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\NoodlerYicesConfiguration$Companion.class",
+                          "sha256":  "95f8575341f59fe9cf79581da5fa98b6970a430116c8d6edb855fcf5439323b3",
+                          "bytes":  979
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\NoodlerYicesConfiguration$configure$1.class",
+                          "sha256":  "4dbcefa16be3b3a1fddc600ee282667de7d49af0c4b6ecc19409a9f89f3a98b7",
+                          "bytes":  3294
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\NoodlerYicesConfiguration.class",
+                          "sha256":  "2fd44439b3f9c8af4bd5601c5b061a3e5429f4e8084993830852942d20b8cfc0",
+                          "bytes":  10928
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$isEmpty$1.class",
+                          "sha256":  "e714442ddff48bacbe39cf5a3712879a602781098c30b43d54e13bb7cebc5983",
+                          "bytes":  1778
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$orderedNodes$$inlined$sortedBy$1.class",
+                          "sha256":  "2d8098feb87cf77209c581aa1902bc7b876f8c9da10b1114267c50cbbedd8220",
+                          "bytes":  2061
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$terminal$1.class",
+                          "sha256":  "2eaf8d46d0092d7cc027002df96ac105313bfa106bb9f471238d272c9d59c7cd",
+                          "bytes":  1858
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$toDot$1$label$2.class",
+                          "sha256":  "dffc6fd0f7a6bcda742bdf50db2dab386852c577290e025b277537c84b2004f5",
+                          "bytes":  1691
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$toDot$lambda$14$$inlined$sortedBy$1.class",
+                          "sha256":  "b9a299eb764f8e1d6dad9c6510f2aad1af29e6acb60c9ca80934a179124efda3",
+                          "bytes":  2070
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$toDot$lambda$14$$inlined$sortedBy$2.class",
+                          "sha256":  "7668055b3b95925bb291226828987d663330d585fc7cf5acf3d3ee2472d8a852",
+                          "bytes":  2136
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$toDot$lambda$14$$inlined$sortedBy$3.class",
+                          "sha256":  "d1b99e8f2dddf18a734d21cf9d41771e5954aaddf5feda371a733ac13e84bdc7",
+                          "bytes":  2294
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton$toDot$lambda$14$$inlined$sortedBy$4.class",
+                          "sha256":  "277e9ebfdd4cffaf96917d90c8ab9142ba91399f319b9690c26f9a028dddf7c2",
+                          "bytes":  1973
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Automaton.class",
+                          "sha256":  "33e2f56ee5a7288f9d69b8c5cc19ed2b52a68ccf5560a8a1500c0182917cbf6b",
+                          "bytes":  19080
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\AutomatonKt.class",
+                          "sha256":  "f3f2f7a615be35bdaa27e28fa5dca9d170ce798a9b75306b92d406964dade0f4",
+                          "bytes":  3335
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\BaseAutomata.class",
+                          "sha256":  "b0325d3a2edf16d20bfc5e80340c3df30b41388efec5029a8a4e46790d9a741a",
+                          "bytes":  4279
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\BaseAutomataKt.class",
+                          "sha256":  "0174be411467eaa9b0fe289f6e8c335799bb75aa352ae9a6ef412c3e4cfa1095",
+                          "bytes":  1010
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFA$asNFA$nodes$1.class",
+                          "sha256":  "44b874c175144670b456400a2c5e9a5b877550d25fb22ffbb893d1dd0e92256b",
+                          "bytes":  1700
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFA$complement$nodes$1.class",
+                          "sha256":  "2a94c7369e56cf0ffbd03dd0bffc60ba300a1c074c4a7706faa5f6636c740f52",
+                          "bytes":  1715
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFA$constructDFAFromStateSets$oldNodes$1.class",
+                          "sha256":  "8ed5e86220d6b78b8b82806210ef173f3129cb7fc27de3525754ecf3140be33c",
+                          "bytes":  1782
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFA$minimize$nonTerminalSet$1.class",
+                          "sha256":  "79ebc817b11f5430e86f9610aa07b15e937025dbf59d5a1e0c9d0035d7dd197f",
+                          "bytes":  1795
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFA.class",
+                          "sha256":  "c7b55cd82e7a2d9a34281d28aab7a2233c89c39cf1a79d479d1abac7ac4be63b",
+                          "bytes":  11574
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\DFANode.class",
+                          "sha256":  "519a9d279204e4262ccba0a6cf5e1b6cdb83123d0ede7150710eaca19af64725",
+                          "bytes":  5375
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\NFA.class",
+                          "sha256":  "b0e26694cbc27e999683ddc7ab4b24992fca8857cc142f7f4673a49dc9912488",
+                          "bytes":  10983
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\NFAKt.class",
+                          "sha256":  "47f3ef6669e846218e5be260cfaa8b63dff60d342c9c75831f753285997e3354",
+                          "bytes":  5861
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\NFANode.class",
+                          "sha256":  "25c0f687b6048acf492297509ef69cc87522656520b6382e2b3fb2bac33e3b61",
+                          "bytes":  4211
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\Node.class",
+                          "sha256":  "99be414710a936d844a9d0d9e10796d29d91b4f27ef4b48602326d669b5dd5a7",
+                          "bytes":  2193
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\NodeKt.class",
+                          "sha256":  "6ed0b3dbe6843de64abcc8e7b001d7f2b49278d539196bf6a6ec898d5998c1bf",
+                          "bytes":  5025
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\RegexKt$toRegex$nodes$1.class",
+                          "sha256":  "6edc5fc1b7cb0ad7c17c3b7f7894ee8136d7f6324a1323fbc2f5f01b8678b5ce",
+                          "bytes":  1758
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\automaton\\RegexKt.class",
+                          "sha256":  "f7093ddc118524a9400063e140f9dd0692689fdca7f926e4709fdde34aabf821",
+                          "bytes":  14674
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkBackend$Companion$parse$2.class",
+                          "sha256":  "b7e69b149c206f869222b826d75545ee80664927a6800801b726051de9141d58",
+                          "bytes":  1862
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkBackend$Companion.class",
+                          "sha256":  "3290f88876291b17946463fdcec63b5dadd5161c1e6711996ea9a077b6068b73",
+                          "bytes":  3108
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkBackend$create$1$1.class",
+                          "sha256":  "7922e1be41252f1aedbbce673ad1b82c6e723faa34ccbf9fe9d3feb7aeb95593",
+                          "bytes":  1947
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkBackend$WhenMappings.class",
+                          "sha256":  "a4dc14fe30e42db347a22551eb5b8dd023b3eaaeb3b0f5f80e7a58d2baba309f",
+                          "bytes":  946
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkBackend.class",
+                          "sha256":  "8d7eafa433df6fac6d64910050c5dede4e5d4d3aac7a6264d0658db9a94612b6",
+                          "bytes":  5319
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkCsv$row$1.class",
+                          "sha256":  "c0078ceb0cfb135311df1a50ae2f86e70583de244a524edc37dc3076fcc63df7",
+                          "bytes":  1973
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkCsv.class",
+                          "sha256":  "1749572e50aa5a925849f0c5e3a71650ce20104db4ac013054470fcfc42a3ea7",
+                          "bytes":  3690
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkDataKt$hex$1.class",
+                          "sha256":  "c0a917e0c0555ece326df8048fac3c9f3a578505f1cf50d7dc2dffa315003d80",
+                          "bytes":  1869
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkDataKt.class",
+                          "sha256":  "1943d4c603566f257e8fcfb3a97405b3cfd4867a932ae06a62cb767823698a34",
+                          "bytes":  9530
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkDeadline.class",
+                          "sha256":  "fbf5bfa59b764a7c3d6a9d8df14b9adaa8d74fbf78071f400edb7017782e0863",
+                          "bytes":  1606
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkHybridSettings$sha256$2.class",
+                          "sha256":  "a592f513c668fc4c9147c2d9c42446f2c6c1c7067738ce9258e7b768de2c2196",
+                          "bytes":  2068
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkHybridSettings$special$$inlined$sortedBy$1.class",
+                          "sha256":  "42c5b014e5702630eb24197c681582eccef9dd67beddc62a12b788a62343da52",
+                          "bytes":  1999
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkHybridSettings.class",
+                          "sha256":  "5208a1a9a8b9c1761390b56033e459a11aee1b0a0725cf3e1297eca948a8bb35",
+                          "bytes":  10522
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkLimits.class",
+                          "sha256":  "9a799610dd220612b92ae578f7ad1bb6ff726e1ed5c27fc894d74f328274fa56",
+                          "bytes":  3511
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProcess$run$2.class",
+                          "sha256":  "32dcd6538265c8297fecd607cdb633cc19d2de1a364ec4716b09f8630fba1df0",
+                          "bytes":  1487
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProcess$Snapshot.class",
+                          "sha256":  "6f456f5b5066cf8eb96a3a084f665b7d29687d0d18d2c2eac516cd3617f229f2",
+                          "bytes":  4380
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProcess.class",
+                          "sha256":  "c263ccd89ad36ebe75aa3d2209807c1315fae2afcbfcdb363066942533fe9102",
+                          "bytes":  14105
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProcessKt.class",
+                          "sha256":  "a7de5fed4bdc97c555ff1e785d3cccb6d1742cf75901a7e83c0c30095844929b",
+                          "bytes":  2216
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProtocol$encode$$inlined$sortedBy$1.class",
+                          "sha256":  "b43f38fe9a280563acf49d9d2f6b59ad08355b01f2e4280500c4e858c2da96c5",
+                          "bytes":  1994
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProtocol$encode$2.class",
+                          "sha256":  "3203cbda66f42321e51640090dd3a79653a8a08f55a89fa156755b91251293f5",
+                          "bytes":  2323
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkProtocol.class",
+                          "sha256":  "5bf5bb4ac6ecf08aa6e013d8f16e2f93d62fe3dfb5fba2c164843f300e44b382",
+                          "bytes":  7617
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkReportKt$appendSolverTotals$$inlined$groupingBy$1.class",
+                          "sha256":  "0dfa4b2762314b30332771c1492c8f66d39a735406acf5ec9da641eb6f552659",
+                          "bytes":  2463
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkReportKt$restoreAggregateCsv$$inlined$sortedBy$1.class",
+                          "sha256":  "9b2dddc56653b67a32b0b867f300cc208d9146a486b1dbb12d803e192ec0e538",
+                          "bytes":  2077
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkReportKt$restoreAggregateCsv$excluded$2.class",
+                          "sha256":  "3682aea2aacadf5b5992656357218748f70c6caeacf6d42851cb2a422c035b3f",
+                          "bytes":  3527
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkReportKt$restoreAggregateCsv$raw$1.class",
+                          "sha256":  "15300268f956ffff564befd049bf83555e0a5c1aca150e213a8623e80839c28a",
+                          "bytes":  1829
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkReportKt.class",
+                          "sha256":  "11c05dda57ddd6b3e2cc6f76616e7fd99aa66f036913d0cb51498b8b07d034b6",
+                          "bytes":  42691
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSample.class",
+                          "sha256":  "20b2ec9ea412027cbbb040010ed88d2534209b39dfc30e748008a1e974c2a227",
+                          "bytes":  5070
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceList$Companion$read$names$1.class",
+                          "sha256":  "283d9ba75e74af4d8828d9beb896d92d383fb2497a0d251261eb2b43e6aa40a9",
+                          "bytes":  1909
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceList$Companion.class",
+                          "sha256":  "b28ff95f246cf72f62300886c0a486c76ca637efaf5fff313118c762f99fa3a0",
+                          "bytes":  5937
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceList.class",
+                          "sha256":  "62c3c049dbac2666e9a6a2a352d457d521738683cb3c34e3ec33d3106e18aa84",
+                          "bytes":  3117
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceListKt$discoverSamples$3$1.class",
+                          "sha256":  "112614727576f3914b6fff323a65d58575a2b0f28b6e4f738b1226f848079a1e",
+                          "bytes":  2078
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceListKt$discoverSamples$3$2.class",
+                          "sha256":  "f7c1a772a2c1c4ea541400471d030c2993a6689bc814c43013ddbc4caaae9e37",
+                          "bytes":  2173
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceListKt$discoverSamples$3$3.class",
+                          "sha256":  "8342886a4c9aa4ec33e0fcfee9593beb22a8b129be633c7b4bb11954df298254",
+                          "bytes":  1841
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkSourceListKt.class",
+                          "sha256":  "fc0a0761e35c0d28dddbd00583043e21d52614acae9861ebe048ed55ba1b4e42",
+                          "bytes":  9417
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkTimeout.class",
+                          "sha256":  "c2faeb6eb2bc95db62de9d5da5a008a98c70d741629d46b458bcbc21ceb08134",
+                          "bytes":  619
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkVariant$Companion.class",
+                          "sha256":  "dd3315af7cb2c57bb6cf0b9c0158347418c67974d6cfb35a72363e9ec06ea251",
+                          "bytes":  7346
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkVariant.class",
+                          "sha256":  "a68458974ed0aca325d16df15186a81099bfaf3d40b54343be9d752fc3604c82",
+                          "bytes":  7114
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkVariantKt.class",
+                          "sha256":  "a1a013ccc09918258edff616d25ed19fb64325900bfdeca43569e646fc9a432a",
+                          "bytes":  539
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkWorkerKt$runBenchmarkWorker$1$2$4$2.class",
+                          "sha256":  "7b8b979c82cf5b5cf6a9e475453f1eb73bd2825432605e4b193f76832160bacd",
+                          "bytes":  2212
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkWorkerKt$runBenchmarkWorker$1$2$5$witness$1.class",
+                          "sha256":  "49d8aa23e5e4a3104f2701f5b5f8c95bcc2452de065fc60eb361c14c05d523a8",
+                          "bytes":  2093
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkWorkerKt$runBenchmarkWorker$lambda$8$lambda$7$lambda$5$$inlined$sortedBy$1.class",
+                          "sha256":  "dbf48b8d557078a106b3d81e1c4aaa80596af76894e921a737c3eb914440301d",
+                          "bytes":  2070
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkWorkerKt$WhenMappings.class",
+                          "sha256":  "98bd32fed59d99f6f81c4a3cfae8df944bf820e367ed3c9c67a5964107c1843a",
+                          "bytes":  836
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\BenchmarkWorkerKt.class",
+                          "sha256":  "d4ae0328bd6f71215a3b58192617fe4cbfefa35e0007b462a9daebe537fedaf6",
+                          "bytes":  24902
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$fingerprintEntry$1$1.class",
+                          "sha256":  "0698f6fe1af5def696c897d9ac9036be2a560d84694c297fecba952493aafcb6",
+                          "bytes":  1736
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$fingerprintEntry$1$2.class",
+                          "sha256":  "4173a2f5059bf54b58e00302d52eb3d90e99ad0ef4c4a40a1bf48b3b3892a814",
+                          "bytes":  2295
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$locateCorpus$2$1.class",
+                          "sha256":  "87e6b0e08bf043ac9c30539c26996912ce88f470132fd3189d24cdb2db9741cf",
+                          "bytes":  1714
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$locateCorpus$2$2.class",
+                          "sha256":  "9c4e5240d08ab6be21e5cb98365518e689f79fd1b6d6e9104a70a2cb0fe49cc7",
+                          "bytes":  1435
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$manifestText$1.class",
+                          "sha256":  "7385a904b2058dd18a4824ab1b792256890d8c8823f95b0f8732cd12e5bac64f",
+                          "bytes":  2425
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$readPropertyDirectory$1$1.class",
+                          "sha256":  "25468108d155b580426872e23a483bcce0c73f0f9c7c1c7e61672ef647acb351",
+                          "bytes":  1862
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$readPropertyDirectory$1$2.class",
+                          "sha256":  "fbb3951753e1d8a51c692582c10de357e6d43d7433bd9f2ba5920b0cab3b88da",
+                          "bytes":  1906
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$readRecords$1.class",
+                          "sha256":  "2ff78f66b82cc00fd81c96293fb2a6953fdd703e4f4f2a31f192d2b80e945448",
+                          "bytes":  1875
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$readRecords$2.class",
+                          "sha256":  "56242635e11564b9045f941d05345acca071f56ab9c6917cf3780875b99d6044",
+                          "bytes":  1865
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$runComparison$$inlined$sortedBy$1.class",
+                          "sha256":  "f44e72eb44bd3000e468b338f429dc638561c4fc69545321d089d8577886718b",
+                          "bytes":  2049
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$runComparison$9$1$7.class",
+                          "sha256":  "df818df30093dcee89f7e8ab9796a427bf80f06795363f451dea527b1fc2d16d",
+                          "bytes":  1824
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$runComparison$configurationHash$2.class",
+                          "sha256":  "de652218ee9d30a8c6cfe1af2e69ed6efda06c28d563491303813a36ca6a36ff",
+                          "bytes":  2152
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$runComparison$defaults$1.class",
+                          "sha256":  "41fc5c92f28e0f805ab90d4a594fa2e0835f113f14cf273ad5666c7a7f33e9a6",
+                          "bytes":  1834
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt$runtimeFingerprint$2.class",
+                          "sha256":  "9eae8777e44d0d5c14ff3a5347bec8b85403413c87a2506a3a896a1e0ac773fa",
+                          "bytes":  1948
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\benchmark\\NoodlerBenchmarkRunnerKt.class",
+                          "sha256":  "262a59d0ea89739461c8a4f3f9b9678d1cad823ea5552cdeca1ffcb1f1ccd6e0",
+                          "bytes":  46087
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend$1.class",
+                          "sha256":  "d22ada6806b4f36a9b8cdb62f5345f2a0d6602b6d6ee75d6c58d559bf30ac7d7",
+                          "bytes":  1993
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend$2.class",
+                          "sha256":  "e275dda31a5939ea281868b7b38396d5bef46144160ebdee64515a6d3fea14ee",
+                          "bytes":  1997
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend$3.class",
+                          "sha256":  "ec22b128a5d48858d6309e17aa05562d5ebbb585d872691fdae1a417dd489501",
+                          "bytes":  1651
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend$Companion$fromCliName$2.class",
+                          "sha256":  "5d1845511aafa29abb2fa52d59f9bad9717b6d1af14d7f0628bbb7b6e9628666",
+                          "bytes":  1845
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend$Companion.class",
+                          "sha256":  "facd65d53280ab384ae280e9b386dfcacdd95c05db29707a5a999ad0c2d9fc8d",
+                          "bytes":  3063
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\KNoodlerBackend.class",
+                          "sha256":  "1db0272390324b9e650050561f71471efab218f6e99cd4be3fd4bd0fe7e35cb8",
+                          "bytes":  3689
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\ModelExtraction$Companion.class",
+                          "sha256":  "420c48225e729b2ce657e97071126936698cdddfd4b3db1614d4c6c966368671",
+                          "bytes":  1168
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\ModelExtraction.class",
+                          "sha256":  "77ec905d3d12cdfa901f96aa011cfc9f026864902d8be6c3854bcce721b78d3e",
+                          "bytes":  3842
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\Noodler$propagate$1.class",
+                          "sha256":  "c10273aaf98819ec2a69b0180b3de7a5b5365d2fabbbf2e7ee35bedc16aaf921",
+                          "bytes":  1230
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\Noodler$PropagationResult.class",
+                          "sha256":  "56e96da12b5f8421c44e15cf0d72e723b5774e7a319f8e4db677cc18f1a6a2e6",
+                          "bytes":  3344
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\Noodler.class",
+                          "sha256":  "2a5a96ad9815f715dfee11be523ce493f119d5d2e57aa1a8d1f2f4aee144d3a8",
+                          "bytes":  12087
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerInputAnalysis.class",
+                          "sha256":  "780e27f387391d706edcb00c751b9739f7bb5a1211f1926da6abd68a3c36e424",
+                          "bytes":  3707
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerKt.class",
+                          "sha256":  "50bd1b588732a7d33b14085b446238b60ae697600e400303e1ff66ad91c2bd31",
+                          "bytes":  3535
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleDebugSampleKt$main$1$1.class",
+                          "sha256":  "c51dcb1952ffaf8ae3316eaf32de6281ff1755b02169350e31a0ad85f484d69c",
+                          "bytes":  1820
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleDebugSampleKt$printModel$$inlined$sortedBy$1.class",
+                          "sha256":  "ce564ba66edd91438ca53902cf819bcdcb5e9fc5c788bca27797c78f2186e783",
+                          "bytes":  2091
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleDebugSampleKt$renderValue$1.class",
+                          "sha256":  "226297d9f12dd973122c2c6b492c7ba7ab6425e14eb0bde3a437a517e0c3808e",
+                          "bytes":  1985
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleDebugSampleKt.class",
+                          "sha256":  "fdcc480b4fa009c4ee18a0743b6f9dc5a4539bb224e8855edc64fd8a61325fe8",
+                          "bytes":  13928
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$collectFragmentSafeQfSamples$byRelativeName$1.class",
+                          "sha256":  "898c63e9a237ac6f48d1bda0b224ee27eec58948fd4b08da784b396c2aeeaf96",
+                          "bytes":  1908
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$collectFragmentSafeQfSamples$files$1$1.class",
+                          "sha256":  "d73ccd3e5abaef86cff9ff9e8b3a64f3b84296307618bc070a5d5f57542a5177",
+                          "bytes":  2024
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$locateStringDataRoot$2$1.class",
+                          "sha256":  "28d95a7ee027edd9418af72886915acb8a6b515cf2ea896742f3bd9b400fa11e",
+                          "bytes":  1691
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$locateStringDataRoot$2$2.class",
+                          "sha256":  "de404b7a0ffa25b2a29780b38739a424859175504a193407dc5e1d8d4e80d95a",
+                          "bytes":  1538
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$NoodlerResult.class",
+                          "sha256":  "43dd1fcded1a3a9451a920edb433ae403a85c3d94f168147db4a5074b45846ac",
+                          "bytes":  5651
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$prepare$candidates$1.class",
+                          "sha256":  "919f03e7f0c3d0c3ef9155bf33c1f39ffbb4990331665e224d613c33e8f95b86",
+                          "bytes":  2055
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$prepare$candidates$2.class",
+                          "sha256":  "d4a6cebdffba35fc2bdf53b137dfbdab85e498c85986028f6ae7c18821c5758b",
+                          "bytes":  2000
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner$SampleDescriptor.class",
+                          "sha256":  "dfa9dc5edba79bfaa203a0eb328b02e2f0505aa681bac1dca0d869cccf5bb215",
+                          "bytes":  3938
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunner.class",
+                          "sha256":  "8aff9d2c88f39439cf80e27126a300d182b70e2e214bf87c0134bb0c1626059c",
+                          "bytes":  30382
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunnerKt$compareStringModels$mismatchPreview$1.class",
+                          "sha256":  "b7feb8789b384f096f116ca8eaab5c472bb4263a871b19998e880e1ec1da1bff",
+                          "bytes":  2534
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunnerKt$serializeStringAssignments$$inlined$sortedBy$1.class",
+                          "sha256":  "e1cf2732498e9cd79a0467ad85058c0331bd8d081ea4538e980038d9395f14ae",
+                          "bytes":  2075
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunnerKt$serializeStringAssignments$2.class",
+                          "sha256":  "44b2cf60a7aac4040c899f565fb8dcb24f7c252142eb8bb33d71a2b968204fb3",
+                          "bytes":  2313
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunnerKt$WhenMappings.class",
+                          "sha256":  "b3234d7c4ccb60456a09ed5eaf0088ed095ebeff8ce7796652d817fd3c832f65",
+                          "bytes":  934
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerQfSimpleRunnerKt.class",
+                          "sha256":  "f49590f49280beb1247e88e850fda978dd83a75afd143346dbeb19ab3c9d0d8b",
+                          "bytes":  16120
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerStatementsKt$extractNoodlerStatements$1.class",
+                          "sha256":  "252c8f1ef3915da849807f171f1ea60ca97b5114533e0562cd274b187113dd67",
+                          "bytes":  1261
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerStatementsKt$isSupportedStringTerm$1.class",
+                          "sha256":  "609a10491728604b5a382e8ad2b7240e5e7cc67dfc3ece84f13c2fd283419056",
+                          "bytes":  1241
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerStatementsKt$toNoodlerStatementOrNull$1.class",
+                          "sha256":  "71a4e4ea998bd565e4df3b1fe0d66ae5bd7af6290e2e3ffe75f5816fd57c1928",
+                          "bytes":  1269
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerStatementsKt.class",
+                          "sha256":  "d0e939cc2796d025494d3079320607060612c44d5f02798f3a7ad5508764cd75",
+                          "bytes":  11497
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\NoodlerZ3ExampleKt.class",
+                          "sha256":  "b70fc5bc0279597916a470e26232bb8d0e07a249355a18d5fc6b884d5aa180ad",
+                          "bytes":  4206
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\RunnerCommand.class",
+                          "sha256":  "2456e0f75227cc1ccb7123fd0ef8b07db400f1d5e649d279aa6712c38226f097",
+                          "bytes":  1527
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\RunnerConfig$Companion.class",
+                          "sha256":  "86cb552321a3e76e4d568e527937076ce9526bc89b9f7cf71cf13505c083b0f3",
+                          "bytes":  4838
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\RunnerConfig.class",
+                          "sha256":  "5f30ed8cd98ddf762b5ef4fab2dc8b26c35a0fed4fcdc822b7f1802e341fa7fa",
+                          "bytes":  5953
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\SolverInteractor.class",
+                          "sha256":  "60ed207f489131ef4a47ad0fe59310c607c3f453f80bbf8feda0bb5fb16d64d1",
+                          "bytes":  5588
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\StringModelComparison.class",
+                          "sha256":  "3d5f32780c62d71cada063c3f2bde9d1bece1b7dfcbb1b2a5fa9d5ebcf3af765",
+                          "bytes":  3180
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\StringModelComparisonStatus.class",
+                          "sha256":  "4c6a423a1d032f43dbf6dfdcdfed657fd257a4dbc9d84e04547bfbb8a98cb0df",
+                          "bytes":  1773
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\core\\TermPartsBudget.class",
+                          "sha256":  "2c9edfc0113e760ccab68a77cc56b3c8b59df39044288417a190638d9448d98d",
+                          "bytes":  1755
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AcceptedLengthPrefix.class",
+                          "sha256":  "2b1c57b411bcc673dd27d520ed98bf3cf584bcc04244b74da7fe6c6b9bfe810b",
+                          "bytes":  3118
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AcceptedLengths.class",
+                          "sha256":  "c06aada3a364022475ec683bfc2065a2fb4d0441d0589e3ba9c899b7bdcf48b2",
+                          "bytes":  4259
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomataLimitException.class",
+                          "sha256":  "b79afe0f19ed0ded02b9576a357b4c2572bbd41344ae4b2a117943e2d14d9ed9",
+                          "bytes":  915
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomataLimits.class",
+                          "sha256":  "e22ba520647296e42a811c9250f441d11f01b2e7bc2f51c9ca49e3c17368ffbd",
+                          "bytes":  4077
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomataStorageBudget.class",
+                          "sha256":  "8c0c8aaba4237c468c348c389903ea1e0ffca63f8026c508966cc7a94fcefdff",
+                          "bytes":  1568
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$analyze$exact$1.class",
+                          "sha256":  "b10b488e15982614b3aca967f3d60c648ba85db7e5ef9d41c104c7ed52a63eac",
+                          "bytes":  2333
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$analyze$exact$2.class",
+                          "sha256":  "6174124504355e94ddfd01671ec98639e7136eccc6dc26362883c2431d0a1800",
+                          "bytes":  1970
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$analyze$summary$1.class",
+                          "sha256":  "2fe53984d484b566d2d8307b022038c008fdb09b4bc037a8b0c8930cf7343285",
+                          "bytes":  2052
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$attempt$1.class",
+                          "sha256":  "ca755446ca568291c9eadfa9a9fd175c0231f395770c053e49ffc46fb9ba6a6b",
+                          "bytes":  1866
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$Companion.class",
+                          "sha256":  "7f5d8213ccbe483d488ac32680a983a8e47bd41ed3241d93b8839efd9f88b95f",
+                          "bytes":  974
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection$Projection.class",
+                          "sha256":  "af90682eb6b33a95a5ebf42ed0f3c7d2b5003deb110850043a9009d11ad60943",
+                          "bytes":  5005
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthProjection.class",
+                          "sha256":  "0cd9737a207ddac8b08b1c655a30a56cf2713d7d566d373dcab1f27bab438229",
+                          "bytes":  15480
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthSummary.class",
+                          "sha256":  "c9c98e49d92d0fe3ff0532110e425b9408e7c8fe8d8630d763a35da663f3ada6",
+                          "bytes":  4547
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthSummaryKt$lengthSummary$1.class",
+                          "sha256":  "2121391091be9d356b6c24c20be6afd150f618cb70b662822d85d7d6c8679432",
+                          "bytes":  1319
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\AutomatonLengthSummaryKt.class",
+                          "sha256":  "c1f9ca601e97651ff3f2178f7f804cfd37db5c9002aa8a93e6efe1dac67b74fc",
+                          "bytes":  11702
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\CandidateRealization$Companion.class",
+                          "sha256":  "7734b3e64325c2bc3c6ed771e1358ed263f822306cb0417aaf8369cb795e5c82",
+                          "bytes":  1107
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\CandidateRealization.class",
+                          "sha256":  "22a6616e7b1475212c9b7ed05e9c6ec88959f958d28cbbd320c57ce302d4a865",
+                          "bytes":  21652
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\DfaRegexEmitter.class",
+                          "sha256":  "3e6937673d04c2b2d828c89f8af42e9f5c9f6cea4766c01908632d65cb24f76b",
+                          "bytes":  10892
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\HybridCheckControl.class",
+                          "sha256":  "631948e72dbfb7716b4e7eb2f2fa2d5b171ca99288fdb7a81474326653368be6",
+                          "bytes":  2524
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\HybridIncomplete.class",
+                          "sha256":  "0b0f8a66b12145d7de1cdc5382fa2a5faa8c646080e917422eaff46dd91e2843",
+                          "bytes":  1110
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\HybridSyntax.class",
+                          "sha256":  "29e03a37807b81b056b8f483455d1370691e89f7aa2109fa7a9859f7edaabf5f",
+                          "bytes":  7937
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\LengthProjectionLimitException.class",
+                          "sha256":  "2ad5bffc6d6d87be6f673cc2f85d62448fc767200a6a249fcadb0860e7fdf9fa",
+                          "bytes":  1382
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\MembershipTransition.class",
+                          "sha256":  "91623baecbc5aebfdb1e61ddf01c79443ddfb00e7041b8415ffbe4abc4316369",
+                          "bytes":  2998
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\MembershipTransitionPlan.class",
+                          "sha256":  "dced5ad548938307f97fd80c8f41720df0061c75186f3222b4998fdd7f7d013a",
+                          "bytes":  3442
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\MembershipTransitionPlanKt$planMembershipTransitions$1.class",
+                          "sha256":  "071836d0284bf910a1c16eb25e195e594ed51e6b481a31ae3cfd5da441ce42b3",
+                          "bytes":  1419
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\MembershipTransitionPlanKt.class",
+                          "sha256":  "237bef6f8f481e3dd209792ebe0b4b77ae42dfb5ffc994ed1db140979bc5c2f1",
+                          "bytes":  5393
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerRefiner$1.class",
+                          "sha256":  "166fb20981b7067bdaaa08c215f3f1150b3ef21c94d4cb5b29fbb3b9cb1ba095",
+                          "bytes":  1258
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerRefiner.class",
+                          "sha256":  "8cb43bbe7bf05a1c2599f62ae61b72cf480f3d86c9729357dd8343db71d282a4",
+                          "bytes":  14721
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel$Companion.class",
+                          "sha256":  "7e361a3b02288ea0904bbd83b1b4ccf90560027adc13c6860171314191cb4365",
+                          "bytes":  906
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel$complete$2.class",
+                          "sha256":  "1acc4db6f3fe076e5ac8d797fffe45f870b7e352623a891b8dcb60067aa13a81",
+                          "bytes":  1637
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel$evaluator$1.class",
+                          "sha256":  "69d7d17a4336f7b911b5a326810ecf039b3b7614f92c8bb60e542a7acf5c19e8",
+                          "bytes":  1323
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel$evaluator$2.class",
+                          "sha256":  "4ebbfb49e6de86d301a961381b91b0f00591d1376f4bcda8d25fa27211b2c827",
+                          "bytes":  11297
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel$partial$2.class",
+                          "sha256":  "36709bb793cbb9ee61d504d97f202e16653a33299bfd11a04f0eb4a9def13dc2",
+                          "bytes":  1635
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\NoodlerYicesModel.class",
+                          "sha256":  "a01b7ec9c71f1d883f18b3db4dbecb943b82ecfd77ab5c31841c6e3d74537a50",
+                          "bytes":  7623
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\PreprocessingBudget$1.class",
+                          "sha256":  "7f2620350cfd5aabfb21aa64a90a608477275e7107fe474db31799a7fc2aab1e",
+                          "bytes":  1233
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\PreprocessingBudget$Companion.class",
+                          "sha256":  "f8f3cec6bedb2b4b8b1ef20957bd3fdd1e76e0c754a0aba1fc3c6edd3b5678bb",
+                          "bytes":  903
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\PreprocessingBudget.class",
+                          "sha256":  "eaa77269226405b2797dc7413f1c45f069292e75e3c394394d9a2d63fc12a3dd",
+                          "bytes":  4074
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\PreprocessingLimitException.class",
+                          "sha256":  "d75fc6981b2273c565a00fa0d380c9d2dc454c0b4b4ecf5019106e60a0c07e54",
+                          "bytes":  947
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RefinementResult.class",
+                          "sha256":  "239d094764d879b3fa7011fd0245ce5487c1c43631f201dbb41e59a7d39a7d38",
+                          "bytes":  3918
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$1.class",
+                          "sha256":  "32683fd25f21a06462b70800da3058c898d7e7ea255f837106d76c23f3a00ef9",
+                          "bytes":  1254
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$Companion.class",
+                          "sha256":  "0d5e4b6f0801c94cf57e02d2d7ef6eeb16366a506070b127c98ba2c5a9dd82d8",
+                          "bytes":  882
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$compile$result$1.class",
+                          "sha256":  "323e1212692e77cd09589224ab1a776d260189444b607fc5ed0f24c04fb6c8fb",
+                          "bytes":  2520
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$compileIsland$1.class",
+                          "sha256":  "a7f08bc39bda5a9513223ba7d45a2f78d609767397ab5b1fbb936def88619186",
+                          "bytes":  2661
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$compileIsland$2.class",
+                          "sha256":  "7b6c5b7bf27e1dc4b8237dbbd1503889156676dd5f56338f75ac156b508191bf",
+                          "bytes":  2661
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$compileIsland$3.class",
+                          "sha256":  "27fe7cd0fbf18238ccd29984dd291935da779f54244b26ae459433bf961c791a",
+                          "bytes":  2661
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$compileIsland$4.class",
+                          "sha256":  "144afb183774c13ea7f49dd86a8855b2f02f3f1eb1ce1eae42957826f890fa41",
+                          "bytes":  2661
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$Fragment.class",
+                          "sha256":  "247287142ca48200feb8a3d6a7bc8e050098ee3029a1f549edc4688f47f5c5ae",
+                          "bytes":  3645
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata$Frame.class",
+                          "sha256":  "a2603d3fc688724c1bf3fe6e052b13581bfd2ffc2bae17ff46bb24baa1b4423d",
+                          "bytes":  2380
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexAutomata.class",
+                          "sha256":  "aa76897551c3af17be1d2404aa02c15ff801fdd9ef7878fd4b91e532662b7132",
+                          "bytes":  20051
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexEmissionBudget.class",
+                          "sha256":  "2c4450d9ec8a186d6109840a2301e1c45677a550c0a80cb2f7dd5f5de1b277bf",
+                          "bytes":  2170
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\RegexLabel.class",
+                          "sha256":  "92853fe1c3c5df429a6d6641b3c67064ac5ad802738be24d639478d4007870c1",
+                          "bytes":  3175
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction$Companion.class",
+                          "sha256":  "d16448533bc486d236c66ba789f06098d92ca2dbf86ccec3255a123827096299",
+                          "bytes":  952
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction$Frame.class",
+                          "sha256":  "5d6aeefcc2ddc8ce4b547bfe7962b0be739446d8df0dc4b519d7e97412315f01",
+                          "bytes":  2189
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction$Word$Concat.class",
+                          "sha256":  "0cce55c89b4272ee830204db21c98728b80b7e9d0f2f0b4269918605c1323342",
+                          "bytes":  2122
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction$Word$Leaf.class",
+                          "sha256":  "e63e7d972e1de47d76e73953e87a6b79b13f3122a57f61c3cb7f04c6d935cd3a",
+                          "bytes":  1713
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction$Word.class",
+                          "sha256":  "118b6dcc86aa8fc13f89af5e073016a54b433be8c296c564ba722d8974afda9a",
+                          "bytes":  2126
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAbstraction.class",
+                          "sha256":  "1c2dcf36ee67df2af0fb7a81b051a055399b4a8fe01f1d9eee1bc0bd438dfae2",
+                          "bytes":  21095
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAtom$Equality.class",
+                          "sha256":  "de9b7f03430d01d4f86248280baa150dc20d86a3ca28b4156dd68bdf47b9b3cf",
+                          "bytes":  1556
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAtom$Membership.class",
+                          "sha256":  "40a3e94a30451241beb57a58fdd4bb7f1b32c9c99f7cb9bce7bb0afdda39e7fc",
+                          "bytes":  2096
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringAtom.class",
+                          "sha256":  "a543135c398c4acc7b7abc6ecb50c9dd0d9e1bf068875bf544bc8e7e22153be4",
+                          "bytes":  1630
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringEquation.class",
+                          "sha256":  "ab73b484cd0c675764b312798568df7bcd996c46e9a8f255a22ece279f447ca9",
+                          "bytes":  3429
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringTermPart$Literal.class",
+                          "sha256":  "f30628e85c2ba985740554b53f147183300b3f2bdf0d8738eed72ffb12b15695",
+                          "bytes":  2898
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringTermPart$Variable.class",
+                          "sha256":  "1407d5eea902731031530511f173cdd9afeae6ea4828fbc0c069e182861f3196",
+                          "bytes":  3013
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\StringTermPart.class",
+                          "sha256":  "b7c65703dbb09147149ad6689638e10578658070da1c1b0cd5b024f30bc8d094",
+                          "bytes":  1045
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$acceptedLengths$1.class",
+                          "sha256":  "f515cba85fef7441f119cc03987b2e6ece4a853ce03532d368df72d602d8c131",
+                          "bytes":  1269
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$accepts$1.class",
+                          "sha256":  "101c6887f5e6745ff8fe02fd2d326a3f1480fd196c29f7a776f747a1bb821a37",
+                          "bytes":  1200
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$Companion.class",
+                          "sha256":  "94c3398ad6946c6c46aebde5c4c4b0a07433c6d9f68c5adbf9def4b228a72296",
+                          "bytes":  8584
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$concat$1.class",
+                          "sha256":  "11033981509ba92dd9f188bbedcd5d0599608c86beccbacd9880b7c15f9aa48d",
+                          "bytes":  1280
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$equivalentTo$1.class",
+                          "sha256":  "885ef8dcba4d369a81df45a24caba197cde41246bf109653d5d82ff7e54a0299",
+                          "bytes":  1256
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$intersection$1.class",
+                          "sha256":  "a13574f9eddc76d82b9ad4c64b7a82792c28eff241bf12fedc1633f58f081d5f",
+                          "bytes":  1298
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$intersection$2.class",
+                          "sha256":  "0696e1979b5c1731f549e31444caa087f38f74ac3393ecad79d9331bd14856ca",
+                          "bytes":  1642
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$isEmpty$1.class",
+                          "sha256":  "819d3452deaedcacd8fdc2c91c78bdfb88cfa5319c0ac82b695ec3829a76d3fb",
+                          "bytes":  1198
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$star$1.class",
+                          "sha256":  "30644b32c0bcaa0f5a95ec9f66dbb91640523c1c5178917a2b0cb2bde18a704a",
+                          "bytes":  1231
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$union$1.class",
+                          "sha256":  "d02fb51b2bc6460b54a39ce356618e5270fca4486e7d443b930132541ebb5209",
+                          "bytes":  1277
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa$union$2.class",
+                          "sha256":  "cb13646bb89fabfb5a6079a804629638d70139b229d6e212a46a6f9d5e1c0a54",
+                          "bytes":  1622
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfa.class",
+                          "sha256":  "e77078ab8c02c94aded115e836ca82971917bdab6eefb4fce3c045a99e82a438",
+                          "bytes":  29191
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfaKt.class",
+                          "sha256":  "9ed14763b8074c06b273bc0c2e01b3a64808effd9877ba6391cd3ba6f305fe50",
+                          "bytes":  3860
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicDfaRegexKt.class",
+                          "sha256":  "7c56d2be8f660a7fc76f0986283bbccaf39bc344173845c556d153c5fc443018",
+                          "bytes":  1860
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicNfa$append$1.class",
+                          "sha256":  "f71a0bd217e412a8fddc27bc1a410cc7aa4e642bee90ed77262251f0e7db8f16",
+                          "bytes":  1238
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\SymbolicNfa.class",
+                          "sha256":  "2106f383a57cd52dcbfc48126998bc0ad19b765523bb70de3fdfd83e4841d7fe",
+                          "bytes":  11704
+                      },
+                      {
+                          "relative":  "io\\ksmt\\solver\\noodler\\hybrid\\Transition.class",
+                          "sha256":  "589a6e9095cb7399beb84796a25a6561a4031ee82f1c946d24fe423491751fa4",
+                          "bytes":  2645
+                      },
+                      {
+                          "relative":  "META-INF\\ksmt-noodler.kotlin_module",
+                          "sha256":  "4d46746a71a42971b9307a9e0ac227820bfe387e5a2379f2175925fda129e9c8",
+                          "bytes":  605
+                      }
+                  ]
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-z3\\build\\libs\\ksmt-z3-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\01-ksmt-z3-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "2c9ac4537752e4df7a9dfb16aa346d95dcbe1149321a1b95e553de16e9fbf842",
+        "bytes":  261
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-z3\\ksmt-z3-core\\build\\libs\\ksmt-z3-core-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\02-ksmt-z3-core-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "f0e8823efb1ba2fcf0f3bb62946e64ccf158f942eb9fcf6494182f37d4cfdb00",
+        "bytes":  221282
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-z3\\ksmt-z3-core\\build\\dist\\z3-release-z3-4.13.4-x64-win\\com.microsoft.z3.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\03-com.microsoft.z3.jar",
+        "kind":  "file",
+        "sha256":  "2e02284243dadaeef316156f0b98ef4b1c6cc0db6ef3e4889cf356b2f7fe9018",
+        "bytes":  203510
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-cvc5\\build\\libs\\ksmt-cvc5-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\04-ksmt-cvc5-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "a4824fba26265fa733095201cbd9cc817b2aa154f2ed7a4edf6d8ceabf6e9373",
+        "bytes":  261
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-cvc5\\ksmt-cvc5-core\\build\\libs\\ksmt-cvc5-core-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\05-ksmt-cvc5-core-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "95d4c014d983c3cd0982c3f43400e813cc317069f59e83e7b765e4d85383da5f",
+        "bytes":  242763
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-cvc5\\dist\\cvc5-1.2.0.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\06-cvc5-1.2.0.jar",
+        "kind":  "file",
+        "sha256":  "530792e86685ff6f383e0b530bad1a4720350f4321c9efd52d3ce4e0c6dd803d",
+        "bytes":  99566
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-yices\\build\\libs\\ksmt-yices-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\07-ksmt-yices-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "4c262374fc063c058833f4a9b47db56c0423ced2c553a0932a316cfc3ae4bcf2",
+        "bytes":  261
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-yices\\ksmt-yices-core\\build\\libs\\ksmt-yices-core-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\08-ksmt-yices-core-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "da7e665d9242c88ad58d0317445ee71725fb33d7e4ec673d37904347865a0c48",
+        "bytes":  201001
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-yices\\dist\\com.sri.yices.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\09-com.sri.yices.jar",
+        "kind":  "file",
+        "sha256":  "b617e0a7bc0e57ca32dd23d533875a01e212f2332b9297d44a1e51a4cd594378",
+        "bytes":  45600
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-core\\build\\libs\\ksmt-core-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\10-ksmt-core-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "f8f4a43e0291b439def6731191fc4e9edc44f1e5b42a732317177b4d50460605",
+        "bytes":  1816953
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-z3\\ksmt-z3-native\\build\\libs\\ksmt-z3-native-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\11-ksmt-z3-native-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "2a45aa5a328c26e4f9f8c80e2902e722c0eedc350b87a2ea5abf1173baa02050",
+        "bytes":  55821970
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-cvc5\\ksmt-cvc5-native\\build\\libs\\ksmt-cvc5-native-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\12-ksmt-cvc5-native-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "e60974693695b9179f78217f53e29f9835f422bfa772009ab95f7cf23e540e60",
+        "bytes":  30157775
+    },
+    {
+        "original":  "C:\\Users\\danii\\smt\\ksmt-yices\\ksmt-yices-native\\build\\libs\\ksmt-yices-native-0.5.29.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\13-ksmt-yices-native-0.5.29.jar",
+        "kind":  "file",
+        "sha256":  "19ee7a6a50140304edda0b3f42c467392b05ad733d1b20a10857d89b0e4f2f8d",
+        "bytes":  3589374
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk8\\1.7.20\\eac6656981d9d7156e838467d2d8d79093b1570\\kotlin-stdlib-jdk8-1.7.20.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\14-kotlin-stdlib-jdk8-1.7.20.jar",
+        "kind":  "file",
+        "sha256":  "1da0d306c995945e1f807240ef64b5cd2dd5ac58612afb1a8596143d10b7ded5",
+        "bytes":  19805
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\it.unimi.dsi\\fastutil-core\\8.5.11\\790ac854a8316bb4896662d02c53dd30d769ed53\\fastutil-core-8.5.11.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\15-fastutil-core-8.5.11.jar",
+        "kind":  "file",
+        "sha256":  "efef6f94db499f4ce5c798b259ad80f48d3892fdd272f26e64dcde8182f8a16d",
+        "bytes":  6436211
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk7\\1.7.20\\2a729aa8763306368e665e2b747abd1dfd29b9d5\\kotlin-stdlib-jdk7-1.7.20.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\16-kotlin-stdlib-jdk7-1.7.20.jar",
+        "kind":  "file",
+        "sha256":  "524da3c1a2ad56fd52c4ae2272ef3de421de8d2047ab1c51fc306d351243f2f5",
+        "bytes":  45709
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-collections-immutable-jvm\\0.3.5\\2790401179de4445c880ad9efb3d4c068c7e5dd8\\kotlinx-collections-immutable-jvm-0.3.5.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\17-kotlinx-collections-immutable-jvm-0.3.5.jar",
+        "kind":  "file",
+        "sha256":  "0cc458268187e86241854ae85bfa35accf9bd7a650fbe57015347287bf7e6b66",
+        "bytes":  243747
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib\\1.7.20\\726594ea9ba2beb2ee113647fefa9a10f9fabe52\\kotlin-stdlib-1.7.20.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\18-kotlin-stdlib-1.7.20.jar",
+        "kind":  "file",
+        "sha256":  "7779ec96b9acbf92ca023858ac04543f9d2c3bdf1722425fff42f25ff3acfc9b",
+        "bytes":  1537347
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-common\\1.7.20\\e15351bdaf9fa06f009be5da7a202e4184f00ae3\\kotlin-stdlib-common-1.7.20.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\19-kotlin-stdlib-common-1.7.20.jar",
+        "kind":  "file",
+        "sha256":  "e0e91962bc0007338bf5b1739f62927ac32d14ba3d827fa608ab4e5351729d5d",
+        "bytes":  212210
+    },
+    {
+        "original":  "C:\\Users\\danii\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains\\annotations\\13.0\\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\\annotations-13.0.jar",
+        "snapshot":  "C:\\Users\\danii\\smt\\build\\reports\\noodler-combined-comparison\\full-20261027T172513Z\\runtime\\20-annotations-13.0.jar",
+        "kind":  "file",
+        "sha256":  "ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478",
+        "bytes":  17536
+    }
+]

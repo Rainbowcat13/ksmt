@@ -738,7 +738,17 @@ open class KCvc5ExprConverter(
 
     private fun convertNativeConstStringExpr(expr: Term): ExprConversionResult = with(ctx) {
         convert {
-            mkStringLiteral(expr.stringValue)
+            // getStringValue() crosses UTF-16 and cannot distinguish adjacent surrogate
+            // character codes from one supplementary character. Read character codes instead.
+            val lengthExpr = tm.mkTerm(Kind.STRING_LENGTH, expr)
+            val length = tm.registerPointer(solver.simplify(lengthExpr, false)).integerValue.intValueExact()
+            val contents = IntArray(length) { index ->
+                val position = tm.builder { mkInteger(index.toLong()) }
+                val character = tm.mkTerm(Kind.STRING_CHARAT, expr, position)
+                val code = tm.mkTerm(Kind.STRING_TO_CODE, character)
+                tm.registerPointer(solver.simplify(code, false)).integerValue.intValueExact()
+            }
+            mkStringLiteral(contents)
         }
     }
 

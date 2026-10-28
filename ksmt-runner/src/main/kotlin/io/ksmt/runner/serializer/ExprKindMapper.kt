@@ -758,7 +758,7 @@ class ExprKindMapper: KTransformerBase {
     override fun transform(expr: KStringFromIntExpr): KExpr<KStringSort> = expr.kind(ExprKind.StringFromIntExpr)
 
 
-    override fun transform(expr: KStringLiteralExpr): KExpr<KStringSort> = expr.kind(ExprKind.StringLiteralExpr)
+    override fun transform(expr: KStringLiteralExpr): KExpr<KStringSort> = expr.kind(ExprKind.StringCodePointLiteralExpr)
 
 
     override fun transform(expr: KRegexConcatExpr): KExpr<KRegexSort> = expr.kind(ExprKind.RegexConcatExpr)

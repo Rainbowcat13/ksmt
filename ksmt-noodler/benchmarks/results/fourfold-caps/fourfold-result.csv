@@ -1,0 +1,2 @@
+solver,label,hybrid_variant,sat,unsat,solved,eligible_trial_slots,unknown,timeout,other,completed_attempts,expected_attempts,complete,source_run
+noodler-yices,Noodler + Yices,baseline,149,363,512,752,124,116,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-resource-caps-4x\fourfold-20261027T222944Z\runs\20261027T223146Z-9babb927

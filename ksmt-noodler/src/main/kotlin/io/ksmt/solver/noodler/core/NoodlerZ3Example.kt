@@ -2,9 +2,6 @@ package io.ksmt.solver.noodler.core
 
 import io.ksmt.KContext
 
-import io.ksmt.solver.KSolver
-import io.ksmt.solver.KSolverConfiguration
-
 fun main() = with(KContext()) {
     val z = mkConst("z", stringSort)
     val y = mkConst("y", stringSort)
@@ -24,24 +21,37 @@ fun main() = with(KContext()) {
     val n = Noodler(assertions, listOf('a', 'b'))
 
     val (sat, extra) = n.solve()
-    println(sat)
+    println(if (sat) "No contradiction proved" else "Contradiction proved")
     for (a in extra) {
         println(a)
     }
 
-    val interactor = SolverInteractor(assertions,
-        listOf('a', 'b'), createZ3SolverOrNull(this)!!)
-
-    println("Interactor result: ${interactor.solve()}")
+    checkExampleFromArticle()
 }
 
-private fun createZ3SolverOrNull(ctx: KContext): KSolver<out KSolverConfiguration>? {
-    return try {
-        val solverClass = Class.forName("io.ksmt.solver.z3.KZ3Solver")
-        val ctor = solverClass.getConstructor(KContext::class.java)
-        @Suppress("UNCHECKED_CAST")
-        ctor.newInstance(ctx) as KSolver<out KSolverConfiguration>
-    } catch (_: Throwable) {
-        null
+fun checkExampleFromArticle() = with(KContext()) {
+    // zyx = xxz & x in a* & y in a+b+ & z in b*
+    val x = mkConst("x", stringSort)
+    val y = mkConst("y", stringSort)
+    val z = mkConst("z", stringSort)
+
+    val equation = mkEq(mkStringConcat(z, mkStringConcat(y, x)),
+        mkStringConcat(x, mkStringConcat(x, z)))
+
+    val astar = mkRegexStar(mkStringToRegex(mkStringLiteral("a")))
+    val bstar = mkRegexStar(mkStringToRegex(mkStringLiteral("b")))
+    val apbp = mkRegexConcat(mkRegexCross(mkStringToRegex(mkStringLiteral("a"))),
+        mkRegexCross(mkStringToRegex(mkStringLiteral("b"))))
+
+    val xc = mkStringInRegex(x, astar)
+    val yc = mkStringInRegex(y, apbp)
+    val zc = mkStringInRegex(z, bstar)
+
+    val assertions = listOf(equation, xc, yc, zc)
+    val n = Noodler(assertions, listOf('a', 'b'))
+    val (sat, extra) = n.solve()
+    println(if (sat) "No contradiction proved" else "Contradiction proved")
+    for (a in extra) {
+        println(a)
     }
 }

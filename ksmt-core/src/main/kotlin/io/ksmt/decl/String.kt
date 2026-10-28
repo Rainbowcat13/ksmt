@@ -1,6 +1,7 @@
 package io.ksmt.decl
 
 import io.ksmt.KContext
+import io.ksmt.utils.KStringValue
 import io.ksmt.expr.KApp
 import io.ksmt.expr.KExpr
 import io.ksmt.sort.KBoolSort
@@ -460,13 +461,19 @@ class KStringFromIntDecl internal constructor(
 
 class KStringLiteralDecl internal constructor(
     ctx: KContext,
-    val value: String
+    codePoints: IntArray
 ) : KConstDecl<KStringSort>(
     ctx,
-    value,
+    KStringValue(codePoints).toSmtLibContent(),
     ctx.mkStringSort()
 ) {
+    private val stringValue = KStringValue(codePoints)
+    val codePoints: IntArray get() = stringValue.copyCodePoints()
+
+    /** UTF-16 convenience view; use [codePoints] for arbitrary SMT-LIB strings. */
+    val value: String get() = stringValue.toJavaString()
+
     override fun <R> accept(visitor: KDeclVisitor<R>): R = visitor.visit(this)
 
-    override fun apply(args: List<KExpr<*>>): KApp<KStringSort, *> = ctx.mkStringLiteral(value)
+    override fun apply(args: List<KExpr<*>>): KApp<KStringSort, *> = ctx.mkStringLiteral(codePoints)
 }

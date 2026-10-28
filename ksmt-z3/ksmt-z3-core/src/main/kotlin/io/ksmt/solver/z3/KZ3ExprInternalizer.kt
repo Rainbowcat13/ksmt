@@ -1026,7 +1026,10 @@ open class KZ3ExprInternalizer(
     }
 
     override fun transform(expr: KStringLiteralExpr) = with(expr) {
-        transform { Native.mkString(nCtx, value) }
+        transform {
+            val contents = codePoints
+            Native.mkU32string(nCtx, contents.size, contents)
+        }
     }
 
     // regex

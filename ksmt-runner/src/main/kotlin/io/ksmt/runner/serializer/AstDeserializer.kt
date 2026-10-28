@@ -308,6 +308,7 @@ class AstDeserializer(
             ExprKind.StringToIntExpr -> deserialize(::mkStringToIntNoSimplify)
             ExprKind.StringFromIntExpr -> deserialize(::mkStringFromIntNoSimplify)
             ExprKind.StringLiteralExpr -> mkStringLiteral(readString())
+            ExprKind.StringCodePointLiteralExpr -> mkStringLiteral(readIntArray())
             ExprKind.RegexConcatExpr -> deserialize(::mkRegexConcatNoSimplify)
             ExprKind.RegexUnionExpr -> deserialize(::mkRegexUnionNoSimplify)
             ExprKind.RegexIntersectionExpr -> deserialize(::mkRegexIntersectionNoSimplify)

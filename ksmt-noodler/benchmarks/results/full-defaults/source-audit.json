@@ -1,0 +1,20 @@
+{
+  "verified_inventory": 3248,
+  "eligible": 752,
+  "excluded": 2496,
+  "families": {
+    "QF_S/20250411-hornstr-equiv": 552,
+    "QF_S/20250411-negated-predicates": 200
+  },
+  "quick_selection": {
+    "count": 40,
+    "seed": "noodler-combined-2026-10-27",
+    "family_counts": {
+      "hornstr-equiv": 30,
+      "negated-predicates": 10
+    },
+    "method": "first SHA256(seed + newline + relative_path) values within each family, no outcome filtering"
+  },
+  "reference_manifest_sha256": "35ede7ff21aa9608d614f3e16b62e66521d260e1d7d68c69c237bd424eafdb7b",
+  "reference_comparison_sha256": "4283b9f61566af9563ee93f253b314c7f66b7ee1d7de55406b317be329982337"
+}

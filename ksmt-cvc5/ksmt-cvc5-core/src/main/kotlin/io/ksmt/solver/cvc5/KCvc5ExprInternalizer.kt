@@ -1349,7 +1349,12 @@ class KCvc5ExprInternalizer(
     }
 
     override fun transform(expr: KStringLiteralExpr) = with(expr) {
-        transform { tm.builder { mkString(expr.value) } }
+        transform {
+            // The packaged JNI library does not export the jar's mkString(int[]) overload.
+            // An ASCII-only escape sequence preserves every code without crossing UTF-16.
+            val escaped = codePoints.joinToString(separator = "") { "\\u{${it.toString(radix = 16)}}" }
+            tm.builder { mkString(escaped, true) }
+        }
     }
 
     // regex

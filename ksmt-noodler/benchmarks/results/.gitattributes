@@ -1,0 +1,2 @@
+# Preserve measured manifest/data hashes across Windows and Unix checkouts.
+* -text whitespace=blank-at-eol,space-before-tab,cr-at-eol

@@ -12,6 +12,9 @@ import io.ksmt.expr.KEqExpr
 import io.ksmt.expr.KExistentialQuantifier
 import io.ksmt.expr.KExpr
 import io.ksmt.expr.KInterpretedValue
+import io.ksmt.expr.KStringLiteralExpr
+import io.ksmt.expr.KStringConcatExpr
+import io.ksmt.expr.KStringLenExpr
 import io.ksmt.expr.KUninterpretedSortValue
 import io.ksmt.expr.KUniversalQuantifier
 import io.ksmt.expr.rewrite.KExprUninterpretedDeclCollector
@@ -48,6 +51,11 @@ open class KExprSimplifier(override val ctx: KContext) :
             boolSort -> this@KExprSimplifier.simplifyEqBool(lhs.uncheckedCast(), rhs.uncheckedCast())
             intSort -> simplifyEqInt(lhs.uncheckedCast(), rhs.uncheckedCast())
             realSort -> simplifyEqReal(lhs.uncheckedCast(), rhs.uncheckedCast())
+            stringSort -> if (lhs is KStringLiteralExpr && rhs is KStringLiteralExpr) {
+                falseExpr
+            } else {
+                withExpressionsOrdered(lhs, rhs, ::mkEqNoSimplify)
+            }
             is KBvSort -> simplifyEqBv(lhs as KExpr<KBvSort>, rhs.uncheckedCast())
             is KFpSort -> simplifyEqFp(lhs as KExpr<KFpSort>, rhs.uncheckedCast())
             is KArraySortBase<*> -> simplifyEqArray(lhs as KExpr<KArraySortBase<KSort>>, rhs.uncheckedCast())
@@ -118,6 +126,7 @@ open class KExprSimplifier(override val ctx: KContext) :
             boolSort -> areDefinitelyDistinctBool(lhs.uncheckedCast(), rhs.uncheckedCast())
             intSort -> areDefinitelyDistinctInt(lhs.uncheckedCast(), rhs.uncheckedCast())
             realSort -> areDefinitelyDistinctReal(lhs.uncheckedCast(), rhs.uncheckedCast())
+            stringSort -> lhs is KStringLiteralExpr && rhs is KStringLiteralExpr
             is KBvSort -> areDefinitelyDistinctBv(lhs as KExpr<KBvSort>, rhs.uncheckedCast())
             is KFpSort -> areDefinitelyDistinctFp(lhs as KExpr<KFpSort>, rhs.uncheckedCast())
             is KUninterpretedSort -> areDefinitelyDistinctUninterpreted(lhs.uncheckedCast(), rhs.uncheckedCast())
@@ -136,6 +145,16 @@ open class KExprSimplifier(override val ctx: KContext) :
         simplifyExpr(expr, expr.args) { args ->
             expr.decl.apply(args)
         }
+
+    // Model evaluation must fold these operations even when the context disables
+    // simplification during expression construction.
+    override fun transform(expr: KStringConcatExpr) = simplifyExpr(expr, expr.arg0, expr.arg1) { lhs, rhs ->
+        simplifyStringConcatBasic(lhs, rhs, ::mkStringConcatNoSimplify)
+    }
+
+    override fun transform(expr: KStringLenExpr) = simplifyExpr(expr, expr.arg) { arg ->
+        simplifyStringLenBasic(arg, ::mkStringLenNoSimplify)
+    }
 
     // quantified expressions
     fun <D : KSort, R : KSort> KContext.preprocess(expr: KArrayLambda<D, R>): KExpr<KArraySort<D, R>> = expr

@@ -1,6 +1,7 @@
 package io.ksmt.expr
 
 import io.ksmt.KContext
+import io.ksmt.utils.KStringValue
 import io.ksmt.cache.hash
 import io.ksmt.cache.structurallyEqual
 import io.ksmt.decl.KStringConcatDecl
@@ -614,19 +615,32 @@ class KStringFromIntExpr internal constructor(
 
 class KStringLiteralExpr internal constructor(
     ctx: KContext,
-    val value: String
+    codePoints: IntArray
 ) : KInterpretedValue<KStringSort>(ctx) {
+    private val stringValue = KStringValue(codePoints)
+
+    /** A defensive copy of the SMT-LIB character codes, including surrogate codes. */
+    val codePoints: IntArray get() = stringValue.copyCodePoints()
+
+    /** Number of SMT-LIB characters, without allocating a copy of their codes. */
+    val codePointCount: Int get() = stringValue.size
+
+    /** UTF-16 convenience view. Throws if distinct surrogate characters would be merged. */
+    val value: String get() = stringValue.toJavaString()
+
     override val sort: KStringSort
         get() = ctx.stringSort
 
     override val decl: KStringLiteralDecl
-        get() = ctx.mkStringLiteralDecl(value)
+        get() = ctx.mkStringLiteralDecl(codePoints)
 
     override fun accept(transformer: KTransformerBase): KExpr<KStringSort> =
         transformer.transform(this)
 
-    override fun print(printer: ExpressionPrinter) = with(printer) { append("\"$value\"") }
+    override fun print(printer: ExpressionPrinter) = with(printer) {
+        append("\"${stringValue.toSmtLibContent()}\"")
+    }
 
-    override fun internHashCode(): Int = hash(value)
-    override fun internEquals(other: Any): Boolean = structurallyEqual(other) { value }
+    override fun internHashCode(): Int = hash(stringValue)
+    override fun internEquals(other: Any): Boolean = structurallyEqual(other) { stringValue }
 }

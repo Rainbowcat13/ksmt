@@ -1,0 +1,753 @@
+sample,before,after,before_solve_ms,after_solve_ms,before_reason,after_reason,gain,loss
+QF_S/20250411-hornstr-equiv/Burns_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,155.7347,146.6227,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,92.8434,86.0151,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,141.8062,143.6906,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,163.8339,159.4257,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,190.4833,162.8499,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,171.4519,170.989,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_4.smt2,SAT,SAT,171.8639,164.0713,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_5.smt2,SAT,SAT,162.3415,163.0248,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_6.smt2,SAT,SAT,172.4828,160.7809,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_7.smt2,SAT,SAT,219.6987,166.9134,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_8.smt2,SAT,SAT,170.3876,154.8759,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_bad_0_9.smt2,UNSAT,UNSAT,122.8655,180.5568,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,138.5189,135.1495,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,87.0843,86.1043,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,123.5186,123.6331,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_11.smt2,UNSAT,UNSAT,111.9239,160.944,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,145.7521,156.1745,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,113.2627,121.4134,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,140.2903,123.7167,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,118.6665,130.7453,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,124.4951,122.4931,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,114.1358,120.5469,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,118.6324,120.4964,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,121.9919,120.4323,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,131.2721,136.6662,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_trans_10_0.smt2,UNSAT,UNSAT,133.2476,137.5528,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_trans_12_0.smt2,UNSAT,UNSAT,134.1105,134.129,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_trans_14_0.smt2,UNSAT,UNSAT,135.2942,131.6328,,,False,False
+QF_S/20250411-hornstr-equiv/Burns_sat_non_incre_equiv_trans_28_0.smt2,UNSAT,UNSAT,130.7512,132.0361,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,128.6557,129.8667,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,112.2071,111.356,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_init_0_0.smt2,SAT,SAT,136.3993,136.9038,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,87.3919,101.0627,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,109.8076,151.4613,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,114.6503,172.0921,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_trans_4_0.smt2,UNSAT,UNSAT,94.739,95.668,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_lstar_non_incre_equiv_trans_6_0.smt2,UNSAT,UNSAT,83.8768,89.1249,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,134.3716,131.5101,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,109.2956,114.4578,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,88.4584,88.3086,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,144.6671,147.5638,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,113.5901,119.1002,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,86.8643,88.5366,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_5.smt2,SAT,SAT,148.8592,152.4259,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,118.2441,120.8881,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_trans_0_1.smt2,UNSAT,UNSAT,117.7071,121.2769,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_trans_4_0.smt2,SAT,SAT,181.4761,133.049,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_trans_4_1.smt2,UNSAT,UNSAT,86.1583,87.1193,,,False,False
+QF_S/20250411-hornstr-equiv/Israeli-Jalfon_sat_non_incre_equiv_trans_6_0.smt2,UNSAT,UNSAT,84.6423,87.5666,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,135.8384,147.0745,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,125.2164,124.3065,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,115.98,113.8512,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,118.4113,124.747,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,153.2138,150.3251,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_lstar_non_incre_equiv_trans_4_0.smt2,UNSAT,UNSAT,130.6169,141.6163,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,133.8235,141.9337,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,121.4587,124.0164,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,131.0622,136.7988,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,84.0494,90.4054,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,113.316,162.3578,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,136.9707,149.1755,,,False,False
+QF_S/20250411-hornstr-equiv/LR-philo_sat_non_incre_equiv_trans_4_0.smt2,UNSAT,UNSAT,128.1312,127.3844,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,136.0606,139.3923,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,127.8987,123.443,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,84.9459,89.4304,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,118.4712,120.3813,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,127.4461,127.4198,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_14_0.smt2,UNSAT,UNSAT,95.4269,97.5985,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_15_0.smt2,UNSAT,UNSAT,91.7473,95.0361,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_16_0.smt2,UNSAT,UNSAT,92.7925,103.2086,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_17_0.smt2,UNSAT,UNSAT,122.4731,100.331,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_18_0.smt2,UNSAT,UNSAT,98.7284,94.8961,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_lstar_non_incre_equiv_trans_19_0.smt2,UNSAT,UNSAT,94.556,94.8684,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,128.316,137.4172,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,147.3785,166.2575,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,152.0106,159.9494,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,156.4953,149.1542,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,113.8291,119.923,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_5.smt2,SAT,SAT,140.5794,143.2781,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_6.smt2,SAT,SAT,154.9599,155.3138,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_bad_0_7.smt2,UNSAT,UNSAT,110.3263,118.8509,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,132.2325,138.0374,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,85.0551,85.9887,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,113.6509,138.2327,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_11.smt2,UNSAT,UNSAT,117.7041,189.1647,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,140.1901,148.316,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_3.smt2,SAT,SAT,138.9492,144.0634,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,115.2987,258.3325,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,112.4454,124.2053,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,115.5027,121.5708,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,114.8004,119.0427,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_8.smt2,SAT,SAT,143.7251,144.7222,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,115.799,118.1341,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,117.6083,123.3092,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_0_1.smt2,UNSAT,UNSAT,117.1199,118.374,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_14_0.smt2,UNSAT,UNSAT,118.7055,125.0732,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_14_1.smt2,UNSAT,UNSAT,121.2352,123.2211,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_15_0.smt2,UNSAT,UNSAT,118.2957,120.8514,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_15_1.smt2,UNSAT,UNSAT,120.2683,122.8307,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_16_0.smt2,UNSAT,UNSAT,124.2148,121.5082,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_16_1.smt2,UNSAT,UNSAT,116.8998,120.0676,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_17_0.smt2,UNSAT,UNSAT,118.4624,120.3416,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_17_1.smt2,UNSAT,UNSAT,115.9502,119.4258,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_18_0.smt2,UNSAT,UNSAT,118.1313,121.94,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_18_1.smt2,UNSAT,UNSAT,119.9267,121.5493,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_19_0.smt2,SAT,SAT,134.5469,141.2234,,,False,False
+QF_S/20250411-hornstr-equiv/Lehmann-Rabin_sat_non_incre_equiv_trans_19_1.smt2,UNSAT,UNSAT,120.079,119.1511,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,144.7361,139.8984,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,117.4186,149.2327,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,86.0336,88.2925,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,110.952,121.2797,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,118.4945,121.5304,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,121.2653,126.8297,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_lstar_non_incre_equiv_trans_2_0.smt2,UNSAT,UNSAT,119.8488,125.8692,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,117.9625,117.7924,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,131.6603,134.472,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,141.8934,144.0421,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,113.3484,116.1571,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,164.9094,120.2933,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,121.5409,124.5387,,,False,False
+QF_S/20250411-hornstr-equiv/bakery_sat_non_incre_equiv_trans_2_0.smt2,UNSAT,UNSAT,118.4828,120.9942,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,128.2473,132.7658,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,116.8943,117.9683,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,85.0344,87.3136,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_init_0_1.smt2,SAT,SAT,156.7917,174.2686,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,110.4477,120.0972,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,132.7415,149.4848,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_lstar_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,131.4733,128.5439,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,128.3358,136.9687,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,261.4973,131.5294,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,134.1574,149.3844,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,87.6701,99.2274,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,328.9001,158.0898,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_3.smt2,SAT,SAT,142.9172,144.3689,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_4.smt2,SAT,SAT,154.033,151.9258,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,110.8199,120.576,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,117.5886,127.6751,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can-v2_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,119.6479,124.7758,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,132.6125,140.1518,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_bad_0_1.smt2,SAT,SAT,230.9237,236.4159,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_bad_0_2.smt2,SAT,SAT,435.7891,448.1222,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_bad_0_3.smt2,UNKNOWN,UNSAT,239.9417,638.2219,automata resource limit: Symbolic automata storage/work exceeds 1000000 entries,,True,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,85.4013,93.6265,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,172.5109,166.8454,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,291.585,299.0513,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_lstar_non_incre_equiv_init_0_3.smt2,UNKNOWN,UNSAT,235.6309,559.1416,automata resource limit: Symbolic automata storage/work exceeds 1000000 entries,,True,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,134.2013,146.0432,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,149.6788,146.3249,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,123.3367,120.6514,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,139.0231,149.4717,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,220.1455,90.2014,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,166.6515,162.8487,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_3.smt2,SAT,SAT,173.0488,365.6792,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_4.smt2,SAT,SAT,158.6241,164.0536,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_5.smt2,SAT,SAT,160.0151,165.1609,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,120.4186,139.5577,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,123.7308,123.1513,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,125.2417,129.827,,,False,False
+QF_S/20250411-hornstr-equiv/coffee-can_sat_non_incre_equiv_trans_2_0.smt2,UNSAT,UNSAT,128.7843,133.5492,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,303.5046,316.5287,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,137.5701,133.4948,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,252.1057,269.0617,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,287.0056,295.1017,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_10.smt2,SAT,SAT,313.0947,295.4315,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_11.smt2,UNSAT,UNSAT,208.428,215.04,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,295.9797,312.4231,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,283.3256,290.6287,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_4.smt2,SAT,SAT,272.1565,278.8179,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_5.smt2,SAT,SAT,397.3991,382.5623,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_6.smt2,SAT,SAT,374.6474,361.8258,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_7.smt2,SAT,SAT,322.4682,321.4546,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_8.smt2,SAT,SAT,291.197,308.0263,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_bad_0_9.smt2,SAT,SAT,311.8964,312.8993,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,150.2395,169.0807,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,94.6597,97.9417,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,131.0072,138.0711,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_11.smt2,UNSAT,UNSAT,133.7263,139.1702,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_12.smt2,UNSAT,UNSAT,127.7357,142.2008,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_13.smt2,UNSAT,UNSAT,131.0115,138.8154,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_14.smt2,UNSAT,UNSAT,133.4094,137.0571,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_15.smt2,UNSAT,UNSAT,127.9041,134.0134,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_16.smt2,UNSAT,UNSAT,134.7179,133.1169,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_17.smt2,UNSAT,UNSAT,129.2372,134.7105,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,246.3109,255.2932,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_3.smt2,SAT,SAT,190.5027,183.7326,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_4.smt2,SAT,SAT,181.78,181.9992,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_5.smt2,SAT,SAT,162.1263,164.0171,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_6.smt2,SAT,SAT,154.6286,163.2527,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,135.2169,135.1026,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,136.3222,132.2659,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,133.9479,133.2497,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,163.234,146.0134,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_24_0.smt2,UNSAT,UNSAT,140.4963,131.2052,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_25_0.smt2,UNSAT,UNSAT,136.6414,132.1114,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_26_0.smt2,UNSAT,UNSAT,166.0955,128.3579,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_27_0.smt2,UNSAT,UNSAT,129.045,137.1426,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_56_0.smt2,UNSAT,UNSAT,130.7947,167.0309,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_57_0.smt2,UNSAT,UNSAT,136.2663,132.1104,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_58_0.smt2,UNSAT,UNSAT,132.0818,139.954,,,False,False
+QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_59_0.smt2,UNSAT,UNSAT,203.5298,131.4658,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,136.9465,132.6227,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_1.smt2,SAT,SAT,138.2599,142.6112,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_10.smt2,UNSAT,UNSAT,132.0211,133.888,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_11.smt2,UNSAT,UNSAT,125.1137,135.2125,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_12.smt2,UNSAT,UNSAT,138.0679,130.3711,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_13.smt2,UNSAT,UNSAT,129.9588,141.1186,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_14.smt2,UNSAT,UNSAT,133.2059,134.0886,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_15.smt2,UNSAT,UNSAT,150.2353,153.1207,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_16.smt2,UNSAT,UNSAT,150.2985,154.4708,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_17.smt2,UNSAT,UNSAT,161.0084,157.1901,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_18.smt2,UNSAT,UNSAT,165.5416,163.0253,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_19.smt2,UNSAT,UNSAT,150.3539,175.5236,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,219.7418,220.0651,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_20.smt2,UNSAT,UNSAT,168.9569,196.6147,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_21.smt2,UNSAT,UNSAT,148.2979,208.8551,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_22.smt2,UNSAT,UNSAT,157.5284,213.9085,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_23.smt2,UNSAT,UNSAT,149.1533,210.0171,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_24.smt2,UNSAT,UNSAT,169.9497,164.5822,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_25.smt2,UNSAT,UNSAT,164.9348,185.9991,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_26.smt2,UNSAT,UNSAT,175.5289,183.1368,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,114.5741,119.2298,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,121.3866,121.5817,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_5.smt2,UNSAT,UNSAT,123.3809,125.8067,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_6.smt2,UNSAT,UNSAT,122.3411,125.5711,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_7.smt2,UNSAT,UNSAT,116.8632,128.6903,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_8.smt2,UNSAT,UNSAT,126.9441,125.3428,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_bad_0_9.smt2,UNSAT,UNSAT,133.432,131.5382,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,88.0253,87.8656,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,116.7554,115.9742,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_12.smt2,UNSAT,UNSAT,118.2313,124.5226,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_15.smt2,UNSAT,UNSAT,120.4355,116.7529,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_18.smt2,UNSAT,UNSAT,124.5313,119.8585,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,194.8479,192.5451,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_21.smt2,UNSAT,UNSAT,139.8867,126.7492,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_24.smt2,UNSAT,UNSAT,125.1584,127.3164,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_27.smt2,UNSAT,UNSAT,126.1783,125.3121,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,110.7921,109.4239,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,112.9718,114.686,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,288.3463,277.3713,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_1.smt2,UNSAT,UNSAT,172.1654,134.2323,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_10.smt2,UNSAT,UNSAT,177.4216,161.0037,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_11.smt2,UNSAT,UNSAT,170.2354,167.6571,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_12.smt2,UNSAT,UNSAT,217.8142,175.7264,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_13.smt2,UNSAT,UNSAT,210.1719,246.6213,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_14.smt2,UNSAT,UNSAT,213.4512,234.1732,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_15.smt2,UNSAT,UNSAT,227.9035,264.1736,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_16.smt2,UNSAT,UNSAT,261.6967,258.0111,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_17.smt2,UNSAT,UNSAT,241.9999,261.1151,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_18.smt2,UNSAT,UNSAT,250.353,244.8455,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_19.smt2,UNSAT,UNSAT,313.5949,278.3229,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_2.smt2,UNSAT,UNSAT,132.9214,143.4875,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_20.smt2,UNSAT,UNSAT,263.9157,271.3179,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_21.smt2,UNSAT,UNSAT,266.3952,293.4434,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_22.smt2,UNSAT,UNSAT,286.3673,290.8114,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_23.smt2,UNSAT,UNSAT,267.2806,291.9193,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_24.smt2,UNSAT,UNSAT,280.5351,296.9061,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_3.smt2,UNSAT,UNSAT,134.491,138.8604,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_4.smt2,UNSAT,UNSAT,140.9999,144.6678,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_5.smt2,UNSAT,UNSAT,139.0658,147.1151,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_6.smt2,UNSAT,UNSAT,152.15,153.8486,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_7.smt2,UNSAT,UNSAT,198.8643,194.2483,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_8.smt2,UNSAT,UNSAT,190.7393,196.2734,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_0_9.smt2,UNSAT,UNSAT,214.1052,173.7782,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_0.smt2,SAT,SAT,372.7176,695.2273,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_1.smt2,SAT,SAT,164.0576,166.8827,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_10.smt2,UNKNOWN,UNKNOWN,442.3639,4404.4688,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_11.smt2,UNKNOWN,UNKNOWN,420.8521,4356.5066,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_12.smt2,UNKNOWN,UNKNOWN,463.6693,5085.9329,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_13.smt2,UNKNOWN,TIMEOUT,538.9972,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_14.smt2,UNKNOWN,UNKNOWN,543.6947,7951.4643,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_15.smt2,UNKNOWN,UNKNOWN,530.9601,9647.2677,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_16.smt2,UNKNOWN,TIMEOUT,597.5263,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_17.smt2,UNKNOWN,TIMEOUT,577.896,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_18.smt2,UNKNOWN,TIMEOUT,599.6135,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_19.smt2,UNKNOWN,UNKNOWN,643.9909,5239.5198,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_2.smt2,SAT,SAT,162.557,185.5937,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_20.smt2,UNKNOWN,UNKNOWN,659.3763,5194.0353,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_21.smt2,UNKNOWN,UNKNOWN,621.8897,6031.5663,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_22.smt2,UNKNOWN,UNKNOWN,727.5904,800.4092,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_23.smt2,UNKNOWN,UNKNOWN,721.5584,772.8639,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_24.smt2,UNKNOWN,UNKNOWN,704.1543,783.18,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_3.smt2,SAT,SAT,167.0205,162.7042,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_4.smt2,UNKNOWN,UNKNOWN,2243.8583,2249.2514,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_5.smt2,UNKNOWN,UNKNOWN,2339.0104,2755.8524,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_6.smt2,UNKNOWN,UNKNOWN,3086.0693,2827.7991,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_7.smt2,UNKNOWN,UNKNOWN,520.6417,3097.18,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_8.smt2,UNKNOWN,UNKNOWN,454.508,3136.7687,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_lstar_non_incre_equiv_trans_1_9.smt2,UNKNOWN,UNKNOWN,429.9485,4470.2602,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,130.057,137.8788,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,113.8744,122.3547,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,119.2912,121.7757,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,113.8759,122.4008,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,128.6614,138.3123,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_5.smt2,UNSAT,UNSAT,272.8738,142.2402,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_6.smt2,SAT,SAT,189.6383,204.2114,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_7.smt2,UNSAT,UNSAT,113.6428,125.7417,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_bad_0_8.smt2,UNSAT,UNSAT,122.6813,137.0143,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,130.7914,135.3872,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,82.9231,86.0572,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,132.4331,143.0393,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,117.6048,123.1587,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,112.08,118.0052,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,116.0056,119.4034,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_5.smt2,UNKNOWN,UNKNOWN,1683.7837,3447.4919,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,133.5977,160.1093,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,341.2453,143.1297,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,125.6529,133.1171,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,117.1894,132.2828,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_0.smt2,SAT,SAT,159.8921,175.3101,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_1.smt2,UNSAT,UNSAT,127.9495,140.8363,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_2.smt2,UNSAT,UNSAT,131.8403,134.1082,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_3.smt2,SAT,SAT,285.6765,446.8016,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_4.smt2,UNKNOWN,UNKNOWN,2354.656,5673.233,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_5.smt2,UNKNOWN,UNKNOWN,2018.7163,4506.9026,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_0_6.smt2,UNSAT,UNSAT,251.1385,308.6432,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,133.3998,137.0921,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_1_1.smt2,SAT,SAT,159.3408,183.0413,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_1_2.smt2,UNSAT,UNSAT,222.6717,257.1005,,,False,False
+QF_S/20250411-hornstr-equiv/eqdist_sat_non_incre_equiv_trans_2_0.smt2,SAT,SAT,163.7897,189.9205,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_lstar_non_incre_equiv_bad_0_0.smt2,UNSAT,UNSAT,110.9048,112.2683,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,115.5978,114.8527,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,122.7097,125.6424,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_lstar_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,125.2221,129.0585,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,125.7343,127.3123,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,134.1184,118.4547,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,134.716,128.0482,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,83.59,82.9413,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,143.8956,137.3058,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,109.576,111.4606,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,130.1826,126.5373,,,False,False
+QF_S/20250411-hornstr-equiv/herman-linear_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,114.7401,116.174,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,109.9147,110.5268,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,117.9581,114.1593,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_lstar_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,118.7881,122.825,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,124.2644,122.702,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,134.8802,189.8656,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,129.1869,136.8938,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,82.6572,84.8802,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,133.3841,140.9509,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_3.smt2,SAT,SAT,131.3787,133.8192,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,86.4442,86.3038,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,110.8304,114.5682,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,117.8399,134.3181,,,False,False
+QF_S/20250411-hornstr-equiv/herman-ring_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,116.3216,127.5133,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,130.922,134.3711,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,89.563,84.883,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,137.7829,138.6976,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,162.5701,178.4118,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,154.8595,152.4864,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,138.1105,143.9887,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_4.smt2,SAT,SAT,142.2666,151.1252,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_5.smt2,SAT,SAT,144.7041,145.0906,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_bad_0_6.smt2,UNSAT,UNSAT,123.4403,118.0552,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,132.3414,130.7909,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,81.9109,84.6517,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,122.3707,119.5719,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,115.3628,118.1819,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_4.smt2,SAT,SAT,143.1022,147.7171,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,119.9901,122.8773,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,112.2267,116.9963,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,121.2881,122.5261,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,110.3276,117.9261,,,False,False
+QF_S/20250411-hornstr-equiv/mux-array_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,121.8955,128.0873,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,124.8716,134.656,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,116.9088,122.0147,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_10.smt2,UNSAT,UNSAT,114.1865,118.9496,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_11.smt2,UNSAT,UNSAT,124.3208,122.3358,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_12.smt2,UNSAT,UNSAT,127.4699,132.3118,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_13.smt2,UNSAT,UNSAT,127.8881,132.009,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_14.smt2,UNSAT,UNSAT,122.7494,126.4301,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_15.smt2,UNSAT,UNSAT,129.884,128.7063,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_16.smt2,UNSAT,UNSAT,121.4493,120.772,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,113.8301,120.5474,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,115.8864,120.4846,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,115.5523,115.2386,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_5.smt2,UNSAT,UNSAT,113.4156,115.1226,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_6.smt2,UNSAT,UNSAT,128.1579,116.3714,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_7.smt2,UNSAT,UNSAT,118.7301,114.1627,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_8.smt2,UNSAT,UNSAT,125.3633,121.449,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_bad_0_9.smt2,UNSAT,UNSAT,117.2003,116.8915,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,130.4596,127.0516,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,83.296,82.7159,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_10.smt2,UNSAT,UNSAT,118.3662,121.2061,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_11.smt2,UNSAT,UNSAT,128.6205,123.1135,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_12.smt2,UNSAT,UNSAT,119.5457,125.405,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_13.smt2,UNSAT,UNSAT,141.7523,137.6073,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_14.smt2,UNSAT,UNSAT,134.7752,137.3904,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_15.smt2,UNSAT,UNSAT,131.6725,127.5254,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_16.smt2,UNSAT,UNSAT,130.2982,132.0508,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_17.smt2,UNSAT,UNSAT,120.3596,122.7127,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,118.306,117.5559,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,120.0092,118.18,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,117.1634,120.7743,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,113.2519,118.3749,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,108.942,115.5599,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,119.1478,120.0019,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,121.739,115.8854,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,130.0151,128.1925,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_0.smt2,SAT,SAT,152.4787,144.9992,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_1.smt2,SAT,SAT,161.7711,155.7037,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_10.smt2,UNSAT,UNSAT,137.194,146.5254,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_11.smt2,UNSAT,UNSAT,204.8033,222.7041,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_12.smt2,UNSAT,UNSAT,140.5445,146.0296,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_13.smt2,UNSAT,UNSAT,135.6609,132.0168,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_14.smt2,UNSAT,UNSAT,145.8942,141.4515,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_15.smt2,UNSAT,UNSAT,137.2065,146.1147,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_2.smt2,SAT,SAT,164.446,147.5805,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_3.smt2,UNSAT,UNSAT,138.0409,132.7552,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_4.smt2,UNSAT,UNSAT,112.8676,118.3258,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_5.smt2,UNSAT,UNSAT,120.5268,125.811,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_6.smt2,UNSAT,UNSAT,135.5846,136.8591,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_7.smt2,UNSAT,UNSAT,156.9151,158.7406,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_8.smt2,SAT,SAT,155.0846,150.2448,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_0_9.smt2,SAT,SAT,155.1272,153.1638,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_0.smt2,UNKNOWN,TIMEOUT,1676.4579,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_1.smt2,TIMEOUT,TIMEOUT,10000.0,10000.0,External SOLVE watchdog expired,External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_10.smt2,UNKNOWN,TIMEOUT,1193.8749,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_2.smt2,UNKNOWN,TIMEOUT,1889.7117,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_3.smt2,UNKNOWN,TIMEOUT,920.15,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_4.smt2,UNKNOWN,UNKNOWN,997.2807,2746.9918,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_5.smt2,UNKNOWN,TIMEOUT,905.7333,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_6.smt2,SAT,SAT,226.7408,201.2014,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_7.smt2,UNKNOWN,UNKNOWN,1292.6171,3170.2335,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_8.smt2,UNKNOWN,UNKNOWN,905.2562,3217.9232,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_1_9.smt2,UNKNOWN,UNKNOWN,872.7093,3329.0358,character encoding resource limit (1000000),character encoding resource limit (4000000),False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_2_0.smt2,SAT,SAT,136.1922,148.6288,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_2_1.smt2,SAT,SAT,146.6409,150.7599,,,False,False
+QF_S/20250411-hornstr-equiv/muzzle_sat_non_incre_equiv_trans_2_2.smt2,UNKNOWN,TIMEOUT,798.1096,10000.0,automata resource limit: Symbolic automaton exceeds 100000 states,External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,139.7415,144.8167,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,107.0608,112.4377,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,114.3231,111.4536,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_lstar_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,111.7843,113.5013,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,124.1512,121.932,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,142.1458,139.3474,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,145.9936,126.7603,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,148.1416,143.6795,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_4.smt2,SAT,SAT,150.7528,141.6042,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_5.smt2,SAT,SAT,135.3524,138.2653,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_6.smt2,UNSAT,UNSAT,113.3626,109.1502,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_bad_0_7.smt2,UNSAT,UNSAT,114.1452,107.8333,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,129.4233,125.3483,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,82.21,82.2015,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,134.9123,127.8934,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,122.5566,112.1675,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,118.8955,109.1997,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,112.1438,116.6074,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,113.7615,117.0437,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,154.6886,149.6466,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,115.0795,130.1783,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_init_0_9.smt2,UNSAT,UNSAT,111.9662,116.8876,,,False,False
+QF_S/20250411-hornstr-equiv/one_token_pass_sat_non_incre_equiv_trans_0_0.smt2,SAT,SAT,142.6391,143.6302,,,False,False
+QF_S/20250411-hornstr-equiv/power-binary_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,85.2521,84.6329,,,False,False
+QF_S/20250411-hornstr-equiv/power-binary_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,86.1127,83.4822,,,False,False
+QF_S/20250411-hornstr-equiv/power-binary_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,125.4409,132.0957,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,146.84,139.2825,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_lstar_non_incre_equiv_bad_0_1.smt2,SAT,SAT,141.3304,145.3242,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,83.3667,84.0745,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,132.9561,137.31,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,160.8624,160.8774,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,146.7669,154.1491,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,114.9281,112.4325,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,134.4375,125.0914,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,82.4195,80.9812,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,114.9849,115.5586,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,117.4004,113.5584,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,115.577,110.9042,,,False,False
+QF_S/20250411-hornstr-equiv/resource-allocator_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,138.5049,128.0341,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_bad_0_0.smt2,UNSAT,UNSAT,112.8013,111.6487,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_bad_1_0.smt2,UNSAT,UNSAT,120.4504,116.1909,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_bad_2_0.smt2,UNSAT,UNSAT,111.4972,115.5027,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,116.4758,114.5332,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_trans_0_0.smt2,UNKNOWN,TIMEOUT,2072.3252,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_lstar_non_incre_equiv_trans_1_0.smt2,UNKNOWN,TIMEOUT,1954.0528,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,129.7723,132.0353,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,137.9315,144.5173,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,116.2373,121.2713,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_bad_1_0.smt2,UNSAT,UNSAT,115.4646,116.581,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_bad_2_0.smt2,UNSAT,UNSAT,114.5541,117.395,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,130.9664,132.066,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,81.3911,85.61,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_init_0_2.smt2,SAT,SAT,143.8437,147.9812,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,116.711,117.033,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,114.9684,114.583,,,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_trans_0_0.smt2,UNKNOWN,TIMEOUT,1490.1353,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/three_token_pass_sat_non_incre_equiv_trans_1_0.smt2,UNKNOWN,TIMEOUT,1533.0837,10000.0,character encoding resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,130.5566,132.4061,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,265.2752,119.767,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_0_2.smt2,UNSAT,UNSAT,114.5078,120.061,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_1_0.smt2,SAT,SAT,141.8771,139.3101,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_1_1.smt2,UNSAT,UNSAT,116.1812,117.8162,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_bad_2_0.smt2,UNSAT,UNSAT,118.6603,117.9366,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,84.7928,83.6515,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_init_0_1.smt2,SAT,SAT,293.4238,284.1688,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,114.4269,112.8647,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,110.1535,110.3849,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,134.0169,132.4205,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_lstar_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,132.5787,132.1316,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,138.1133,129.766,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_1.smt2,UNSAT,UNSAT,115.2489,113.7103,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,142.2185,134.0253,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_3.smt2,UNSAT,UNSAT,117.4565,116.7974,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,115.3093,110.7066,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_5.smt2,UNSAT,UNSAT,111.7376,112.3014,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_0_6.smt2,UNSAT,UNSAT,120.1479,112.5715,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_1_0.smt2,UNSAT,UNSAT,118.2237,112.2574,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_1_1.smt2,UNSAT,UNSAT,113.5271,112.3885,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_1_2.smt2,UNSAT,UNSAT,107.0338,346.9637,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_1_3.smt2,SAT,SAT,131.7992,138.2845,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_1_4.smt2,UNSAT,UNSAT,113.1955,121.9583,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_2_0.smt2,UNSAT,UNSAT,116.7543,114.9208,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_2_1.smt2,SAT,SAT,142.0923,141.538,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_2_2.smt2,UNSAT,UNSAT,110.8833,115.1802,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_bad_2_3.smt2,UNSAT,UNSAT,115.9619,117.1417,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_0.smt2,SAT,SAT,130.878,131.4965,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,83.6391,84.3365,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,115.6163,121.6712,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,114.4183,115.2833,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,109.3015,117.7718,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_5.smt2,SAT,SAT,143.5928,149.1256,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_6.smt2,UNSAT,UNSAT,115.8709,115.1883,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_7.smt2,UNSAT,UNSAT,112.8854,116.2858,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_init_0_8.smt2,UNSAT,UNSAT,118.8817,116.3074,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,127.069,121.2134,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_0_1.smt2,UNSAT,UNSAT,123.4039,128.0637,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_0_2.smt2,UNSAT,UNSAT,243.8943,236.2664,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_1_0.smt2,SAT,SAT,144.0069,146.3436,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_1_1.smt2,SAT,SAT,139.7189,153.3578,,,False,False
+QF_S/20250411-hornstr-equiv/two_token_pass_sat_non_incre_equiv_trans_1_2.smt2,UNSAT,UNSAT,248.1,229.4206,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_lstar_non_incre_equiv_bad_0_0.smt2,SAT,SAT,134.8048,137.7726,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_lstar_non_incre_equiv_bad_0_1.smt2,SAT,SAT,148.1,143.8281,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_lstar_non_incre_equiv_init_0_0.smt2,UNSAT,UNSAT,85.8214,113.2664,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_bad_0_0.smt2,SAT,SAT,138.8033,140.9851,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_bad_0_1.smt2,SAT,SAT,148.3603,151.7193,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_bad_0_2.smt2,SAT,SAT,152.1234,156.1395,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_bad_0_3.smt2,SAT,SAT,145.7225,152.6658,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_bad_0_4.smt2,UNSAT,UNSAT,121.9755,120.525,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_0.smt2,TIMEOUT,TIMEOUT,10000.0,10000.0,External SOLVE watchdog expired,External SOLVE watchdog expired,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_1.smt2,UNSAT,UNSAT,89.8093,85.7202,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_2.smt2,UNSAT,UNSAT,117.2447,140.8907,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_3.smt2,UNSAT,UNSAT,125.012,125.6695,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_4.smt2,UNSAT,UNSAT,121.8823,125.086,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_init_0_5.smt2,UNSAT,UNSAT,121.2385,120.2667,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_0_0.smt2,UNSAT,UNSAT,124.8329,128.7577,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_10_0.smt2,UNSAT,UNSAT,123.4332,132.4967,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_15_0.smt2,UNSAT,UNSAT,133.0608,133.6928,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_1_0.smt2,UNSAT,UNSAT,126.8365,125.1259,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_23_0.smt2,UNSAT,UNSAT,128.4308,130.3173,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_33_0.smt2,UNSAT,UNSAT,127.9294,129.0563,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_37_0.smt2,UNSAT,UNSAT,129.0391,130.0868,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_38_0.smt2,UNSAT,UNSAT,127.193,133.4571,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_39_0.smt2,UNSAT,UNSAT,135.6657,127.3939,,,False,False
+QF_S/20250411-hornstr-equiv/water-jug_sat_non_incre_equiv_trans_40_0.smt2,UNSAT,UNSAT,127.511,126.3198,,,False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-0.smt2,UNKNOWN,UNKNOWN,1953.4686,4239.215,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-1.smt2,UNKNOWN,UNKNOWN,2038.8986,4895.6976,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-10.smt2,UNKNOWN,UNKNOWN,1961.647,4266.6404,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-100.smt2,UNKNOWN,UNKNOWN,1961.0526,4192.581,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-101.smt2,UNKNOWN,UNKNOWN,1962.8249,4644.9416,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-102.smt2,UNKNOWN,UNKNOWN,1988.6524,4235.5657,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-103.smt2,UNKNOWN,UNKNOWN,1944.4873,4236.8477,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-104.smt2,UNKNOWN,UNKNOWN,2007.4095,4727.4389,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-105.smt2,UNKNOWN,UNKNOWN,1888.53,4398.0436,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-106.smt2,UNKNOWN,UNKNOWN,1894.9124,4743.8165,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-107.smt2,UNKNOWN,UNKNOWN,1897.034,5014.0906,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-108.smt2,UNKNOWN,UNKNOWN,1934.545,4225.7463,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-109.smt2,UNKNOWN,UNKNOWN,2128.4222,4214.7843,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-11.smt2,UNKNOWN,UNKNOWN,2297.895,5923.5501,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-110.smt2,UNKNOWN,UNKNOWN,1892.9,4235.0425,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-111.smt2,UNKNOWN,UNKNOWN,1907.1129,4295.1391,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-112.smt2,UNKNOWN,UNKNOWN,2043.4251,4725.0331,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-113.smt2,UNKNOWN,UNKNOWN,1909.1191,4204.9795,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-114.smt2,UNKNOWN,UNKNOWN,1883.5686,4230.1601,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-5-115.smt2,UNKNOWN,UNKNOWN,1933.5166,4744.2827,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-0.smt2,UNKNOWN,UNKNOWN,2186.0488,4961.0853,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-1.smt2,UNKNOWN,UNKNOWN,1712.591,3932.9037,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-10.smt2,UNKNOWN,UNKNOWN,1938.9908,5712.8366,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-100.smt2,UNKNOWN,UNKNOWN,1454.9138,3530.7093,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-101.smt2,UNKNOWN,UNKNOWN,1445.5728,3548.6814,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-102.smt2,UNKNOWN,UNKNOWN,1479.9272,3918.4704,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-103.smt2,UNKNOWN,UNKNOWN,1535.6019,3696.9736,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-104.smt2,UNKNOWN,UNKNOWN,1436.2695,3537.9962,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-105.smt2,UNKNOWN,UNKNOWN,1457.2903,3588.2034,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-106.smt2,UNKNOWN,UNKNOWN,1757.9095,4413.5643,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-107.smt2,UNKNOWN,UNKNOWN,1441.9246,3542.1669,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-108.smt2,UNKNOWN,UNKNOWN,1539.2058,3482.8508,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-109.smt2,UNKNOWN,UNKNOWN,1488.7796,3928.5041,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-11.smt2,UNKNOWN,UNKNOWN,1487.042,3709.7773,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-110.smt2,UNKNOWN,UNKNOWN,1506.442,3569.1294,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-111.smt2,UNKNOWN,UNKNOWN,1581.7313,3977.5523,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-112.smt2,UNKNOWN,UNKNOWN,1653.9463,4140.5717,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-113.smt2,UNKNOWN,UNKNOWN,1953.4734,3586.158,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-114.smt2,UNKNOWN,UNKNOWN,1759.8742,3581.9023,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-3-6-115.smt2,UNKNOWN,UNKNOWN,1663.4577,3876.843,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-0.smt2,UNKNOWN,UNKNOWN,2080.7776,5179.9805,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-1.smt2,UNKNOWN,UNKNOWN,2078.2005,5056.9665,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-10.smt2,UNKNOWN,UNKNOWN,2108.8861,5524.4262,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-100.smt2,UNKNOWN,UNKNOWN,1984.7385,5039.559,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-101.smt2,UNKNOWN,UNKNOWN,1962.3283,5010.8958,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-102.smt2,UNKNOWN,UNKNOWN,1986.0627,5438.4826,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-103.smt2,UNKNOWN,UNKNOWN,2131.9631,5125.6117,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-104.smt2,UNKNOWN,UNKNOWN,2016.2345,5669.3512,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-105.smt2,UNKNOWN,UNKNOWN,1941.146,5258.8306,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-106.smt2,UNKNOWN,UNKNOWN,1895.7594,5030.9792,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-107.smt2,UNKNOWN,UNKNOWN,2122.7843,5502.5285,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-108.smt2,UNKNOWN,UNKNOWN,1965.6526,5036.399,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-109.smt2,UNKNOWN,UNKNOWN,1958.7919,5060.3373,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-11.smt2,UNKNOWN,UNKNOWN,1965.5498,5281.7571,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-110.smt2,UNKNOWN,UNKNOWN,2087.0553,5040.5448,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-111.smt2,UNKNOWN,UNKNOWN,1959.8826,5581.4455,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-112.smt2,UNKNOWN,UNKNOWN,1948.5506,5194.3751,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-113.smt2,UNKNOWN,UNKNOWN,1982.8125,5420.7844,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-114.smt2,UNKNOWN,UNKNOWN,1947.6678,5607.1758,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-4-5-115.smt2,UNKNOWN,UNKNOWN,1955.934,4992.2489,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-0.smt2,UNKNOWN,UNKNOWN,2342.033,5784.6463,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-1.smt2,UNKNOWN,UNKNOWN,2312.8709,5891.7853,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-10.smt2,UNKNOWN,UNKNOWN,2331.3974,5350.0276,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-100.smt2,UNKNOWN,UNKNOWN,2295.0848,5925.6678,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-101.smt2,UNKNOWN,UNKNOWN,2295.1689,5407.5093,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-102.smt2,UNKNOWN,UNKNOWN,2323.2405,5792.2235,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-103.smt2,UNKNOWN,UNKNOWN,2334.323,5350.8347,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-104.smt2,UNKNOWN,UNKNOWN,2343.6024,5622.4909,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-105.smt2,UNKNOWN,UNKNOWN,2329.4886,6132.5827,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-106.smt2,UNKNOWN,UNKNOWN,2385.8293,5407.2812,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-107.smt2,UNKNOWN,UNKNOWN,2314.9019,5980.6963,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-108.smt2,UNKNOWN,UNKNOWN,2340.4925,5424.3461,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-109.smt2,UNKNOWN,UNKNOWN,2333.7378,5520.8359,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-11.smt2,UNKNOWN,UNKNOWN,2507.2707,5761.2645,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-110.smt2,UNKNOWN,UNKNOWN,2311.4975,5310.5441,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-111.smt2,UNKNOWN,UNKNOWN,2338.5795,5968.8816,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-112.smt2,UNKNOWN,UNKNOWN,2350.7029,5419.3009,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-113.smt2,UNKNOWN,UNKNOWN,2701.7985,5974.8871,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-114.smt2,UNKNOWN,UNKNOWN,2660.6349,5809.4912,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-5-115.smt2,UNKNOWN,UNKNOWN,2625.7644,5351.6227,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-0.smt2,UNKNOWN,UNKNOWN,2633.3534,5939.4651,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-1.smt2,UNKNOWN,UNKNOWN,2759.8216,5450.5398,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-10.smt2,UNKNOWN,UNKNOWN,2910.0693,5809.5467,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-100.smt2,UNKNOWN,UNKNOWN,2701.1164,5393.1759,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-101.smt2,UNKNOWN,UNKNOWN,2554.6026,5394.3538,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-102.smt2,UNKNOWN,UNKNOWN,2512.0977,5877.5283,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-103.smt2,UNKNOWN,UNKNOWN,2489.9868,5395.6886,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-104.smt2,UNKNOWN,UNKNOWN,2467.0386,5924.545,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-105.smt2,UNKNOWN,UNKNOWN,2444.8306,5704.9177,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-106.smt2,UNKNOWN,UNKNOWN,2523.1934,5431.8046,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-107.smt2,UNKNOWN,UNKNOWN,2402.8841,5928.2626,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-108.smt2,UNKNOWN,UNKNOWN,2402.5327,5426.9469,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-109.smt2,UNKNOWN,UNKNOWN,2369.3421,5896.1258,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-11.smt2,UNKNOWN,UNKNOWN,2552.7232,5349.7174,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-110.smt2,UNKNOWN,UNKNOWN,2317.9595,5365.6158,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-111.smt2,UNKNOWN,UNKNOWN,2324.0359,5860.1424,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-112.smt2,UNKNOWN,UNKNOWN,2300.3292,5464.5753,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-113.smt2,UNKNOWN,UNKNOWN,2590.2261,6158.3939,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-114.smt2,UNKNOWN,UNKNOWN,2323.4326,5593.6775,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-1-5-6-115.smt2,UNKNOWN,UNKNOWN,2294.596,5405.4114,preprocessing resource limit (1000000),preprocessing resource limit (4000000),False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-0.smt2,UNKNOWN,TIMEOUT,4366.6235,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-1.smt2,UNKNOWN,TIMEOUT,4776.9938,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-10.smt2,UNKNOWN,TIMEOUT,4287.9945,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-100.smt2,UNKNOWN,TIMEOUT,4251.0477,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-101.smt2,UNKNOWN,TIMEOUT,4821.4987,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-102.smt2,UNKNOWN,TIMEOUT,4882.8112,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-103.smt2,UNKNOWN,TIMEOUT,4350.5088,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-104.smt2,UNKNOWN,TIMEOUT,4243.2686,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-105.smt2,UNKNOWN,TIMEOUT,4255.4731,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-106.smt2,UNKNOWN,TIMEOUT,4257.7388,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-107.smt2,UNKNOWN,TIMEOUT,5558.5243,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-108.smt2,UNKNOWN,TIMEOUT,4835.936,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-109.smt2,UNKNOWN,TIMEOUT,4378.4208,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-11.smt2,UNKNOWN,TIMEOUT,5999.1064,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-110.smt2,UNKNOWN,TIMEOUT,4315.5908,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-111.smt2,UNKNOWN,TIMEOUT,4336.301,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-112.smt2,UNKNOWN,TIMEOUT,4704.0777,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-113.smt2,UNKNOWN,TIMEOUT,4793.01,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-114.smt2,UNKNOWN,TIMEOUT,4492.6754,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-5-115.smt2,UNKNOWN,TIMEOUT,4530.4032,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-0.smt2,UNKNOWN,TIMEOUT,4446.2464,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-1.smt2,UNKNOWN,TIMEOUT,4493.4685,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-10.smt2,UNKNOWN,TIMEOUT,4552.0256,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-100.smt2,UNKNOWN,TIMEOUT,4884.8182,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-101.smt2,UNKNOWN,TIMEOUT,4986.5609,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-102.smt2,UNKNOWN,TIMEOUT,4460.5048,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-103.smt2,UNKNOWN,TIMEOUT,4507.9065,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-104.smt2,UNKNOWN,TIMEOUT,4459.4128,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-105.smt2,UNKNOWN,TIMEOUT,4580.8447,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-106.smt2,UNKNOWN,TIMEOUT,6597.879,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-107.smt2,UNKNOWN,TIMEOUT,4630.9992,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-108.smt2,UNKNOWN,TIMEOUT,4798.6759,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-109.smt2,UNKNOWN,TIMEOUT,4460.8456,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-11.smt2,UNKNOWN,TIMEOUT,4855.9807,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-110.smt2,UNKNOWN,TIMEOUT,5036.8473,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-111.smt2,UNKNOWN,TIMEOUT,5116.7317,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-112.smt2,UNKNOWN,TIMEOUT,4734.4274,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-113.smt2,UNKNOWN,TIMEOUT,4428.9074,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-114.smt2,UNKNOWN,TIMEOUT,4668.0292,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-3-6-115.smt2,UNKNOWN,TIMEOUT,4476.8069,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-0.smt2,UNKNOWN,TIMEOUT,4476.1505,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-1.smt2,UNKNOWN,TIMEOUT,4886.2822,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-10.smt2,UNKNOWN,TIMEOUT,4944.7863,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-100.smt2,UNKNOWN,TIMEOUT,4465.5069,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-101.smt2,UNKNOWN,TIMEOUT,4435.5271,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-102.smt2,UNKNOWN,TIMEOUT,4441.4797,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-103.smt2,UNKNOWN,TIMEOUT,4512.0913,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-104.smt2,UNKNOWN,TIMEOUT,5260.0465,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-105.smt2,UNKNOWN,TIMEOUT,4853.7493,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-106.smt2,UNKNOWN,TIMEOUT,4417.9547,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-107.smt2,UNKNOWN,TIMEOUT,4523.4725,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-108.smt2,UNKNOWN,TIMEOUT,4549.2514,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-109.smt2,UNKNOWN,TIMEOUT,4479.9864,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-11.smt2,UNKNOWN,TIMEOUT,4963.9248,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-110.smt2,UNKNOWN,TIMEOUT,4960.3076,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-111.smt2,UNKNOWN,TIMEOUT,4490.8564,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-112.smt2,UNKNOWN,TIMEOUT,4923.3309,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-113.smt2,UNKNOWN,TIMEOUT,4417.8319,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-114.smt2,UNKNOWN,TIMEOUT,4855.2776,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-4-5-115.smt2,UNKNOWN,TIMEOUT,5124.2685,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-0.smt2,UNKNOWN,TIMEOUT,4927.231,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-1.smt2,UNKNOWN,TIMEOUT,4581.8327,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-10.smt2,UNKNOWN,TIMEOUT,4408.1117,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-100.smt2,UNKNOWN,TIMEOUT,4451.1495,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-101.smt2,UNKNOWN,TIMEOUT,4519.7777,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-102.smt2,UNKNOWN,TIMEOUT,5352.8726,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-103.smt2,UNKNOWN,TIMEOUT,4931.1166,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-104.smt2,UNKNOWN,TIMEOUT,4475.2957,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-105.smt2,UNKNOWN,TIMEOUT,4486.2001,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-106.smt2,UNKNOWN,TIMEOUT,4484.1982,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-107.smt2,UNKNOWN,TIMEOUT,4947.3941,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-108.smt2,UNKNOWN,TIMEOUT,4828.8497,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-109.smt2,UNKNOWN,TIMEOUT,5069.1138,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-11.smt2,UNKNOWN,TIMEOUT,4492.6339,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-110.smt2,UNKNOWN,TIMEOUT,4639.4997,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-111.smt2,UNKNOWN,TIMEOUT,4387.1169,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-112.smt2,UNKNOWN,TIMEOUT,4443.6533,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-113.smt2,UNKNOWN,TIMEOUT,4879.585,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-114.smt2,UNKNOWN,TIMEOUT,4957.8298,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-5-115.smt2,UNKNOWN,TIMEOUT,5034.0006,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-0.smt2,UNKNOWN,TIMEOUT,4992.8054,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-1.smt2,UNKNOWN,TIMEOUT,5057.5587,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-10.smt2,UNKNOWN,TIMEOUT,4970.9344,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-100.smt2,UNKNOWN,TIMEOUT,5646.4667,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-101.smt2,UNKNOWN,TIMEOUT,5606.8588,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-102.smt2,UNKNOWN,TIMEOUT,5043.446,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-103.smt2,UNKNOWN,TIMEOUT,5042.1999,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-104.smt2,UNKNOWN,TIMEOUT,5362.9429,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-105.smt2,UNKNOWN,TIMEOUT,5567.0709,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-106.smt2,UNKNOWN,TIMEOUT,5291.535,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-107.smt2,UNKNOWN,TIMEOUT,5048.9321,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-108.smt2,UNKNOWN,TIMEOUT,5093.6106,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-109.smt2,UNKNOWN,TIMEOUT,5018.5262,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-11.smt2,UNKNOWN,TIMEOUT,5692.7736,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-110.smt2,UNKNOWN,TIMEOUT,5477.9605,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-111.smt2,UNKNOWN,TIMEOUT,6309.825,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-112.smt2,UNKNOWN,TIMEOUT,6502.7746,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-113.smt2,UNKNOWN,TIMEOUT,5696.7342,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-114.smt2,UNKNOWN,TIMEOUT,6097.7478,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False
+QF_S/20250411-negated-predicates/diseq-None-5-6-115.smt2,UNKNOWN,TIMEOUT,6321.7214,10000.0,preprocessing resource limit (1000000),External SOLVE watchdog expired,False,False

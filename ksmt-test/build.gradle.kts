@@ -20,6 +20,7 @@ dependencies {
     implementation(kotlin("reflect"))
 
     testImplementation("org.junit.jupiter", "junit-jupiter-params", "5.8.2")
+    testImplementation(project(":ksmt-noodler"))
 
     jmh("org.openjdk.jmh:jmh-core:1.36")
     jmh("org.openjdk.jmh:jmh-generator-annprocess:1.36")
@@ -31,6 +32,11 @@ val runBenchmarksBasedTests = project.booleanProperty("runBenchmarksBasedTests")
 val benchmarkChunkMaxSize = project.intProperty("benchmarkChunkSize") ?: Int.MAX_VALUE
 // Use only a [benchmarkChunk] chunk of test data
 val benchmarkChunk = project.intProperty("benchmarkChunk") ?: 0
+// Restrict benchmark samples to a specific relative path prefix, e.g. QF_S/
+val benchmarkPathPrefix = project.stringProperty("benchmarkPathPrefix")?.takeIf { it.isNotBlank() }
+val noodlerCheckTimeoutSeconds = project.intProperty("noodlerCheckTimeoutSeconds")
+val noodlerSampleTimeoutSeconds = project.intProperty("noodlerSampleTimeoutSeconds")
+val noodlerReportPhaseStats = project.booleanProperty("noodlerReportPhaseStats")
 
 // use benchmarks from testData directory instead of downloading
 val usePreparedBenchmarks = project.booleanProperty("usePreparedBenchmarks") ?: true
@@ -111,6 +117,10 @@ tasks.withType<Test> {
         dependsOn.add(prepareTestData)
         environment("benchmarkChunkMaxSize", benchmarkChunkMaxSize)
         environment("benchmarkChunk", benchmarkChunk)
+        benchmarkPathPrefix?.let { environment("benchmarkPathPrefix", it) }
+        noodlerCheckTimeoutSeconds?.let { environment("noodlerCheckTimeoutSeconds", it) }
+        noodlerSampleTimeoutSeconds?.let { environment("noodlerSampleTimeoutSeconds", it) }
+        noodlerReportPhaseStats?.let { environment("noodlerReportPhaseStats", it.toString()) }
     } else {
         exclude("io/ksmt/test/benchmarks/**")
 

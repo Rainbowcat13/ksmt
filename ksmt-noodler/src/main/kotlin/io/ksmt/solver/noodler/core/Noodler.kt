@@ -1,299 +1,142 @@
-@file:Suppress("UNCHECKED_CAST")
-
 package io.ksmt.solver.noodler.core
 
+import io.ksmt.decl.KDecl
 import io.ksmt.expr.KConst
 import io.ksmt.expr.KEqExpr
 import io.ksmt.expr.KExpr
 import io.ksmt.expr.KStringConcatExpr
 import io.ksmt.expr.KStringInRegexExpr
+import io.ksmt.expr.KStringLiteralExpr
+import io.ksmt.solver.KSolverUnsupportedFeatureException
 import io.ksmt.solver.noodler.automaton.ALL_CHAR_ALPHABET
-import io.ksmt.solver.noodler.automaton.BaseAutomata
-import io.ksmt.solver.noodler.automaton.EPS
-import io.ksmt.solver.noodler.automaton.NFA
-import io.ksmt.solver.noodler.automaton.NFANode
-import io.ksmt.solver.noodler.automaton.fromRegex
-import io.ksmt.solver.noodler.automaton.toRegex
-import io.ksmt.solver.noodler.automaton.transformToDFA
+import io.ksmt.solver.noodler.hybrid.AutomataLimitException
+import io.ksmt.solver.noodler.hybrid.NoodlerRefiner
+import io.ksmt.solver.noodler.hybrid.RegexAutomata
+import io.ksmt.solver.noodler.hybrid.RegexEmissionBudget
+import io.ksmt.solver.noodler.hybrid.StringEquation
+import io.ksmt.solver.noodler.hybrid.StringTermPart
+import io.ksmt.solver.noodler.hybrid.SymbolicDfa
+import io.ksmt.solver.noodler.hybrid.toRegex
+import io.ksmt.sort.KRegexSort
 import io.ksmt.sort.KStringSort
 
+private const val MAX_PROPAGATION_TERM_PARTS = 100_000
+
+/** A sound, incomplete language propagator. A backend must decide the original joint formula. */
 class Noodler(
-    statements: List<KExpr<*>>,
-    val alphabet: List<Char>
+    private val statements: List<KExpr<*>>,
+    /** Compatibility hint only: string semantics always use the full SMT-LIB Unicode alphabet. */
+    val alphabet: List<Char> = ALL_CHAR_ALPHABET,
 ) {
-    val equations: List<KEqExpr<*>>
-    val regularConstraints: List<KStringInRegexExpr>
-    val regularConstraintsByVariable: Map<String, NFA>
+    val equations: List<KEqExpr<*>> = statements.filterIsInstance<KEqExpr<*>>()
+    val regularConstraints: List<KStringInRegexExpr> = statements.filterIsInstance<KStringInRegexExpr>()
 
-    init {
-        val collectedEquations = mutableListOf<KEqExpr<*>>()
-        val collectedRegularConstraints = mutableListOf<KStringInRegexExpr>()
-        val collectedRegularConstraintsByVariable = linkedMapOf<String, NFA>()
+    var inputRegularConstraints: Map<KDecl<KStringSort>, KExpr<KRegexSort>> = emptyMap()
+        private set
+    var derivedRegularConstraints: Map<KDecl<KStringSort>, KExpr<KRegexSort>> = emptyMap()
+        private set
 
-        statements.forEachIndexed { index, statement ->
-            when {
-                statement is KStringInRegexExpr -> {
-                    collectedRegularConstraints.add(statement)
+    data class PropagationResult(
+        val contradiction: Boolean,
+        val constraints: List<KStringInRegexExpr>,
+    )
 
-                    val variableName = statement.extractVariableName(index)
-                    val automaton = fromRegex(statement.arg1, alphabet)
-                    val a2 = transformToDFA(automaton).minimize()
-                    println(a2.alphabet)
-
-                    collectedRegularConstraintsByVariable.compute(variableName) { _, oldAutomaton ->
-                        oldAutomaton?.product(automaton) ?: automaton
-                    }
+    /**
+     * Performs one sweep using complete boundary reachability. Per-variable languages overapproximate
+     * solutions: shared occurrences and different equations still require a joint backend model.
+     * [checkpoint] may abort preprocessing; no partial results are published on failure.
+     */
+    fun propagate(checkpoint: () -> Unit = {}): PropagationResult {
+        inputRegularConstraints = emptyMap()
+        derivedRegularConstraints = emptyMap()
+        val compiler = RegexAutomata(checkpoint)
+        val languages = linkedMapOf<KDecl<KStringSort>, SymbolicDfa>()
+        val inputs = linkedMapOf<KDecl<KStringSort>, KExpr<KRegexSort>>()
+        val normalized = arrayListOf<StringEquation>()
+        val partsBudget = TermPartsBudget(checkpoint)
+        for (statement in statements) {
+            checkpoint()
+            when (statement) {
+                is KStringInRegexExpr -> {
+                    val variable = statement.arg0 as? KConst<*>
+                        ?: throw KSolverUnsupportedFeatureException("Regex constraint requires a string variable")
+                    val declaration = variable.stringDeclaration()
+                    val language = compiler.compile(statement.arg1)
+                    languages[declaration] = languages[declaration]?.intersection(language, checkpoint) ?: language
+                    inputs[declaration] = inputs[declaration]?.let {
+                        statement.ctx.mkRegexIntersectionNoSimplify(it, statement.arg1)
+                    } ?: statement.arg1
                 }
-
-                statement is KEqExpr<*> &&
-                        statement.lhs.sort is KStringSort &&
-                        statement.rhs.sort is KStringSort -> {
-                    val lhs = statement.lhs as KExpr<KStringSort>
-                    val rhs = statement.rhs as KExpr<KStringSort>
-                    require(lhs.isConcatOfStringVariables()) {
-                        "Equation at index $index has unsupported left side. " +
-                                "Only concatenations of string variables are allowed."
-                    }
-                    require(rhs.isConcatOfStringVariables()) {
-                        "Equation at index $index has unsupported right side. " +
-                                "Only concatenations of string variables are allowed."
-                    }
-
-                    collectedEquations.add(statement)
-                }
-
-                else -> throw IllegalArgumentException(
-                    "Unsupported statement at index $index: " +
-                            "${statement::class.simpleName}. " +
-                            "Only string equations and regular constraints are allowed."
+                is KEqExpr<*> -> normalized += StringEquation(
+                    flatten(statement.lhs, partsBudget), flatten(statement.rhs, partsBudget)
                 )
+                else -> throw KSolverUnsupportedFeatureException("Expected a string equation or regex constraint")
             }
         }
-
-        equations = collectedEquations
-        regularConstraints = collectedRegularConstraints
-        regularConstraintsByVariable = collectedRegularConstraintsByVariable
+        val result = NoodlerRefiner(checkpoint).refine(languages, normalized)
+        if (result.contradiction) {
+            inputRegularConstraints = inputs.toMap()
+            return PropagationResult(contradiction = true, constraints = emptyList())
+        }
+        val emission = RegexEmissionBudget(checkpoint)
+        val derived = linkedMapOf<KDecl<KStringSort>, KExpr<KRegexSort>>()
+        val constraints = arrayListOf<KStringInRegexExpr>()
+        for ((declaration, language) in result.languages) {
+            checkpoint()
+            val original = languages[declaration] ?: SymbolicDfa.allWords()
+            if (original.equivalentTo(language, checkpoint)) continue
+            val regex = language.toRegex(declaration.ctx, emission)
+            derived[declaration] = regex
+            constraints += declaration.ctx.mkStringInRegexNoSimplify(declaration.apply(emptyList()), regex)
+        }
+        inputRegularConstraints = inputs.toMap()
+        derivedRegularConstraints = derived.toMap()
+        return PropagationResult(contradiction = false, constraints = constraints)
     }
 
-    fun solve(): Pair<Boolean, List<KStringInRegexExpr>> {
-        val baseAutomata = BaseAutomata(alphabet)
-        val refinedByVariable = linkedMapOf<String, NFA>()
-        val variablesByName = linkedMapOf<String, KExpr<KStringSort>>()
+    /** Compatibility adapter: true means only "no contradiction proved", never SAT. */
+    fun solve(): Pair<Boolean, List<KStringInRegexExpr>> = propagate().let { !it.contradiction to it.constraints }
 
-        fun rememberVariable(variable: KConst<*>) {
-            if (variable.sort is KStringSort) {
-                variablesByName.putIfAbsent(variable.decl.name, variable as KExpr<KStringSort>)
-            }
-        }
+    @Deprecated("Propagation does not construct a joint model. Query KNoodlerSolver.model() after SAT.")
+    fun model(): Map<KExpr<KStringSort>, String> = throw KSolverUnsupportedFeatureException(
+        "Independent words from projected languages are not a model; query the backend after SAT"
+    )
+}
 
-        equations.forEach { equation ->
-            flattenConcatVariables(equation.lhs as KExpr<KStringSort>).forEach(::rememberVariable)
-            flattenConcatVariables(equation.rhs as KExpr<KStringSort>).forEach(::rememberVariable)
-        }
-        regularConstraints.forEach { constraint ->
-            val variable = constraint.arg0 as? KConst<*> ?: return@forEach
-            rememberVariable(variable)
-        }
-
-        fun areEquivalent(lhs: NFA, rhs: NFA): Boolean {
-            return lhs.difference(rhs).isEmpty() && rhs.difference(lhs).isEmpty()
-        }
-
-        if (regularConstraintsByVariable.values.any { it.isEmpty() }) {
-            return false to emptyList()
-        }
-
-        for (equation in equations) {
-            val (ok, refined) = processEquation(equation)
-            if (!ok) {
-                return false to emptyList()
-            }
-
-            for ((variableName, automaton) in refined) {
-                if (automaton.isEmpty()) {
-                    return false to emptyList()
-                }
-                refinedByVariable.compute(variableName) { _, old ->
-                    old?.product(automaton) ?: automaton
-                }
-            }
-        }
-
-        val additionalConstraints = mutableListOf<KStringInRegexExpr>()
-        for ((variableName, automaton) in refinedByVariable) {
-            val baseConstraint = regularConstraintsByVariable[variableName] ?: baseAutomata.allWord()
-            val strengthened = baseConstraint.product(automaton)
-            if (strengthened.isEmpty()) {
-                return false to emptyList()
-            }
-            if (areEquivalent(baseConstraint, strengthened)) {
-                continue
-            }
-
-            val variable = variablesByName[variableName] ?: continue
-            val regex = strengthened.toRegex(variable.ctx)
-            additionalConstraints.add(variable.ctx.mkStringInRegexNoSimplify(variable, regex))
-        }
-
-        return true to additionalConstraints
-    }
-
-    private fun processEquation(equation: KEqExpr<*>): Pair<Boolean, Map<String, NFA>> {
-        fun transformConcatenationToNFASequence(expr: KExpr<*>): List<NFA> {
-            return flattenConcatVariables(
-                expr as KExpr<KStringSort>
-            ).map {
-                regularConstraintsByVariable[it.decl.name] ?: BaseAutomata().allWord()
-            }
-        }
-
-        val rhsVariables = flattenConcatVariables(equation.rhs as KExpr<KStringSort>)
-        val leftNFASequence = transformConcatenationToNFASequence(equation.lhs)
-        val rightNFASequence = transformConcatenationToNFASequence(equation.rhs)
-
-        val leftAutomaton = transformToDFA(leftNFASequence.drop(1).fold(leftNFASequence.first()) { acc, nfa ->
-            acc.concat(nfa)
-        }).minimize().asNFA()
-
-        val rightAutomaton = rightNFASequence.drop(1).fold(rightNFASequence.first()) { acc, nfa ->
-            acc.concat(nfa)
-        }
-
-        leftAutomaton.picture("left.png")
-        rightAutomaton.picture("right.png")
-
-        val grid = leftAutomaton.product(rightAutomaton)
-
-        if (grid.isEmpty()) {
-            return false to emptyMap()
-        }
-
-        val noodles = makeNoodles(grid)
-        val result = mutableMapOf<String, NFA>()
-        for (noodle in noodles) {
-            val resultInNoodle = mutableMapOf<String, NFA>()
-
-            val segments = noodle.map {
-                makeSegmentNFA(it)
-            }
-            val segmentCount = minOf(rhsVariables.size, segments.size)
-            for (i in 0 until segmentCount) {
-                val variableName = rhsVariables[i].decl.name
-                val automaton = segments[i]
-
-                resultInNoodle.compute(variableName) { _, old ->
-                    old?.product(automaton) ?: automaton
-                }
-            }
-
-            for ((variableName, automaton) in resultInNoodle) {
-                result.compute(variableName) { _, old ->
-                    old?.union(automaton) ?: automaton
-                }
-            }
-        }
-
-        return true to result
-    }
-
-    private fun makeNoodles(grid: NFA): List<List<List<NFANode>>> {
-        val allNoodles = mutableListOf<List<List<NFANode>>>()
-
-        fun dfs(
-            v: NFANode,
-            currentSegment: MutableList<NFANode>,
-            currentSegmentSet: MutableSet<NFANode>,
-            currentNoodle: MutableList<List<NFANode>>,
-            stagePathNodes: MutableSet<NFANode>
-        ) {
-            currentSegment.add(v)
-            currentSegmentSet.add(v)
-
-            for ((letter, nextNodes) in v.getAllList()) {
-                if (letter == EPS) {
-                    continue
-                }
-
-                for (next in nextNodes) {
-                    if (next !in currentSegmentSet) {
-                        dfs(next, currentSegment, currentSegmentSet, currentNoodle, stagePathNodes)
-                    }
-                }
-            }
-
-            val nextStageNodes = v.getList(EPS)
-            currentNoodle.add(currentSegment.toList())
-
-            if (nextStageNodes.isEmpty()) {
-                if (currentSegment.any { it.terminal }) {
-                    allNoodles.add(currentNoodle.map { it.toList() })
-                }
-            } else {
-                for (nextStageNode in nextStageNodes) {
-                    if (!stagePathNodes.add(nextStageNode)) {
-                        continue
-                    }
-                    dfs(
-                        v = nextStageNode,
-                        currentSegment = mutableListOf(),
-                        currentSegmentSet = mutableSetOf(),
-                        currentNoodle = currentNoodle,
-                        stagePathNodes = stagePathNodes
-                    )
-                    stagePathNodes.remove(nextStageNode)
-                }
-            }
-
-            currentNoodle.removeLast()
-            currentSegment.removeLast()
-            currentSegmentSet.remove(v)
-        }
-
-        dfs(
-            v = grid.start,
-            currentSegment = mutableListOf(),
-            currentSegmentSet = mutableSetOf(),
-            currentNoodle = mutableListOf(),
-            stagePathNodes = mutableSetOf(grid.start)
-        )
-        return allNoodles
-    }
-
-    private fun makeSegmentNFA(nodes: List<NFANode>): NFA {
-        val nodeSet = nodes.toSet()
-
-        for (node in nodes) {
-            val edges = node.getAllList().map { (letter, nextNodes) ->
-                letter to nextNodes.toList()
-            }
-            for ((letter, nextNodes) in edges) {
-                val newNextNodes = nextNodes.filter { nodeSet.contains(it) }
-                node.remove(letter)
-                newNextNodes.forEach { node.put(letter, it) }
-            }
-        }
-
-        nodes.last().terminal = true
-        return NFA(nodes.first(), ALL_CHAR_ALPHABET)
+private class TermPartsBudget(private val checkpoint: () -> Unit) {
+    private var remaining = MAX_PROPAGATION_TERM_PARTS
+    fun consume(count: Int = 1) {
+        checkpoint()
+        if (count > remaining) throw AutomataLimitException("string term expansion budget exceeded")
+        remaining -= count
     }
 }
 
-private fun KStringInRegexExpr.extractVariableName(index: Int): String {
-    val variable = arg0 as? KConst<*>
-    require(variable != null && variable.sort is KStringSort) {
-        "Regular constraint at index $index must use a string variable on the left-hand side"
+private fun flatten(expression: KExpr<*>, budget: TermPartsBudget): List<StringTermPart> {
+    val pending = ArrayDeque<KExpr<*>>()
+    val result = arrayListOf<StringTermPart>()
+    pending.add(expression)
+    while (pending.isNotEmpty()) {
+        budget.consume()
+        when (val current = pending.removeLast()) {
+            is KStringConcatExpr -> {
+                pending.addLast(current.arg1)
+                pending.addLast(current.arg0)
+            }
+            is KConst<*> -> result += StringTermPart.Variable(current.stringDeclaration())
+            is KStringLiteralExpr -> {
+                budget.consume(current.codePointCount)
+                val codePoints = current.codePoints
+                result += StringTermPart.Literal(codePoints.toList())
+            }
+            else -> throw KSolverUnsupportedFeatureException("Expected string variables, literals or concatenation")
+        }
     }
-    return variable.decl.name
+    return result
 }
 
-private fun flattenConcatVariables(expr: KExpr<*>): List<KConst<*>> {
-    return when (expr) {
-        is KStringConcatExpr -> flattenConcatVariables(expr.arg0) + flattenConcatVariables(expr.arg1)
-        is KConst<*> -> {
-            require(expr.sort is KStringSort) { "Expected string variable in equation side" }
-            listOf(expr)
-        }
-
-        else -> error("Expected concatenation of string variables")
-    }
+private fun KConst<*>.stringDeclaration(): KDecl<KStringSort> {
+    if (sort !is KStringSort) throw KSolverUnsupportedFeatureException("Expected a string variable")
+    @Suppress("UNCHECKED_CAST")
+    return decl as KDecl<KStringSort>
 }

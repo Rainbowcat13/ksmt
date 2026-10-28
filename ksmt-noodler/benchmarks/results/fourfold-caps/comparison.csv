@@ -1,0 +1,3 @@
+solver,label,hybrid_variant,sat,unsat,solved,eligible_trial_slots,unknown,timeout,other,completed_attempts,expected_attempts,complete,source_run,configuration
+noodler-yices,Noodler + Yices,baseline,149,361,510,752,240,2,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-combined-comparison\full-20261027T172513Z\runs\20261027T172635Z-0654d06e,default-1x
+noodler-yices,Noodler + Yices,baseline,149,363,512,752,124,116,0,752,752,True,C:\Users\danii\smt\build\reports\noodler-resource-caps-4x\fourfold-20261027T222944Z\runs\20261027T223146Z-9babb927,resources-4x

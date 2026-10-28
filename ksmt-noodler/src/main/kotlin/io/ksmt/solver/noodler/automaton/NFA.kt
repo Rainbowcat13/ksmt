@@ -8,21 +8,21 @@ class NFA(start: NFANode, alphabet: List<Char>) :
     Automaton<NFANode, NFA>(start, alphabet) {
 
     fun concat(other: NFA): NFA {
-        val thisCopy = copy() as NFA
+        return (copy() as NFA).concatInPlace(other)
+    }
+
+    fun concatInPlace(other: NFA): NFA {
         val otherCopy = other.copy() as NFA
-        for (state in thisCopy.terminal) {
+        val previousTerminal = terminal.toList()
+
+        for (state in previousTerminal) {
             state.put(EPS, otherCopy.start)
+            state.terminal = false
         }
-        thisCopy.alphabet = thisCopy.alphabet.toSet().union(otherCopy.alphabet.toSet()).toList()
-        val allNodes = listNodes(thisCopy.start, { true })
-        for (node in allNodes) {
-            node.terminal = false
-        }
-        for (node in otherCopy.terminal) {
-            node.terminal = true
-        }
-        thisCopy.terminal = otherCopy.terminal
-        return thisCopy
+
+        alphabet = alphabet.toSet().union(otherCopy.alphabet.toSet()).toList()
+        terminal = otherCopy.terminal
+        return this
     }
 
     fun product(other: NFA): NFA {
@@ -88,14 +88,12 @@ class NFA(start: NFANode, alphabet: List<Char>) :
 
     fun kleeneClosure(): NFA {
         val result = copy()
-
+        val newStart = NFANode(true, mutableMapOf())
+        newStart.put(EPS, result.start)
         for (node in result.terminal) {
             node.put(EPS, result.start)
         }
-        result.start.terminal = true
-        result.terminal = listNodes(result.start, { it.terminal })
-
-        return result as NFA
+        return NFA(newStart, alphabet)
     }
 
     fun power(a: Int): NFA {
@@ -105,9 +103,9 @@ class NFA(start: NFANode, alphabet: List<Char>) :
             return NFA(start, alphabet)
         }
 
-        var result = copy() as NFA
+        val result = copy() as NFA
         repeat(a - 1) {
-            result = result.concat(copy() as NFA)
+            result.concatInPlace(this)
         }
         return result
     }
@@ -128,8 +126,8 @@ class NFA(start: NFANode, alphabet: List<Char>) :
 
         var currentPower = power(from)
         var result = currentPower.copy() as NFA
-        for (i in (from + 1)..to) {
-            currentPower = currentPower.concat(copy() as NFA)
+        repeat(to - from) {
+            currentPower = currentPower.concat(this)
             result = result.union(currentPower)
         }
         return result

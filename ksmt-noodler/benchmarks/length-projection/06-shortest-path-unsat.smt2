@@ -1,0 +1,6 @@
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(declare-fun x () String)
+(assert (str.in_re x (re.++ (str.to_re "abc") (re.* (str.to_re "d")))))
+(assert (< (str.len x) 3))
+(check-sat)

@@ -95,16 +95,25 @@ fun <N : Node<N>> copy(v: N, copies: MutableMap<N, N> = mutableMapOf()): N {
 }
 
 fun <N : Node<N>> listNodes(v: N, predicate: (N) -> Boolean, visited: MutableSet<N> = mutableSetOf()): List<N> {
-    val result = HashSet<N>()
+    val result = LinkedHashSet<N>()
+    val pending = ArrayDeque<N>()
+
     visited.add(v)
-    if (predicate(v)) {
-        result.add(v)
-    }
-    for (u in v.getAllList().values.flatten()) {
-            if (!visited.contains(u)) {
-                result.addAll(listNodes(u, predicate, visited))
+    pending.add(v)
+
+    while (pending.isNotEmpty()) {
+        val current = pending.removeLast()
+        if (predicate(current)) {
+            result.add(current)
+        }
+
+        for (u in current.getAllList().values.flatten()) {
+            if (visited.add(u)) {
+                pending.add(u)
             }
+        }
     }
+
     return result.toList()
 }
 
