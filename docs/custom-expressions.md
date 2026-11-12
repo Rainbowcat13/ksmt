@@ -207,45 +207,16 @@ class CustomContext : KContext() {
 Since it is required to eliminate all the custom expressions before interacting with any KSMT feature, 
 it is convenient to create wrappers.
 
-For example, we can wrap `KSolver` and eliminate custom expressions on each query.
+For example, [CustomSolver](../examples/src/main/kotlin/CustomExpressions.kt) rewrites
+assertions and assumptions before forwarding them to `KSolver` and wraps the returned model.
 
-```kotlin
-class CustomSolver<C : KSolverConfiguration>(
-    private val solver: KSolver<C>,
-    private val transformer: CustomExprRewriter
-) : KSolver<C> {
-
-    // `expr` can contain custom expressions -> rewrite
-    override fun assert(expr: KExpr<KBoolSort>) =
-        solver.assert(transformer.apply(expr))
-
-    // `expr` can contain custom expressions -> rewrite
-    override fun assertAndTrack(expr: KExpr<KBoolSort>) =
-        solver.assertAndTrack(transformer.apply(expr))
-
-    // `assumptions` can contain custom expressions -> rewrite
-    override fun checkWithAssumptions(assumptions: List<KExpr<KBoolSort>>, timeout: Duration): KSolverStatus =
-        solver.checkWithAssumptions(assumptions.map { transformer.apply(it) }, timeout)
-
-    // wrap model for correct `eval` method handling
-    override fun model(): KModel = CustomModel(solver.model(), transformer)
-
-    // Other methods do not suffer from custom expressions
-
-    override fun check(timeout: Duration): KSolverStatus =
-        solver.check(timeout)
-
-    override fun pop(n: UInt) = solver.pop(n)
-    override fun push() = solver.push()
-
-    override fun reasonOfUnknown(): String = solver.reasonOfUnknown()
-    override fun unsatCore(): List<KExpr<KBoolSort>> = solver.unsatCore()
-
-    override fun close() = solver.close()
-    override fun configure(configurator: C.() -> Unit) = solver.configure(configurator)
-    override fun interrupt() = solver.interrupt()
-}
-```
+Unsat cores require a reverse mapping: the backend sees rewritten expressions, but callers must
+receive the original expressions supplied to `assertAndTrack` or `checkWithAssumptions`.
+Keep scoped pairs of original and rewritten assertions and include assumptions only for their check.
+Different inputs can rewrite to the same expression, so the reverse mapping must retain all their
+originals. Returning them produces a valid, potentially nonminimal core. Assertion-stack changes and
+subsequent checks invalidate the previous core. The linked implementation and its tests handle these
+cases without exposing rewritten expressions to callers.
 
 We can wrap `KModel` and eliminate custom expressions before `eval`.
 
@@ -273,5 +244,7 @@ class CustomModel(
         model.uninterpretedSortUniverse(sort)
 
     override fun detach(): KModel = CustomModel(model.detach(), transformer)
+
+    override fun close() = model.close()
 }
 ```

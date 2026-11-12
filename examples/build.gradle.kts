@@ -14,6 +14,13 @@ dependencies {
     implementation("io.ksmt:ksmt-z3:0.5.29")
     // Runner and portfolio solver
     implementation("io.ksmt:ksmt-runner:0.5.29")
+
+    testImplementation(kotlin("test-junit5"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 java {

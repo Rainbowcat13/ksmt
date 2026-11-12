@@ -168,36 +168,90 @@ class CustomSolver<C : KSolverConfiguration>(
     private val solver: KSolver<C>,
     private val transformer: CustomExprRewriter
 ) : KSolver<C> {
+    private data class TrackedOrigin(
+        val original: KExpr<KBoolSort>,
+        val rewritten: KExpr<KBoolSort>,
+    )
+
+    private val tracked = arrayListOf<TrackedOrigin>()
+    private val scopes = ArrayDeque<Int>()
+    private var coreOrigins: Map<KExpr<KBoolSort>, List<KExpr<KBoolSort>>>? = null
 
     // expr can contain custom expressions -> rewrite
-    override fun assert(expr: KExpr<KBoolSort>) =
+    override fun assert(expr: KExpr<KBoolSort>) {
         solver.assert(transformer.apply(expr))
+        coreOrigins = null
+    }
 
     // expr can contain custom expressions -> rewrite
-    override fun assertAndTrack(expr: KExpr<KBoolSort>) =
-        solver.assertAndTrack(transformer.apply(expr))
+    override fun assertAndTrack(expr: KExpr<KBoolSort>) {
+        val rewritten = transformer.apply(expr)
+        solver.assertAndTrack(rewritten)
+        tracked += TrackedOrigin(expr, rewritten)
+        coreOrigins = null
+    }
 
     // assumptions can contain custom expressions -> rewrite
-    override fun checkWithAssumptions(assumptions: List<KExpr<KBoolSort>>, timeout: Duration): KSolverStatus =
-        solver.checkWithAssumptions(assumptions.map { transformer.apply(it) }, timeout)
+    override fun checkWithAssumptions(assumptions: List<KExpr<KBoolSort>>, timeout: Duration): KSolverStatus {
+        coreOrigins = null
+        val origins = assumptions.map { TrackedOrigin(it, transformer.apply(it)) }
+        val result = solver.checkWithAssumptions(origins.map { it.rewritten }, timeout)
+        rememberCoreOrigins(result, origins)
+        return result
+    }
 
     // wrap model for correct handling of eval method
     override fun model(): KModel = CustomModel(solver.model(), transformer)
 
     // Other methods don't suffer from custom expressions
 
-    override fun check(timeout: Duration): KSolverStatus =
-        solver.check(timeout)
+    override fun check(timeout: Duration): KSolverStatus {
+        coreOrigins = null
+        val result = solver.check(timeout)
+        rememberCoreOrigins(result, emptyList())
+        return result
+    }
 
-    override fun pop(n: UInt) = solver.pop(n)
-    override fun push() = solver.push()
+    override fun pop(n: UInt) {
+        require(n <= scopes.size.toUInt()) { "Cannot pop $n scopes from ${scopes.size}" }
+        solver.pop(n)
+        repeat(n.toInt()) {
+            val size = scopes.removeLast()
+            tracked.subList(size, tracked.size).clear()
+        }
+        if (n != 0u) coreOrigins = null
+    }
+
+    override fun push() {
+        solver.push()
+        scopes.addLast(tracked.size)
+        coreOrigins = null
+    }
 
     override fun reasonOfUnknown(): String = solver.reasonOfUnknown()
-    override fun unsatCore(): List<KExpr<KBoolSort>> = solver.unsatCore()
+    override fun unsatCore(): List<KExpr<KBoolSort>> {
+        val origins = checkNotNull(coreOrigins) { "Unsat core is only available after UNSAT" }
+        return solver.unsatCore().flatMap { rewritten ->
+            checkNotNull(origins[rewritten]) { "Backend core contains an untracked expression" }
+        }.distinct()
+    }
 
-    override fun close() = solver.close()
+    override fun close() {
+        solver.close()
+        coreOrigins = null
+        tracked.clear()
+        scopes.clear()
+    }
     override fun configure(configurator: C.() -> Unit) = solver.configure(configurator)
     override fun interrupt() = solver.interrupt()
+
+    private fun rememberCoreOrigins(status: KSolverStatus, assumptions: List<TrackedOrigin>) {
+        if (status == KSolverStatus.UNSAT) {
+            // Rewriting can merge different inputs. Returning all their originals is a valid,
+            // possibly nonminimal core, and preserves the KSolver interface's input identity.
+            coreOrigins = (tracked + assumptions).groupBy({ it.rewritten }, { it.original })
+        }
+    }
 }
 
 /**
@@ -226,6 +280,8 @@ class CustomModel(
         model.uninterpretedSortUniverse(sort)
 
     override fun detach(): KModel = CustomModel(model.detach(), transformer)
+
+    override fun close() = model.close()
 }
 
 /**
