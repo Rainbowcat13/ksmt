@@ -1,0 +1,20 @@
+{
+  "frozen_before_solver_runs": true,
+  "release": "SMT-LIB 2025.08.04, Zenodo 16740866",
+  "candidate_files": 5283,
+  "target_samples": 1200,
+  "seed": "fair-holdout-20261106-v1",
+  "selection": "Within each named family, choose syntax-eligible files with smallest SHA256(seed + newline + relative_path). No solver outcomes are used.",
+  "quotas": {
+    "QF_S/2019-Jiang": 150,
+    "QF_S/2020-sygus-qgen": 300,
+    "QF_S/20230329-woorpje-lu": 150,
+    "QF_SLIA/2015-Norn": 300,
+    "QF_SLIA/2019-Jiang": 150,
+    "QF_SLIA/20230329-woorpje-lu": 150
+  },
+  "budgets": {"solve_ms": 10000, "startup_parse_ms": 30000, "validation_ms": 10000},
+  "backends": ["noodler-z3", "noodler-yices"],
+  "repeats": 1,
+  "algorithm_policy": "Both combinations use the same PeriodicWordEquality certificate. No algorithm changes are planned after held-out solver results are observed."
+}

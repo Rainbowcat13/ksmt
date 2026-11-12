@@ -14,7 +14,10 @@ internal val benchmarkColumns = listOf(
     "learned_constraints", "realization_checks", "worker_exit", "details", "solver_statistics", "log", "completed_utc",
     "variant", "hybrid_configuration_sha256", "max_automata_states", "max_automata_storage",
     "max_encoding_constraints", "max_preprocessing_units", "max_character_positions", "max_idle_rounds",
-    "optional_preprocessing", "small_first_search", "adaptive_length_projection", "failure_phase",
+    "max_membership_pruning_units",
+    "optional_preprocessing", "small_first_search", "adaptive_length_projection", "automata_witness_search",
+    "periodic_length_reasoning", "periodic_length_lemmas",
+    "failure_phase",
     "optional_preprocessing_skips",
     "last_optional_skip_reason", "bounded_search_bounds", "native_realization_checks",
     "last_candidate_total_length", "last_candidate_encoding_estimate", "phase_times_ms",
@@ -23,6 +26,7 @@ internal val benchmarkColumns = listOf(
     "membership_pruning_fallbacks",
     "regex_determinizations", "regex_peak_intermediate_automata", "regex_cached_roots",
     "refinement_sweeps", "refinement_skips",
+    "automata_witness_attempts", "automata_witness_successes", "automata_witness_fallbacks",
 )
 private val exclusionColumns = listOf("sample_id", "sample", "source_sha256", "reason")
 private val nanoTimes = setOf("startup_ms", "parse_ms", "setup_ms", "solve_ms", "validation_ms", "wall_ms")
@@ -111,6 +115,9 @@ private fun StringBuilder.appendOverview(
         "`${metadata["hybrid-configuration-sha256"].orEmpty()}`.")
     metadata["adaptive-length-projection"]?.let {
         appendLine("Adaptive automaton length projection: `$it`.")
+    }
+    metadata["automata-witness-search"]?.let {
+        appendLine("Bounded automaton witness search: `$it`.")
     }
     metadata["source-list"]?.takeIf { it.isNotEmpty() }?.let {
         appendLine("Exact source selection: `${metadata["source-list-count"]}` paths; " +

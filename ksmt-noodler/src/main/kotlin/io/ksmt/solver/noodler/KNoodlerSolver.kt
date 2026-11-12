@@ -19,11 +19,12 @@ import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.system.measureTimeMillis
 import kotlin.time.Duration
 
-/** Adds one sound Unicode language propagation sweep to a string-capable backend. */
+/** Adds sound Unicode language propagation and certified length consequences to a string-capable backend. */
 class KNoodlerSolver(
     private val ctx: KContext,
     private val baseSolver: KSolver<out KSolverConfiguration>,
     private val alphabet: List<Char> = ALL_CHAR_ALPHABET,
+    private val periodicLengthReasoning: Boolean = true,
 ) : KSolver<KSolverConfiguration> {
     private val assertions = arrayListOf<KExpr<KBoolSort>>()
     private val scopeMarks = ArrayDeque<Int>()
@@ -159,8 +160,10 @@ class KNoodlerSolver(
                     stats.skipReason = "no supported conjuncts"
                 } else {
                     stats.invocations = 1
-                    val result = Noodler(statements, alphabet).propagate(control::checkpoint)
-                    lemmas = if (result.contradiction) listOf(ctx.falseExpr) else result.constraints
+                    val result = Noodler(statements, alphabet, periodicLengthReasoning).propagate(control::checkpoint)
+                    lemmas = if (result.contradiction) listOf(ctx.falseExpr) else {
+                        result.constraints + result.lengthConstraints
+                    }
                     stats.generated = lemmas.size
                     val originals = original.toHashSet()
                     lemmas = lemmas.distinct().filterNot { it in originals }

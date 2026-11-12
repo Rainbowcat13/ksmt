@@ -11,6 +11,8 @@ import io.ksmt.sort.KIntSort
 import io.ksmt.sort.KStringSort
 import io.ksmt.utils.ArithUtils.bigIntegerValue
 
+internal const val DEFAULT_MEMBERSHIP_PRUNING_UNITS: Int = 250_000
+
 /** Exact realization at one length vector. No constraint here is asserted in the unbounded context. */
 @Suppress("LongParameterList") // The independent resource allowances belong to their surrounding check.
 internal class CandidateRealization(
@@ -21,6 +23,7 @@ internal class CandidateRealization(
     private val maxPositions: Int,
     private val maxEncodingConstraints: Int,
     private val preprocessing: PreprocessingBudget = PreprocessingBudget(checkpoint = checkpoint),
+    private val maxMembershipPruningUnits: Int = DEFAULT_MEMBERSHIP_PRUNING_UNITS,
 ) {
     private val characters = linkedMapOf<KDecl<KStringSort>, List<KExpr<KIntSort>>>()
     var encodedConstraints = 0L
@@ -33,6 +36,7 @@ internal class CandidateRealization(
         private set
 
     init {
+        require(maxMembershipPruningUnits >= 0) { "maxMembershipPruningUnits must be nonnegative" }
         for ((declaration, length) in lengths) {
             checkpoint()
             reserve(2L * length)
@@ -126,7 +130,7 @@ internal class CandidateRealization(
     private fun transitionPlan(
         word: List<KExpr<KIntSort>>, language: SymbolicDfa, positive: Boolean,
     ): MembershipTransitionPlan? {
-        val allowance = minOf(preprocessing.remaining / PRUNING_BUDGET_SHARE, MAX_PRUNING_UNITS)
+        val allowance = minOf(preprocessing.remaining / PRUNING_BUDGET_SHARE, maxMembershipPruningUnits)
         // Avoid allocating the character array when even the sparse layer containers cannot fit.
         if (PRUNING_LAYER_STORAGE * word.size + PRUNING_STORAGE_OVERHEAD > allowance) {
             membershipPruningFallbacks++
@@ -198,7 +202,6 @@ internal class CandidateRealization(
     companion object {
         private const val CONSTRAINTS_PER_EDGE = 4L
         private const val PRUNING_BUDGET_SHARE = 4
-        private const val MAX_PRUNING_UNITS = 100_000
         private const val PRUNING_LAYER_STORAGE = 3L
         private const val PRUNING_STORAGE_OVERHEAD = 3L
     }

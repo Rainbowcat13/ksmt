@@ -4,8 +4,8 @@
 
 | Integration | Regular-language reasoning | Final decision and model |
 | --- | --- | --- |
-| `KNoodlerSolver(ctx, KZ3Solver(ctx))` | One sound Unicode automata refinement sweep; strengthened languages become regex constraints | Z3 checks the original formula plus refinements and supplies the joint model |
-| `KNoodlerSolver(ctx, KCvc5Solver(ctx))` | The same refinement engine | cvc5 checks the original formula plus refinements and supplies the joint model |
+| `KNoodlerSolver(ctx, KZ3Solver(ctx))` | One sound Unicode automata refinement sweep plus certified common-word-power length consequences | Z3 checks the original formula plus regular and arithmetic refinements and supplies the joint model |
+| `KNoodlerSolver(ctx, KCvc5Solver(ctx))` | The same refinement engine and periodic length certificate | cvc5 checks the original formula plus refinements and supplies the joint model |
 | `KNoodlerYicesSolver(ctx)` | Unicode automata refine Boolean/string/length candidates | One Yices context searches Boolean choices and lengths; another checks exact characters at a proposed length vector |
 
 The Yices combination never sends strings to native Yices. Repeated occurrences of a variable share character variables, and infeasible realizations block only their complete Boolean/length candidate. A reported SAT witness is checked against the original assertions. Unsupported operations, exhausted budgets, interruption, or timeout return UNKNOWN. This remains an incomplete procedure for unrestricted word equations with lengths.

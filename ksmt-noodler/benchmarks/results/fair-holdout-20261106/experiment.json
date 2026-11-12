@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "samples": 1200,
+  "expected_attempts": 2400,
+  "backends": [
+    "noodler-z3",
+    "noodler-yices"
+  ],
+  "shared_periodic_certificate": true,
+  "syntax_checker_matches_scan": true,
+  "solve_ms": 10000,
+  "startup_parse_ms": 30000,
+  "validation_ms": 10000,
+  "selection_frozen_before_solver_results": true,
+  "quotas": {
+    "QF_S/2019-Jiang": 150,
+    "QF_S/2020-sygus-qgen": 300,
+    "QF_S/20230329-woorpje-lu": 150,
+    "QF_SLIA/2015-Norn": 300,
+    "QF_SLIA/2019-Jiang": 150,
+    "QF_SLIA/20230329-woorpje-lu": 150
+  },
+  "command": [
+    "C:/Program Files/Java/jdk-17/bin/java.exe",
+    "-Xss8m",
+    "-cp",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\00-main;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\01-ksmt-z3-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\02-ksmt-z3-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\03-com.microsoft.z3.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\04-ksmt-cvc5-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\05-ksmt-cvc5-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\06-cvc5-1.2.0.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\07-ksmt-yices-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\08-ksmt-yices-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\09-com.sri.yices.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\10-ksmt-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\11-ksmt-z3-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\12-ksmt-cvc5-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\13-ksmt-yices-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\14-kotlin-stdlib-jdk8-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\15-fastutil-core-8.5.11.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\16-kotlin-stdlib-jdk7-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\17-kotlinx-collections-immutable-jvm-0.3.5.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\18-kotlin-stdlib-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\19-kotlin-stdlib-common-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\20-annotations-13.0.jar",
+    "io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt",
+    "run",
+    "--source",
+    "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidates",
+    "--source-list",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\holdout-sources.txt",
+    "--solvers",
+    "noodler-z3,noodler-yices",
+    "--repeats",
+    "1",
+    "--solve-ms",
+    "10000",
+    "--startup-parse-ms",
+    "30000",
+    "--validation-ms",
+    "10000",
+    "--periodic-length-reasoning",
+    "true",
+    "--automata-witness-search",
+    "true",
+    "--max-membership-pruning-units",
+    "250000",
+    "--output",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\benchmark"
+  ],
+  "started_utc": "2026-11-06T13:42:46.291533+00:00",
+  "returncode": 0,
+  "run": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\benchmark\\20261106T134247Z-f2ee353d",
+  "attempts": 2400,
+  "elapsed_seconds": 2937.5470000000205,
+  "outcomes": {
+    "noodler-z3": {
+      "UNSAT": 274,
+      "SAT": 857,
+      "TIMEOUT": 69
+    },
+    "noodler-yices": {
+      "UNSAT": 309,
+      "SAT": 782,
+      "TIMEOUT": 10,
+      "UNKNOWN": 99
+    }
+  },
+  "finished_utc": "2026-11-06T14:31:43.838506+00:00"
+}

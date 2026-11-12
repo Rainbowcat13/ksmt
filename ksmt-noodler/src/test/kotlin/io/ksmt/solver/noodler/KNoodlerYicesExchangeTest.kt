@@ -38,7 +38,7 @@ class KNoodlerYicesExchangeTest {
     fun encodingBudgetDoesNotTurnResourceExhaustionIntoUnsat() = KContext().use { ctx ->
         with(ctx) {
             KNoodlerYicesSolver(ctx).use { solver ->
-                solver.configure { maxEncodingConstraints = 0 }
+                solver.configure { maxEncodingConstraints = 0; automataWitnessSearch = false }
                 solver.assert(mkEq(mkStringLen(mkConst("x", stringSort)), mkIntNum(1)))
                 assertEquals(KSolverStatus.UNKNOWN, solver.check(10.seconds))
                 assertTrue(solver.reasonOfUnknown().contains("resource limit"))

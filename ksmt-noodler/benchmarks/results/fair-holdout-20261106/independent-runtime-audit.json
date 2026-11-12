@@ -1,0 +1,8 @@
+{
+  "manifest": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime-manifest.json",
+  "manifest_sha256": "5e5a7845141803261876448eda5edfbeb45786347ae51d0602f4c8179909abd8",
+  "verified_files": 286,
+  "external_jars": 20,
+  "metadata_sha256": "b01eeb0e9a06ca04492f9483b46e010b7a7db3bda550f3f8657296245dc5379b",
+  "selection_sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4"
+}

@@ -16,6 +16,7 @@ class KNoodlerYicesStableRefinementTest {
                 val y = mkConst("y", stringSort)
                 val unary = mkRegexStar(mkStringToRegex(mkStringLiteral("a")))
                 KNoodlerYicesSolver(ctx).use { solver ->
+                    solver.configure { periodicLengthReasoning = false }
                     solver.assert(listOf(
                         mkStringInRegex(x, unary), mkStringInRegex(y, unary),
                         mkArithLe(mkStringLen(x), mkIntNum(2)),

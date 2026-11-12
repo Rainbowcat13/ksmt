@@ -16,11 +16,13 @@ import io.ksmt.solver.model.KFuncInterpVarsFree
 import io.ksmt.solver.noodler.hybrid.AutomataLimitException
 import io.ksmt.solver.noodler.hybrid.AutomataLimits
 import io.ksmt.solver.noodler.hybrid.AutomatonLengthProjection
+import io.ksmt.solver.noodler.hybrid.AutomataWitnessSearch
 import io.ksmt.solver.noodler.hybrid.CandidateRealization
 import io.ksmt.solver.noodler.hybrid.HybridCheckControl
 import io.ksmt.solver.noodler.hybrid.HybridIncomplete
 import io.ksmt.solver.noodler.hybrid.NoodlerRefiner
 import io.ksmt.solver.noodler.hybrid.NoodlerYicesModel
+import io.ksmt.solver.noodler.hybrid.PeriodicWordEquality
 import io.ksmt.solver.noodler.hybrid.PreprocessingBudget
 import io.ksmt.solver.noodler.hybrid.PreprocessingLimitException
 import io.ksmt.solver.noodler.hybrid.RegexAutomata
@@ -334,9 +336,51 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
                 learn(ctx.mkNot(cube))
                 return BranchProgress(excluded = true, changed = refinement.changed)
             }
-            val excluded = propagateLengths(branch, cube, candidate, checkpoint)
+            val periodicExcluded = propagatePeriodicLengths(branch, atoms, polarities, cube, candidate)
+            val excluded = propagateLengths(branch, cube, candidate, checkpoint) || periodicExcluded
             branch.refinementStable = !refinement.changed
             return BranchProgress(excluded, refinement.changed)
+        }
+
+        /** A common word-power domain makes equality equivalent to equality of unbounded lengths. */
+        @Suppress("ComplexMethod", "LoopWithTooManyJumpStatements") // Cheap guards precede optional DFA proofs.
+        private fun propagatePeriodicLengths(
+            branch: BranchState, atoms: List<StringAtom>, polarities: List<Boolean>,
+            cube: KExpr<KBoolSort>, candidate: KModel,
+        ): Boolean {
+            if (!configuration.periodicLengthReasoning) return false
+            val parent = if (configuration.optionalPreprocessing) optionalBudget else preprocessing
+            val allowance = minOf(MAX_PERIODIC_UNITS, parent.remaining / PERIODIC_BUDGET_SHARE)
+            if (allowance == 0) return false
+            val budget = parent.limited(allowance)
+            var excluded = false
+            statistics.measure("periodic-lengths") {
+                try {
+                    for ((index, atom) in atoms.withIndex()) {
+                        budget.reserve()
+                        if (atom !is StringAtom.Equality || polarities[index]) continue
+                        if (atom.equation in branch.periodicEquations) continue
+                        if (!PeriodicWordEquality.provesLengthEquivalence(
+                            atom.equation, branch.languages, control::checkpoint, budget,
+                        )) continue
+                        val unequalLengths = ctx.mkNot(ctx.mkEq(
+                            abstraction.length(atom.equation.left, budget),
+                            abstraction.length(atom.equation.right, budget),
+                        ))
+                        val lemma = ctx.mkImplies(cube, unequalLengths)
+                        branch.periodicEquations += atom.equation
+                        if (learn(lemma)) {
+                            statistics.periodicLengthLemmas++
+                            if (candidate.eval(lemma, isComplete = true) !is KTrue) excluded = true
+                        }
+                    }
+                } catch (_: AutomataLimitException) {
+                    // Optional proof failure adds no condition. Keep previously certified lemmas
+                    // and continue with ordinary length propagation and exact realization.
+                    control.checkpoint()
+                }
+            }
+            return excluded
         }
 
         private fun <T> optionalPreparation(action: () -> T): T? {
@@ -389,6 +433,7 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
                 candidateLengths(abstraction, candidate, control, statistics)
             }
             statistics.realizationChecks++
+            if (tryAutomataWitness(candidate, polarities, lengths)) return KSolverStatus.SAT
             realization.push()
             try {
                 var witness: Map<KDecl<KStringSort>, IntArray>? = null
@@ -397,7 +442,7 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
                     CandidateRealization(
                         ctx, realization, lengths, control::checkpoint,
                         configuration.maxCharacterPositions, configuration.maxEncodingConstraints,
-                        preprocessing,
+                        preprocessing, configuration.maxMembershipPruningUnits,
                     ).also { encoder ->
                         try {
                             atoms.zip(polarities).forEach { (atom, positive) -> encoder.assertAtom(atom, positive) }
@@ -439,6 +484,42 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
             } finally {
                 realization.pop()
             }
+        }
+
+        /** A guessed path assignment proves only SAT after joint validation; failure learns nothing. */
+        private fun tryAutomataWitness(
+            candidate: KModel, polarities: List<Boolean>, lengths: Map<KDecl<KStringSort>, Int>,
+        ): Boolean {
+            if (!configuration.automataWitnessSearch) return false
+            val branch = branches[polarities] ?: return false
+            val allowance = minOf(MAX_WITNESS_UNITS, preprocessing.remaining / WITNESS_BUDGET_SHARE)
+            if (allowance == 0) return false
+            val budget = preprocessing.limited(allowance)
+            statistics.automataWitnessAttempts++
+            val accepted = statistics.measure("automata-witness") {
+                try {
+                    val witness = AutomataWitnessSearch.chooseWitness(
+                        branch.languages, lengths, control::checkpoint, budget,
+                    ) ?: return@measure false
+                    budget.reserve(witness.values.sumOf { it.size.toLong() })
+                    val model = makeModel(abstraction, candidate, witness, limits)
+                    var validated = false
+                    try {
+                        validated = model.validates(input, control::checkpoint, budget)
+                        if (validated) lastModel = model
+                        validated
+                    } finally {
+                        if (!validated) model.close()
+                    }
+                } catch (_: AutomataLimitException) {
+                    // Optional path search/validation exhausted its allowance. Exact realization
+                    // still has the parent budget; cancellation and deadlines are not swallowed.
+                    control.checkpoint()
+                    false
+                }
+            }
+            if (accepted) statistics.automataWitnessSuccesses++ else statistics.automataWitnessFallbacks++
+            return accepted
         }
 
         private fun recordProgress(changed: Boolean) {
@@ -634,6 +715,7 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
     private data class BranchState(
         var languages: Map<KDecl<KStringSort>, SymbolicDfa>, val equations: List<StringEquation>,
         var refinementStable: Boolean = false,
+        val periodicEquations: MutableSet<StringEquation> = hashSetOf(),
     )
 
     private data class BranchProgress(val excluded: Boolean, val changed: Boolean)
@@ -665,6 +747,10 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
         val regexCachedRoots: Int = 0,
         val refinementSweeps: Int = 0,
         val refinementSkips: Int = 0,
+        val automataWitnessAttempts: Int = 0,
+        val automataWitnessSuccesses: Int = 0,
+        val automataWitnessFallbacks: Int = 0,
+        val periodicLengthLemmas: Int = 0,
     )
 
     private class MutableStatistics {
@@ -694,6 +780,10 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
         var regexCachedRoots = 0
         var refinementSweeps = 0
         var refinementSkips = 0
+        var automataWitnessAttempts = 0
+        var automataWitnessSuccesses = 0
+        var automataWitnessFallbacks = 0
+        var periodicLengthLemmas = 0
         private val phaseNanos = linkedMapOf<String, Long>()
 
         fun <T> measure(name: String, action: () -> T): T {
@@ -705,9 +795,9 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
                 val elapsed = System.nanoTime() - started
                 phaseNanos[name] = (phaseNanos[name] ?: 0L) + elapsed
                 when (name) {
-                    "seed-lengths", "refinement", "propagate-lengths" -> noodlerNanos += elapsed
+                    "seed-lengths", "refinement", "propagate-lengths", "periodic-lengths" -> noodlerNanos += elapsed
                     "search" -> searchNanos += elapsed
-                    "encoding", "realization" -> realizationNanos += elapsed
+                    "encoding", "realization", "automata-witness" -> realizationNanos += elapsed
                 }
             }
         }
@@ -724,6 +814,8 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
             membershipPruningFallbacks,
             regexDeterminizations, regexPeakIntermediateAutomata, regexCachedRoots,
             refinementSweeps, refinementSkips,
+            automataWitnessAttempts, automataWitnessSuccesses, automataWitnessFallbacks,
+            periodicLengthLemmas,
         )
 
         companion object {
@@ -733,6 +825,10 @@ class KNoodlerYicesSolver(private val ctx: KContext) : KSolver<KNoodlerYicesSolv
 
     companion object {
         private const val OPTIONAL_BUDGET_SHARE = 4
+        private const val WITNESS_BUDGET_SHARE = 8
+        private const val MAX_WITNESS_UNITS = 50_000
+        private const val MAX_PERIODIC_UNITS = 100_000
+        private const val PERIODIC_BUDGET_SHARE = 8
         private const val CHARACTER_BOUND_CONSTRAINTS = 2L
         private const val DFA_EDGE_CONSTRAINTS = 4L
 

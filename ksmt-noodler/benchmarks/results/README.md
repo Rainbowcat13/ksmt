@@ -22,6 +22,14 @@ Run `20261027T223146Z-9babb927`, the same 752 cases and frozen runtime, only Noo
 
 Coverage rose from 510 to 512 cases without losing a previous result. Two UNKNOWN results became UNSAT, 114 became TIMEOUT, and 124 remained UNKNOWN. All 149 SAT witnesses passed Z3 validation; no decisive conflict with the five-backend control was found.
 
+## Shared periodic rule on new families
+
+Run `20261106T134247Z-f2ee353d` compares both combinations with the same periodic-word certificate on 1,200 preselected cases from six previously unused SMT-LIB logic/family strata. The solve deadline was 10 seconds, with one trial per pair and 2,400 completed attempts. The source pool contained 5,283 files; 4,960 passed the common syntax checker. Selection and algorithms were frozen before solver outcomes.
+
+Z3 + Noodler solved 1,131 cases; Yices + Noodler solved 1,091. Yices solved all 300 Norn cases, but lost coverage on Woorpje. All SAT models passed independent validation. The new periodic rule fired on three Yices cases that remained unresolved; this run does not demonstrate a coverage benefit from the rule.
+
+See the [full report and limitations](fair-holdout-20261106/README.md), [aggregate CSV](fair-holdout-20261106/comparison.csv), [paired cases](fair-holdout-20261106/paired.csv), and [independent final audit](fair-holdout-20261106/independent-final-audit.json). The archive index includes exact-byte copies of the measurements, selection, eligibility scan and runtime provenance.
+
 ## Archive scope and reproduction
 
 Native binaries, JVM outputs, worker logs, immutable per-attempt checkpoint files, generated prepared-corpus copies, and Python caches are deliberately excluded. Absolute paths in original metadata identify the measurement environment; they are provenance, not portable launch paths. The archived raw CSVs preserve the complete measured rows, including witness hashes, phase timings, resource settings, and failure reasons. `archive-index.json` can be checked independently with SHA256.

@@ -5,6 +5,7 @@ import io.ksmt.solver.KSolverUnsupportedFeatureException
 import io.ksmt.solver.KSolverUnsupportedParameterException
 import io.ksmt.solver.KTheory
 import io.ksmt.solver.noodler.hybrid.AutomataLimits
+import io.ksmt.solver.noodler.hybrid.DEFAULT_MEMBERSHIP_PRUNING_UNITS
 import io.ksmt.solver.noodler.hybrid.PreprocessingBudget
 import io.ksmt.solver.yices.KYicesSolver
 
@@ -17,6 +18,9 @@ interface KNoodlerYicesSolverConfiguration : KSolverConfiguration {
 
     /** Cumulative primitive constraints permitted in one exact candidate encoding. */
     var maxEncodingConstraints: Int
+
+    /** Optional work per membership transition plan, additionally limited to a quarter of remaining preprocessing. */
+    var maxMembershipPruningUnits: Int
 
     /** Cumulative syntax, term-expansion and model-validation storage units per check. */
     var maxPreprocessingUnits: Int
@@ -33,6 +37,12 @@ interface KNoodlerYicesSolverConfiguration : KSolverConfiguration {
 
     /** Use graph bounds/congruences and bounded exact length projection with a sound fallback. */
     var adaptiveLengthProjection: Boolean
+
+    /** Try bounded automaton witness construction before exact arithmetic character realization. */
+    var automataWitnessSearch: Boolean
+
+    /** Derive exact length equalities for words restricted to powers of a common period. */
+    var periodicLengthReasoning: Boolean
 
     fun setYicesOption(option: String, value: String)
 }
@@ -53,6 +63,11 @@ internal class NoodlerYicesConfiguration : KNoodlerYicesSolverConfiguration {
             require(value >= 0) { "maxEncodingConstraints must be nonnegative" }
             field = value
         }
+    override var maxMembershipPruningUnits: Int = DEFAULT_MEMBERSHIP_PRUNING_UNITS
+        set(value) {
+            require(value >= 0) { "maxMembershipPruningUnits must be nonnegative" }
+            field = value
+        }
     override var maxPreprocessingUnits: Int = PreprocessingBudget.DEFAULT_LIMIT
         set(value) {
             require(value >= 0) { "maxPreprocessingUnits must be nonnegative" }
@@ -71,6 +86,8 @@ internal class NoodlerYicesConfiguration : KNoodlerYicesSolverConfiguration {
     override var optionalPreprocessing: Boolean = false
     override var smallFirstSearch: Boolean = false
     override var adaptiveLengthProjection: Boolean = true
+    override var automataWitnessSearch: Boolean = true
+    override var periodicLengthReasoning: Boolean = true
     private val options = linkedMapOf<String, String>()
 
     override fun setYicesOption(option: String, value: String) {
@@ -81,6 +98,7 @@ internal class NoodlerYicesConfiguration : KNoodlerYicesSolverConfiguration {
         "noodler.maxIdleRounds" -> { maxIdleRounds = value }
         "noodler.maxCharacterPositions" -> { maxCharacterPositions = value }
         "noodler.maxEncodingConstraints" -> { maxEncodingConstraints = value }
+        "noodler.maxMembershipPruningUnits" -> { maxMembershipPruningUnits = value }
         "noodler.maxPreprocessingUnits" -> { maxPreprocessingUnits = value }
         "noodler.maxAutomataStates" -> { maxAutomataStates = value }
         "noodler.maxAutomataStorage" -> { maxAutomataStorage = value }
@@ -93,6 +111,8 @@ internal class NoodlerYicesConfiguration : KNoodlerYicesSolverConfiguration {
         "noodler.optionalPreprocessing" -> { optionalPreprocessing = value }
         "noodler.smallFirstSearch" -> { smallFirstSearch = value }
         "noodler.adaptiveLengthProjection" -> { adaptiveLengthProjection = value }
+        "noodler.automataWitnessSearch" -> { automataWitnessSearch = value }
+        "noodler.periodicLengthReasoning" -> { periodicLengthReasoning = value }
         else -> throw KSolverUnsupportedParameterException("Unsupported Boolean parameter: $param")
     }
 
@@ -116,12 +136,15 @@ internal class NoodlerYicesConfiguration : KNoodlerYicesSolverConfiguration {
         it.maxIdleRounds = maxIdleRounds
         it.maxCharacterPositions = maxCharacterPositions
         it.maxEncodingConstraints = maxEncodingConstraints
+        it.maxMembershipPruningUnits = maxMembershipPruningUnits
         it.maxPreprocessingUnits = maxPreprocessingUnits
         it.maxAutomataStates = maxAutomataStates
         it.maxAutomataStorage = maxAutomataStorage
         it.optionalPreprocessing = optionalPreprocessing
         it.smallFirstSearch = smallFirstSearch
         it.adaptiveLengthProjection = adaptiveLengthProjection
+        it.automataWitnessSearch = automataWitnessSearch
+        it.periodicLengthReasoning = periodicLengthReasoning
         it.options.putAll(options)
     }
 

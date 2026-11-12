@@ -86,8 +86,10 @@ internal class StringAbstraction(
 
     private fun isReady(expression: KExpr<*>): Boolean = expression in translated || expression in terms
 
-    fun length(term: List<StringTermPart>): KExpr<KIntSort> {
-        budget.reserve(term.size.toLong())
+    fun length(
+        term: List<StringTermPart>, workBudget: PreprocessingBudget = budget,
+    ): KExpr<KIntSort> {
+        workBudget.reserve(term.size.toLong())
         val summands = term.map { part ->
             when (part) {
                 is StringTermPart.Variable -> lengths.getValue(part.declaration)

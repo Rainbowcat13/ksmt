@@ -7,11 +7,58 @@ import io.ksmt.solver.yices.KYicesSolver
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.seconds
 
 class CandidateRealizationPruningTest {
+    @Test
+    fun increasedPlanningAllowanceAvoidsFullEncodingWithoutIncreasingItsCap() = KContext().use { ctx ->
+        with(ctx) {
+            val points = List(8_000) { 97 }
+            val language = SymbolicDfa.literal(points)
+            val atom = StringAtom.Membership(mkFreshConst("membership", boolSort),
+                listOf(StringTermPart.Literal(points)), language)
+            KYicesSolver(ctx).use { solver ->
+                val encoder = CandidateRealization(ctx, solver, emptyMap(), {}, 10_000, 100_000,
+                    maxMembershipPruningUnits = 100_000)
+                val failure = assertFailsWith<HybridIncomplete> { encoder.assertAtom(atom, positive = true) }
+                assertTrue(failure.reason.contains("character encoding resource limit"))
+                assertEquals(1, encoder.membershipPruningFallbacks)
+            }
+            KYicesSolver(ctx).use { solver ->
+                val encoder = CandidateRealization(ctx, solver, emptyMap(), {}, 10_000, 100_000)
+                encoder.assertAtom(atom, positive = true)
+                assertEquals(KSolverStatus.SAT, solver.check(10.seconds))
+                assertEquals(0, encoder.membershipPruningFallbacks)
+                assertEquals(8_000L, encoder.membershipTransitionsEncoded)
+                assertTrue(encoder.encodedConstraints <= 100_000)
+            }
+        }
+    }
+
+    @Test
+    fun zeroPlanningAllowanceRetainsExactPositiveAndNegativeMembership() = KContext().use { ctx ->
+        with(ctx) {
+            for (point in listOf(97, 98)) {
+                for (positive in listOf(false, true)) {
+                    KYicesSolver(ctx).use { solver ->
+                        val encoder = CandidateRealization(ctx, solver, emptyMap(), {}, 100, 100,
+                            maxMembershipPruningUnits = 0)
+                        val atom = StringAtom.Membership(mkFreshConst("membership", boolSort),
+                            listOf(StringTermPart.Literal(listOf(point))), SymbolicDfa.literal(listOf(97)))
+                        encoder.assertAtom(atom, positive)
+                        assertEquals(if ((point == 97) == positive) KSolverStatus.SAT else KSolverStatus.UNSAT,
+                            solver.check(10.seconds))
+                        assertEquals(1, encoder.membershipPruningFallbacks)
+                        assertEquals(encoder.membershipTransitionsConsidered, encoder.membershipTransitionsEncoded)
+                    }
+                }
+            }
+        }
+    }
+
     @Test
     fun longLiteralMembershipFitsASmallEncodingBudgetForBothPolarities() =
         KContext(simplificationMode = KContext.SimplificationMode.NO_SIMPLIFY).use { ctx ->
@@ -20,7 +67,7 @@ class CandidateRealizationPruningTest {
                 val word = mkStringLiteral("a".repeat(40))
                 for (positive in listOf(false, true)) {
                     KNoodlerYicesSolver(ctx).use { solver ->
-                        solver.configure { maxEncodingConstraints = 300 }
+                        solver.configure { maxEncodingConstraints = 300; automataWitnessSearch = false }
                         val language = mkStringToRegex(word).let { if (positive) it else mkRegexComplement(it) }
                         val membership = mkStringInRegex(x, language)
                         solver.assert(if (positive) membership else mkNot(membership))

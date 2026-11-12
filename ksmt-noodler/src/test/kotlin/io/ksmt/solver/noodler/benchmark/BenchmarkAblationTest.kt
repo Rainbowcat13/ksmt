@@ -22,12 +22,16 @@ class BenchmarkAblationTest {
         assertEquals(defaults.maxAutomataStates, baseline.settings.maxAutomataStates)
         assertEquals(defaults.maxAutomataStorage, baseline.settings.maxAutomataStorage)
         assertEquals(defaults.maxEncodingConstraints, baseline.settings.maxEncodingConstraints)
+        assertEquals(defaults.maxMembershipPruningUnits, baseline.settings.maxMembershipPruningUnits)
+        assertEquals(250_000, baseline.settings.maxMembershipPruningUnits)
         assertEquals(defaults.maxPreprocessingUnits, baseline.settings.maxPreprocessingUnits)
         assertEquals(defaults.maxCharacterPositions, baseline.settings.maxCharacterPositions)
         assertEquals(defaults.maxIdleRounds, baseline.settings.maxIdleRounds)
         assertEquals(defaults.optionalPreprocessing, baseline.settings.optionalPreprocessing)
         assertEquals(defaults.smallFirstSearch, baseline.settings.smallFirstSearch)
         assertEquals(defaults.adaptiveLengthProjection, baseline.settings.adaptiveLengthProjection)
+        assertEquals(defaults.automataWitnessSearch, baseline.settings.automataWitnessSearch)
+        assertEquals(defaults.periodicLengthReasoning, baseline.settings.periodicLengthReasoning)
         val variants = BenchmarkVariant.ids.map { BenchmarkVariant.resolve(mapOf("variant" to it)) }
         assertEquals(14, variants.size)
         assertEquals(14, variants.map { it.settings.sha256 }.distinct().size)
@@ -56,25 +60,54 @@ class BenchmarkAblationTest {
     fun explicitSettingsSurviveParentWorkerRoundTripAndAreAppliedToConfiguration() {
         val variant = BenchmarkVariant.resolve(mapOf("variant" to "combined", "max-automata-storage" to "1234567",
             "max-character-positions" to "42", "optional-preprocessing" to "false",
-            "adaptive-length-projection" to "false"))
+            "adaptive-length-projection" to "false", "automata-witness-search" to "false",
+            "max-membership-pruning-units" to "73123", "periodic-length-reasoning" to "false"))
         val workerVariant = BenchmarkVariant.resolve(parseOptions(variant.workerArguments()))
         assertEquals(variant, workerVariant)
         val configuration = NoodlerYicesConfiguration()
         workerVariant.settings.applyTo(configuration)
         assertEquals(1_234_567, configuration.maxAutomataStorage)
         assertEquals(42, configuration.maxCharacterPositions)
+        assertEquals(73_123, configuration.maxMembershipPruningUnits)
+        assertEquals(73_123, configuration.copy().maxMembershipPruningUnits)
         assertFalse(configuration.optionalPreprocessing)
         assertTrue(configuration.smallFirstSearch)
         assertFalse(configuration.adaptiveLengthProjection)
+        assertFalse(configuration.automataWitnessSearch)
+        assertFalse(configuration.copy().automataWitnessSearch)
+        assertFalse(configuration.periodicLengthReasoning)
+        assertFalse(configuration.copy().periodicLengthReasoning)
         assertEquals(variant, BenchmarkVariant.resolve(emptyMap(), variant.options()))
         assertNotEquals(variant.settings.sha256, BenchmarkHybridSettings().sha256)
         assertNotEquals(BenchmarkHybridSettings().sha256,
             BenchmarkHybridSettings(adaptiveLengthProjection = false).sha256)
+        assertNotEquals(BenchmarkHybridSettings().sha256,
+            BenchmarkHybridSettings(automataWitnessSearch = false).sha256)
+        assertNotEquals(BenchmarkHybridSettings().sha256,
+            BenchmarkHybridSettings(periodicLengthReasoning = false).sha256)
+        assertNotEquals(BenchmarkHybridSettings().sha256,
+            BenchmarkHybridSettings(maxMembershipPruningUnits = 100_000).sha256)
         assertFailsWith<IllegalArgumentException> {
             BenchmarkVariant.resolve(mapOf("max-character-positions" to "-1"))
         }
+        assertFailsWith<IllegalArgumentException> {
+            BenchmarkVariant.resolve(mapOf("max-membership-pruning-units" to "-1"))
+        }
+        assertFailsWith<IllegalArgumentException> {
+            configuration.setIntParameter("noodler.maxMembershipPruningUnits", -1)
+        }
+        configuration.setIntParameter("noodler.maxMembershipPruningUnits", 0)
+        assertEquals(0, configuration.maxMembershipPruningUnits)
+        configuration.setBoolParameter("noodler.periodicLengthReasoning", true)
+        assertTrue(configuration.copy().periodicLengthReasoning)
         assertFailsWith<IllegalStateException> {
             BenchmarkVariant.resolve(mapOf("small-first-search" to "yes"))
+        }
+        assertFailsWith<IllegalStateException> {
+            BenchmarkVariant.resolve(mapOf("automata-witness-search" to "yes"))
+        }
+        assertFailsWith<IllegalStateException> {
+            BenchmarkVariant.resolve(mapOf("periodic-length-reasoning" to "yes"))
         }
     }
 
@@ -116,6 +149,9 @@ class BenchmarkAblationTest {
         assertEquals("400000", metadata["max-automata-states"])
         assertEquals("1000000", metadata["max-automata-storage"])
         assertEquals("true", metadata["adaptive-length-projection"])
+        assertEquals("true", metadata["automata-witness-search"])
+        assertEquals("true", metadata["periodic-length-reasoning"])
+        assertEquals("250000", metadata["max-membership-pruning-units"])
         assertEquals(sha256File(list), metadata["source-list-sha256"])
         assertEquals(Files.readString(list), Files.readString(run.resolve("source-list.txt")))
         runNoodlerBenchmarks(listOf("run", "--resume", run.toString(), "--max-jobs", "0"))
@@ -130,6 +166,18 @@ class BenchmarkAblationTest {
         assertFailsWith<IllegalArgumentException> {
             runNoodlerBenchmarks(listOf("run", "--resume", run.toString(),
                 "--adaptive-length-projection", "false", "--max-jobs", "0"))
+        }
+        assertFailsWith<IllegalArgumentException> {
+            runNoodlerBenchmarks(listOf("run", "--resume", run.toString(),
+                "--automata-witness-search", "false", "--max-jobs", "0"))
+        }
+        assertFailsWith<IllegalArgumentException> {
+            runNoodlerBenchmarks(listOf("run", "--resume", run.toString(),
+                "--periodic-length-reasoning", "false", "--max-jobs", "0"))
+        }
+        assertFailsWith<IllegalArgumentException> {
+            runNoodlerBenchmarks(listOf("run", "--resume", run.toString(),
+                "--max-membership-pruning-units", "100000", "--max-jobs", "0"))
         }
         Files.writeString(list, "second/sample.smt2\n")
         assertFailsWith<IllegalArgumentException> {
@@ -169,7 +217,9 @@ class BenchmarkAblationTest {
         assertEquals("0", limited["max_character_positions"])
         assertEquals("UNKNOWN", limited["outcome"])
         assertTrue(limited["details"].orEmpty().contains("resource limit"))
-        val ordinary = run(listOf("--variant", "combined", "--adaptive-length-projection", "false"))
+        val ordinary = run(listOf("--variant", "combined", "--adaptive-length-projection", "false",
+            "--automata-witness-search", "false", "--periodic-length-reasoning", "false",
+            "--max-membership-pruning-units", "73123"))
         assertEquals("SAT", ordinary["outcome"])
         assertEquals("SAT", ordinary["validation_status"])
         assertEquals("z3", ordinary["validator"])
@@ -177,10 +227,18 @@ class BenchmarkAblationTest {
         assertEquals("true", ordinary["optional_preprocessing"])
         assertEquals("true", ordinary["small_first_search"])
         assertEquals("false", ordinary["adaptive_length_projection"])
+        assertEquals("false", ordinary["automata_witness_search"])
+        assertEquals("false", ordinary["periodic_length_reasoning"])
+        assertEquals("73123", ordinary["max_membership_pruning_units"])
+        assertEquals("0", ordinary["periodic_length_lemmas"])
+        assertEquals("0", ordinary["automata_witness_attempts"])
+        assertEquals("0", ordinary["automata_witness_successes"])
+        assertEquals("0", ordinary["automata_witness_fallbacks"])
         assertEquals("0", ordinary["length_projection_fallbacks"])
         assertTrue(ordinary["length_projection_cache_hits"]!!.toInt() >= 0)
         assertEquals(BenchmarkVariant.resolve(mapOf("variant" to "combined",
-            "adaptive-length-projection" to "false")).settings.sha256,
+            "adaptive-length-projection" to "false", "automata-witness-search" to "false",
+            "periodic-length-reasoning" to "false", "max-membership-pruning-units" to "73123")).settings.sha256,
             ordinary["hybrid_configuration_sha256"])
     }
 

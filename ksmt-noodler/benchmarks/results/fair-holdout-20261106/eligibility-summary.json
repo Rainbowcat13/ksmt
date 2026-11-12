@@ -1,0 +1,496 @@
+{
+  "source": "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidates",
+  "source_list": "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidate-sources.txt",
+  "source_list_sha256": "d087840326f958552c2b94dfcf40e00ced4bd6b15f5753b4e208e6d0d56b287f",
+  "probe_source_sha256": "9aa06f6d811b42789ae60ef1fe4cf9c6f03304d95337db7f2d8995c63b242794",
+  "classpath_file": "C:\\Users\\danii\\smt\\build\\experiments\\periodic-pruning-20261106\\run-20261105T225742Z\\classpath.txt",
+  "classpath_file_sha256": "e78d619418b1c807d35ad81a3b340f50df52740f75d556050ac441771052721b",
+  "samples": 5283,
+  "statuses": {
+    "ELIGIBLE": 4960,
+    "EXCLUDED": 323
+  },
+  "elapsed_seconds": 84.01499999989755,
+  "batch_size": 100,
+  "batch_timeout_seconds": 60.0,
+  "batches": [
+    {
+      "offset": 0,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00000.log"
+    },
+    {
+      "offset": 100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00001.log"
+    },
+    {
+      "offset": 200,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00002.log"
+    },
+    {
+      "offset": 300,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00003.log"
+    },
+    {
+      "offset": 400,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00004.log"
+    },
+    {
+      "offset": 500,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00005.log"
+    },
+    {
+      "offset": 600,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00006.log"
+    },
+    {
+      "offset": 700,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00007.log"
+    },
+    {
+      "offset": 800,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00008.log"
+    },
+    {
+      "offset": 900,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00009.log"
+    },
+    {
+      "offset": 1000,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00010.log"
+    },
+    {
+      "offset": 1100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00011.log"
+    },
+    {
+      "offset": 1200,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00012.log"
+    },
+    {
+      "offset": 1300,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00013.log"
+    },
+    {
+      "offset": 1400,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00014.log"
+    },
+    {
+      "offset": 1500,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00015.log"
+    },
+    {
+      "offset": 1600,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00016.log"
+    },
+    {
+      "offset": 1700,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00017.log"
+    },
+    {
+      "offset": 1800,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00018.log"
+    },
+    {
+      "offset": 1900,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00019.log"
+    },
+    {
+      "offset": 2000,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00020.log"
+    },
+    {
+      "offset": 2100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00021.log"
+    },
+    {
+      "offset": 2200,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00022.log"
+    },
+    {
+      "offset": 2300,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00023.log"
+    },
+    {
+      "offset": 2400,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00024.log"
+    },
+    {
+      "offset": 2500,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00025.log"
+    },
+    {
+      "offset": 2600,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00026.log"
+    },
+    {
+      "offset": 2700,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00027.log"
+    },
+    {
+      "offset": 2800,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00028.log"
+    },
+    {
+      "offset": 2900,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00029.log"
+    },
+    {
+      "offset": 3000,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00030.log"
+    },
+    {
+      "offset": 3100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00031.log"
+    },
+    {
+      "offset": 3200,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00032.log"
+    },
+    {
+      "offset": 3300,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00033.log"
+    },
+    {
+      "offset": 3400,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00034.log"
+    },
+    {
+      "offset": 3500,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00035.log"
+    },
+    {
+      "offset": 3600,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00036.log"
+    },
+    {
+      "offset": 3700,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00037.log"
+    },
+    {
+      "offset": 3800,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00038.log"
+    },
+    {
+      "offset": 3900,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00039.log"
+    },
+    {
+      "offset": 4000,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00040.log"
+    },
+    {
+      "offset": 4100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00041.log"
+    },
+    {
+      "offset": 4200,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00042.log"
+    },
+    {
+      "offset": 4300,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00043.log"
+    },
+    {
+      "offset": 4400,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00044.log"
+    },
+    {
+      "offset": 4500,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00045.log"
+    },
+    {
+      "offset": 4600,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00046.log"
+    },
+    {
+      "offset": 4700,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00047.log"
+    },
+    {
+      "offset": 4800,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00048.log"
+    },
+    {
+      "offset": 4900,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00049.log"
+    },
+    {
+      "offset": 5000,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00050.log"
+    },
+    {
+      "offset": 5100,
+      "samples": 100,
+      "completed": 100,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00051.log"
+    },
+    {
+      "offset": 5200,
+      "samples": 83,
+      "completed": 83,
+      "timeout": false,
+      "exit_code": 0,
+      "malformed_rows": 0,
+      "log": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\batches\\00052.log"
+    }
+  ],
+  "semantics": "KZ3SMTLibParser plus checkNoodlerYicesSupport; no solver.check calls; no input rewrites; the benchmark harness must check eligibility again."
+}

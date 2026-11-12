@@ -3,6 +3,7 @@ package io.ksmt.solver.noodler.core
 import io.ksmt.expr.KAndExpr
 import io.ksmt.expr.KApp
 import io.ksmt.expr.KConst
+import io.ksmt.expr.KDistinctExpr
 import io.ksmt.expr.KEqExpr
 import io.ksmt.expr.KExpr
 import io.ksmt.expr.KNotExpr
@@ -40,7 +41,7 @@ import io.ksmt.sort.KStringSort
 
 internal fun KExpr<KBoolSort>.toNoodlerStatementOrNull(checkpoint: () -> Unit = {}): KExpr<*>? = when (this) {
     is KStringInRegexExpr -> asNoodlerRegexConstraintOrNull()
-    is KNotExpr -> complementedRegexConstraintOrNull()
+    is KNotExpr -> complementedRegexConstraintOrNull() ?: negatedStringEquationOrNull(checkpoint)
 
     is KEqExpr<*> -> {
         if (lhs.isSupportedStringTerm(checkpoint) && rhs.isSupportedStringTerm(checkpoint)) {
@@ -49,6 +50,10 @@ internal fun KExpr<KBoolSort>.toNoodlerStatementOrNull(checkpoint: () -> Unit = 
             null
         }
     }
+
+    is KDistinctExpr<*> -> if (args.firstOrNull()?.sort is KStringSort &&
+        args.all { it.isSupportedStringTerm(checkpoint) }
+    ) this else null
 
     else -> null
 }
@@ -91,6 +96,13 @@ private fun KNotExpr.complementedRegexConstraintOrNull(): KStringInRegexExpr? {
     val supported = regexConstraint.asNoodlerRegexConstraintOrNull() ?: return null
     val complementedRegex = supported.ctx.mkRegexComplementNoSimplify(supported.arg1)
     return supported.ctx.mkStringInRegexNoSimplify(supported.arg0, complementedRegex)
+}
+
+private fun KNotExpr.negatedStringEquationOrNull(checkpoint: () -> Unit): KNotExpr? {
+    val equation = arg as? KEqExpr<*> ?: return null
+    return if (equation.lhs.isSupportedStringTerm(checkpoint) &&
+        equation.rhs.isSupportedStringTerm(checkpoint)
+    ) this else null
 }
 
 private fun KExpr<*>.isSupportedStringTerm(checkpoint: () -> Unit = {}): Boolean {

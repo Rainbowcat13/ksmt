@@ -1,6 +1,6 @@
 # Noodler and Yices
 
-`KNoodlerYicesSolver` combines regular-language reasoning with two independent Yices contexts. One context searches Boolean choices and integer lengths. The other realizes a proposed choice using integer character positions and automaton transitions. Repeated occurrences of a variable share the same characters.
+`KNoodlerYicesSolver` combines regular-language reasoning with arithmetic search in Yices. One Yices context searches Boolean choices and integer lengths. Prepared variable automata first try to supply strings at those lengths, which must satisfy the original assertions jointly. If that attempt fails, a second Yices context realizes the proposed choice using integer characters and automaton transitions. Repeated occurrences of a variable share the same characters.
 
 The existing `KNoodlerSolver(ctx, baseSolver)` wrappers for Z3 and cvc5 remain available. The Yices combination is a separate solver: it does not forward string expressions to Yices and does not fall back to Z3 or cvc5.
 
@@ -20,12 +20,15 @@ KContext().use { ctx ->
                 maxIdleRounds = 2
                 maxCharacterPositions = 100_000
                 maxEncodingConstraints = 1_000_000
+                maxMembershipPruningUnits = 250_000
                 maxPreprocessingUnits = 1_000_000
                 maxAutomataStates = 100_000
                 maxAutomataStorage = 1_000_000
                 optionalPreprocessing = false
                 smallFirstSearch = false
                 adaptiveLengthProjection = true
+                automataWitnessSearch = true
+                periodicLengthReasoning = true
             }
             solver.assert(mkStringInRegex(x, mkRegexStar(mkStringToRegex(mkStringLiteral("ab")))))
             solver.assert(mkEq(mkStringLen(x), mkIntNum(4)))
@@ -58,6 +61,16 @@ Regex compilation batches concatenation, union, and repetition into a shared eps
 - **UNKNOWN** reports unsupported operations, a timeout, interruption, exhausted resources, or the configured number of idle rounds. There is no completeness guarantee for unrestricted word equations with lengths.
 
 Stable regular-language branches reuse their published consequences across different length candidates. A full sweep that changes no language marks that check-local branch as stable; later candidates can skip the same refinement and projection work. `refinementSweeps` and `refinementSkips` expose this behavior. See the [full comparison run](docs/combined-comparison.md) for its regression test, live benchmark status, and final table locations.
+
+`periodicLengthReasoning` (default `true`) handles disequalities whose participating languages consist of powers of one common nonempty word. For example, strings in `a*` or, separately, in `(ab)*` are determined by their lengths. The solver certifies containment in a common power language using exact DFA reachability, then learns that a selected disequality requires unequal lengths. If both sides have identical length expressions, this excludes the entire Boolean branch. The consequence is guarded by the choices that justify the variable languages. A failed or resource-limited proof adds no constraint. `periodicLengthLemmas` records the learned consequences. The optional proof uses at most 100,000 preprocessing units and one eighth of its parent's remaining allowance.
+
+The Z3 and cvc5 `KNoodlerSolver` wrappers use the same `PeriodicWordEquality` certificate. Their preprocessing extracts only unconditional conjuncts and sends certified length disequalities to the native string solver together with the regular-language refinements. It does not extract a disequality from an arbitrary disjunction. Constructor option `periodicLengthReasoning=false` disables this rule for a wrapper; the benchmark's `--periodic-length-reasoning` flag applies to both wrappers and the Yices combination. The Yices combination can additionally use its selected Boolean branch to justify a guarded certificate.
+
+The [new-family holdout](benchmarks/results/fair-holdout-20261106/README.md) compares the shared rule on 1,200 preselected SMT-LIB cases at a 10-second solve deadline. Z3 + Noodler solved 1,131 cases and Yices + Noodler 1,091. Yices solved all 300 Norn cases, but the new rule itself showed no coverage benefit on this sample. The report includes syntax exclusions, frozen selection, paired results and independent model checks.
+
+`maxMembershipPruningUnits` defaults to 250,000, increased from the former fixed 100,000 allowance. Each positional transition analysis also remains limited to one quarter of the remaining preprocessing budget. The total preprocessing and character-encoding limits are unchanged. Set this option to 100,000 and disable `periodicLengthReasoning` to compare with the preceding algorithm.
+
+Before encoding characters in Yices, `automataWitnessSearch` (default `true`) tries to obtain one accepted word of each proposed length from the prepared variable automata. These independently chosen words are only a candidate assignment: they must satisfy the complete original formula before the solver returns SAT. If this optional attempt does not produce a validated model, the solver falls back to exact character realization without learning a constraint from the failed attempt. Path search and validation together use at most 50,000 preprocessing units and one eighth of the remaining preprocessing allowance. The attempt requires an already prepared branch, so the early realization step of `optionalPreprocessing` remains available without automata preparation. `automataWitnessAttempts`, `automataWitnessSuccesses`, and `automataWitnessFallbacks` record the outcome; a success needs no native character-realization query. Set `automataWitnessSearch=false` to compare with character realization alone. The archived `full-defaults` and `fourfold-caps` results predate this path and do not measure its effect.
 
 `maxIdleRounds` defaults to 2. An idle round has no fresh justified constraint or proven refinement. `maxCharacterPositions` defaults to 100,000 and limits the size of one realization query. `maxEncodingConstraints` defaults to 1,000,000 and limits materialized character equalities and automaton transition cases. `maxPreprocessingUnits` defaults to 1,000,000 and budgets syntax expansion, code-point copies, and refinement work. Exceeding a resource limit returns UNKNOWN; it never removes lengths from the search problem or proves UNSAT.
 
@@ -122,6 +135,9 @@ All Gradle options use the `noodlerBenchmark` prefix:
 | `MaxEncodingConstraints`, `MaxPreprocessingUnits`, `MaxCharacterPositions`, `MaxIdleRounds` | Hybrid resource/progress overrides |
 | `OptionalPreprocessing`, `SmallFirstSearch` | Explicit `true`/`false` policy overrides |
 | `AdaptiveLengthProjection` | Graph constraints with bounded exact projection (`true`); exhaustive exact projection (`false`) |
+| `AutomataWitnessSearch` | Try validated fixed-length paths from prepared automata before character encoding (`true`); disable for comparison (`false`) |
+| `PeriodicLengthReasoning` | Learn guarded length disequalities for certified common-word power languages (`true`); disable for comparison (`false`) |
+| `MaxMembershipPruningUnits` | Optional positional transition-analysis allowance; 250000, also limited by remaining preprocessing |
 
 The direct entry point is `io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt`: `run` accepts corresponding kebab-case flags (for example `--solve-ms`), and `summarize --resume PATH` refreshes a report without rerunning solvers.
 

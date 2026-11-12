@@ -1,0 +1,96 @@
+{
+  "source": "https://zenodo.org/records/16740866",
+  "version": "2025.08.04",
+  "downloaded": {
+    "QF_S": {
+      "url": "https://zenodo.org/records/16740866/files/QF_S.tar.zst?download=1",
+      "size": 3945287,
+      "md5": "22c3c79ddd6bbcb2be5a9cae8b3ffdcf",
+      "sha256": "d20047702648b8f245cad6f10b2ba914c8509e223607084ca57aa0c7ab6e9255"
+    },
+    "QF_SLIA": {
+      "url": "https://zenodo.org/records/16740866/files/QF_SLIA.tar.zst?download=1",
+      "size": 31924163,
+      "md5": "faa6d8dd5ba361b0429429e0e19306ea",
+      "sha256": "b853034d5f957c8d67459fc18bc4a08897ff58382fa250ad8ddf34a4302708a5"
+    }
+  },
+  "inventory": {
+    "QF_S": {
+      "non-incremental/QF_S/2019-Jiang": {
+        "count": 1976
+      },
+      "non-incremental/QF_S/2020-sygus-qgen": {
+        "count": 343
+      },
+      "non-incremental/QF_S/20230329-automatark-lu": {
+        "count": 15995
+      },
+      "non-incremental/QF_S/20230329-woorpje-lu": {
+        "count": 609
+      },
+      "non-incremental/QF_S/20240318-omark": {
+        "count": 17
+      },
+      "non-incremental/QF_S/20250403-pcp-string": {
+        "count": 1000
+      },
+      "non-incremental/QF_S/20250403-rna": {
+        "count": 1000
+      },
+      "non-incremental/QF_S/20250410-matching": {
+        "count": 230
+      },
+      "non-incremental/QF_S/20250411-hornstr-equiv": {
+        "count": 552
+      },
+      "non-incremental/QF_S/20250411-negated-predicates": {
+        "count": 450
+      }
+    },
+    "QF_SLIA": {
+      "non-incremental/QF_SLIA/2015-Norn": {
+        "count": 1027
+      },
+      "non-incremental/QF_SLIA/2018-Kepler": {
+        "count": 587
+      },
+      "non-incremental/QF_SLIA/20180523-Reynolds": {
+        "count": 43277
+      },
+      "non-incremental/QF_SLIA/2019-Jiang": {
+        "count": 1128
+      },
+      "non-incremental/QF_SLIA/2019-Leetcode": {
+        "count": 2652
+      },
+      "non-incremental/QF_SLIA/2019-full_str_int": {
+        "count": 16968
+      },
+      "non-incremental/QF_SLIA/20190311-str-small-rw-Noetzli": {
+        "count": 1880
+      },
+      "non-incremental/QF_SLIA/20230327-stringfuzz-lu": {
+        "count": 11618
+      },
+      "non-incremental/QF_SLIA/20230329-denghang": {
+        "count": 999
+      },
+      "non-incremental/QF_SLIA/20230329-woorpje-lu": {
+        "count": 200
+      },
+      "non-incremental/QF_SLIA/20230331-transducer-plus": {
+        "count": 91
+      },
+      "non-incremental/QF_SLIA/20230403-webapp": {
+        "count": 681
+      },
+      "non-incremental/QF_SLIA/20240411-redos_attack_detection": {
+        "count": 3287
+      },
+      "non-incremental/QF_SLIA/20250410-matching": {
+        "count": 16
+      }
+    }
+  }
+}

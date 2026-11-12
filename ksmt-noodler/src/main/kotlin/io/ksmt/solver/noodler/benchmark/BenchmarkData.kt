@@ -30,8 +30,8 @@ internal enum class BenchmarkBackend(val id: String) {
     ): KSolver<out KSolverConfiguration> = when (this) {
         Z3 -> KZ3Solver(ctx)
         CVC5 -> KCvc5Solver(ctx)
-        NOODLER_Z3 -> KNoodlerSolver(ctx, KZ3Solver(ctx))
-        NOODLER_CVC5 -> KNoodlerSolver(ctx, KCvc5Solver(ctx))
+        NOODLER_Z3 -> KNoodlerSolver(ctx, KZ3Solver(ctx), periodicLengthReasoning = hybrid.periodicLengthReasoning)
+        NOODLER_CVC5 -> KNoodlerSolver(ctx, KCvc5Solver(ctx), periodicLengthReasoning = hybrid.periodicLengthReasoning)
         NOODLER_YICES -> KNoodlerYicesSolver(ctx).also { it.configure { hybrid.applyTo(this) } }
     }
 

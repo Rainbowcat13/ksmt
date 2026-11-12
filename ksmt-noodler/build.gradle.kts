@@ -83,9 +83,12 @@ tasks.register<JavaExec>("benchmarkNoodlerSolvers") {
         "SourceList" to "source-list", "Variant" to "variant",
         "MaxAutomataStates" to "max-automata-states", "MaxAutomataStorage" to "max-automata-storage",
         "MaxEncodingConstraints" to "max-encoding-constraints", "MaxPreprocessingUnits" to "max-preprocessing-units",
+        "MaxMembershipPruningUnits" to "max-membership-pruning-units",
         "MaxCharacterPositions" to "max-character-positions", "MaxIdleRounds" to "max-idle-rounds",
         "OptionalPreprocessing" to "optional-preprocessing", "SmallFirstSearch" to "small-first-search",
         "AdaptiveLengthProjection" to "adaptive-length-projection",
+        "AutomataWitnessSearch" to "automata-witness-search",
+        "PeriodicLengthReasoning" to "periodic-length-reasoning",
     ).forEach { (property, option) ->
         project.findProperty("noodlerBenchmark$property")?.toString()?.let { args("--$option", it) }
     }

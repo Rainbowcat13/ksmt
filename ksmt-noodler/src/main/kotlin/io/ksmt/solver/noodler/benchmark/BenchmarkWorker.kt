@@ -127,6 +127,10 @@ internal fun runBenchmarkWorker(options: Map<String, String>) {
                         result["regex_cached_roots"] = stats.regexCachedRoots.toString()
                         result["refinement_sweeps"] = stats.refinementSweeps.toString()
                         result["refinement_skips"] = stats.refinementSkips.toString()
+                        result["automata_witness_attempts"] = stats.automataWitnessAttempts.toString()
+                        result["automata_witness_successes"] = stats.automataWitnessSuccesses.toString()
+                        result["automata_witness_fallbacks"] = stats.automataWitnessFallbacks.toString()
+                        result["periodic_length_lemmas"] = stats.periodicLengthLemmas.toString()
                         result["phase_times_ms"] = stats.phaseTimesMs.entries.sortedBy { it.key }
                             .joinToString(";") { "${it.key}=${it.value}" }
                         result["solver_statistics"] = stats.toString()

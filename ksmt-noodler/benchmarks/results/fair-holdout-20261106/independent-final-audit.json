@@ -1,0 +1,114 @@
+{
+  "audited_utc": "2026-11-06T14:34:03.772267+00:00",
+  "run_status": "complete",
+  "complete_pairs": 1200,
+  "attempts": 2400,
+  "checkpoint_all_csv_fields_agree": 2400,
+  "nanosecond_to_csv_millisecond_rounding_checked": true,
+  "same_settings_and_runtime_audited_by": "comparison.json",
+  "runtime_manifest_sha256": "5e5a7845141803261876448eda5edfbeb45786347ae51d0602f4c8179909abd8",
+  "verified_runtime_files": 286,
+  "scanner_classpath_sha256": "e78d619418b1c807d35ad81a3b340f50df52740f75d556050ac441771052721b",
+  "scanner_runtime_checker_classes_identical": [
+    {
+      "file": "io\\ksmt\\solver\\noodler\\KNoodlerYicesSupportKt.class",
+      "sha256": "455e9fe4d9048655d8748b4e6b6e7c9d92cbbd61fd8b9f4fa9a399e9db3098b0"
+    },
+    {
+      "file": "io\\ksmt\\solver\\noodler\\hybrid\\HybridSyntax.class",
+      "sha256": "29e03a37807b81b056b8f483455d1370691e89f7aa2109fa7a9859f7edaabf5f"
+    }
+  ],
+  "raw_csv_sha256": "ec919ee960f7b9c041142f50225b56241d134ccfbad97fcdf1c1cda8b786fa11",
+  "comparison_json_sha256": "a99854e4ba0bf5eda7111240e1bc7d78c63515cb97aaed41a0ea64d280725403",
+  "original_expected_status_labels": {
+    "UNKNOWN": 1148,
+    "SAT": 52
+  },
+  "unknown_reasons": {
+    "noodler-z3": {},
+    "noodler-yices": {
+      "automata resource limit: Symbolic automaton exceeds 100000 states": 47,
+      "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries": 48,
+      "character encoding resource limit (1000000)": 1,
+      "preprocessing resource limit (1000000)": 2,
+      "character realization resource limit (100000)": 1
+    }
+  },
+  "timeout_reasons": {
+    "noodler-z3": {
+      "assertion/check deadline expired External SOLVE watchdog expired": 41,
+      "External SOLVE watchdog expired": 21,
+      "Reported assertion/check duration exceeded the common solve deadline": 7
+    },
+    "noodler-yices": {
+      "Reported assertion/check duration exceeded the common solve deadline": 2,
+      "External SOLVE watchdog expired": 8
+    }
+  },
+  "yices_periodic_lemmas_by_family": {
+    "QF_S/2019-Jiang": {
+      "attempts_reporting": 145,
+      "positive_tasks": 3,
+      "lemmas": 522,
+      "positive_outcomes": {
+        "TIMEOUT": 1,
+        "UNKNOWN": 2
+      },
+      "positive_samples": [
+        {
+          "sample": "QF_S/2019-Jiang/slog/slog_stranger_2158_sink.smt2",
+          "outcome": "TIMEOUT",
+          "lemmas": 519
+        },
+        {
+          "sample": "QF_S/2019-Jiang/slog/slog_stranger_2970_sink.smt2",
+          "outcome": "UNKNOWN",
+          "lemmas": 1
+        },
+        {
+          "sample": "QF_S/2019-Jiang/slog/slog_stranger_4234_sink.smt2",
+          "outcome": "UNKNOWN",
+          "lemmas": 2
+        }
+      ]
+    },
+    "QF_S/2020-sygus-qgen": {
+      "attempts_reporting": 300,
+      "positive_tasks": 0,
+      "lemmas": 0,
+      "positive_outcomes": {},
+      "positive_samples": []
+    },
+    "QF_S/20230329-woorpje-lu": {
+      "attempts_reporting": 150,
+      "positive_tasks": 0,
+      "lemmas": 0,
+      "positive_outcomes": {},
+      "positive_samples": []
+    },
+    "QF_SLIA/2015-Norn": {
+      "attempts_reporting": 300,
+      "positive_tasks": 0,
+      "lemmas": 0,
+      "positive_outcomes": {},
+      "positive_samples": []
+    },
+    "QF_SLIA/2019-Jiang": {
+      "attempts_reporting": 147,
+      "positive_tasks": 0,
+      "lemmas": 0,
+      "positive_outcomes": {},
+      "positive_samples": []
+    },
+    "QF_SLIA/20230329-woorpje-lu": {
+      "attempts_reporting": 150,
+      "positive_tasks": 0,
+      "lemmas": 0,
+      "positive_outcomes": {},
+      "positive_samples": []
+    }
+  },
+  "periodic_limitation": "Positive Yices periodic-lemma counters occur only on 3 unsuccessful tasks; this run provides no observed successful application or controlled rule ablation. Z3 wrapper does not expose a periodic-specific counter, and 8 externally terminated Yices attempts lack statistics.",
+  "correctness_limitations": "SAT witnesses independently checked; UNSAT lacks proof certificates. 1148 source labels are UNKNOWN. Shared parser and fixed backend order; one trial. Exact-file novelty does not guarantee semantic independence."
+}

@@ -132,6 +132,144 @@
       "source": "build/reports/noodler-resource-caps-4x/fourfold-20261027T222944Z/runs/20261027T223146Z-9babb927/exclusions.csv",
       "sha256": "cb5d6227a89b49b1fa0152864ba486cf1b26fd972d1d87908b0850c5bea22d00",
       "bytes": 46
+    },
+    {
+      "path": "fair-holdout-20261106/raw.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/raw.csv",
+      "sha256": "ec919ee960f7b9c041142f50225b56241d134ccfbad97fcdf1c1cda8b786fa11",
+      "bytes": 3597650
+    },
+    {
+      "path": "fair-holdout-20261106/manifest.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/manifest.csv",
+      "sha256": "9b780cd21eaa23ee0a1567ffabee8ab959234bd5dfd907bcd892cac3f654efd3",
+      "bytes": 282249
+    },
+    {
+      "path": "fair-holdout-20261106/metadata.properties",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/metadata.properties",
+      "sha256": "b01eeb0e9a06ca04492f9483b46e010b7a7db3bda550f3f8657296245dc5379b",
+      "bytes": 8636
+    },
+    {
+      "path": "fair-holdout-20261106/summary.md",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/summary.md",
+      "sha256": "158c807edea1249afebec4c694a0b50b95662f1867cd936bdbdf23cbe29a7e78",
+      "bytes": 3946
+    },
+    {
+      "path": "fair-holdout-20261106/exclusions.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/exclusions.csv",
+      "sha256": "cb5d6227a89b49b1fa0152864ba486cf1b26fd972d1d87908b0850c5bea22d00",
+      "bytes": 46
+    },
+    {
+      "path": "fair-holdout-20261106/source-list.txt",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/benchmark/20261106T134247Z-f2ee353d/source-list.txt",
+      "sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+      "bytes": 62857
+    },
+    {
+      "path": "fair-holdout-20261106/comparison.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/analysis/comparison.json",
+      "sha256": "a99854e4ba0bf5eda7111240e1bc7d78c63515cb97aaed41a0ea64d280725403",
+      "bytes": 161644
+    },
+    {
+      "path": "fair-holdout-20261106/comparison.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/analysis/comparison.csv",
+      "sha256": "3d03dd5750daa74b8bf594d2e33b84a918232a31490cce7eed56798d647a87e7",
+      "bytes": 279
+    },
+    {
+      "path": "fair-holdout-20261106/families.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/analysis/families.csv",
+      "sha256": "3139edb27f22b9c571be66a4711549aa3f86f1b5d07ef00ad2686cef3265b22e",
+      "bytes": 1350
+    },
+    {
+      "path": "fair-holdout-20261106/paired.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/analysis/paired.csv",
+      "sha256": "3922775d292a11de39a9af1b7b62218f6970a1c7336234386339c22da6b28d65",
+      "bytes": 343179
+    },
+    {
+      "path": "fair-holdout-20261106/independent-final-audit.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/analysis/independent-final-audit.json",
+      "sha256": "831fd36d501a80481cf4af0c1e27b3f0a8796eee6e8cd60a4106dbd4c3272c34",
+      "bytes": 4261
+    },
+    {
+      "path": "fair-holdout-20261106/experiment.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/experiment.json",
+      "sha256": "912ea2b279f249984671bba9251cba2e28ce3260d68eae0934b24419e593410a",
+      "bytes": 4629
+    },
+    {
+      "path": "fair-holdout-20261106/runtime-manifest.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/runtime-manifest.json",
+      "sha256": "5e5a7845141803261876448eda5edfbeb45786347ae51d0602f4c8179909abd8",
+      "bytes": 55792
+    },
+    {
+      "path": "fair-holdout-20261106/independent-runtime-audit.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/independent-runtime-audit.json",
+      "sha256": "6d0fe27fc8adbf6bec484d4021be49a7b84e9c6da336ea3ea98df965acea6e55",
+      "bytes": 452
+    },
+    {
+      "path": "fair-holdout-20261106/selection-plan.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/selection-plan.json",
+      "sha256": "11ae68d9061dc4b6b2ac2be2cf55212a921068af95aab6cd1b01a1a3a42232ee",
+      "bytes": 871
+    },
+    {
+      "path": "fair-holdout-20261106/holdout-sources.txt",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/holdout-sources.txt",
+      "sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+      "bytes": 62857
+    },
+    {
+      "path": "fair-holdout-20261106/holdout-selection.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/holdout-selection.csv",
+      "sha256": "1eece556f5dde57bec0f937a98504f94061abc83cf5d196816f912378ae38522",
+      "bytes": 169787
+    },
+    {
+      "path": "fair-holdout-20261106/candidate-audit.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/candidate-audit.json",
+      "sha256": "ec8dae25174e68f41dd565ff6dbe76bfa803d459897682159632c0182fdd7da8",
+      "bytes": 1419
+    },
+    {
+      "path": "fair-holdout-20261106/candidate-manifest.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/candidate-manifest.csv",
+      "sha256": "b2881820b06d18f43f5c3387154917a6a30b3b4fcf461e0d41babab5da65509e",
+      "bytes": 1532044
+    },
+    {
+      "path": "fair-holdout-20261106/inventory.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/inventory.json",
+      "sha256": "22aba9447e86ad474148ed1b1a31503419e27ff408aa17d40a0317bdcf750eb1",
+      "bytes": 2779
+    },
+    {
+      "path": "fair-holdout-20261106/independent-selection-audit.json",
+      "source": "build/experiments/fair-holdout-20261106/independent-selection-audit.json",
+      "sha256": "2dd8fa07bca9c0346dd7db6f62c3cbdc1d225e1e7190dbd24a8a8326dd508b73",
+      "bytes": 3765
+    },
+    {
+      "path": "fair-holdout-20261106/eligibility.csv",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/eligibility/eligibility.csv",
+      "sha256": "71f390f25467f8510d60638f7daca31abb21eabce141f84d6f9ae4ae39f261b8",
+      "bytes": 781146
+    },
+    {
+      "path": "fair-holdout-20261106/eligibility-summary.json",
+      "source": "build/experiments/fair-holdout-20261106/run-20261106T134245Z/eligibility/summary.json",
+      "sha256": "78009667795a731d0c12ccf9c3944ec3ed5efeb6433b549c1cb674c487de52d0",
+      "bytes": 15595
     }
   ]
 }

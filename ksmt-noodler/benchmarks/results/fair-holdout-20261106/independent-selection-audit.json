@@ -1,0 +1,81 @@
+{
+  "plan": {
+    "frozen_before_solver_runs": true,
+    "release": "SMT-LIB 2025.08.04, Zenodo 16740866",
+    "candidate_files": 5283,
+    "target_samples": 1200,
+    "seed": "fair-holdout-20261106-v1",
+    "selection": "Within each named family, choose syntax-eligible files with smallest SHA256(seed + newline + relative_path). No solver outcomes are used.",
+    "quotas": {
+      "QF_S/2019-Jiang": 150,
+      "QF_S/2020-sygus-qgen": 300,
+      "QF_S/20230329-woorpje-lu": 150,
+      "QF_SLIA/2015-Norn": 300,
+      "QF_SLIA/2019-Jiang": 150,
+      "QF_SLIA/20230329-woorpje-lu": 150
+    },
+    "budgets": {
+      "solve_ms": 10000,
+      "startup_parse_ms": 30000,
+      "validation_ms": 10000
+    },
+    "backends": [
+      "noodler-z3",
+      "noodler-yices"
+    ],
+    "repeats": 1,
+    "algorithm_policy": "Both combinations use the same PeriodicWordEquality certificate. No algorithm changes are planned after held-out solver results are observed."
+  },
+  "selected_samples": 1200,
+  "eligible_candidates": 4960,
+  "excluded_candidates": 323,
+  "old_exact_content_overlaps": 0,
+  "all_candidate_hashes_checked": true,
+  "old_corpus_files_checked": 3248,
+  "selection_sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+  "families": {
+    "QF_S/2019-Jiang": 150,
+    "QF_S/2020-sygus-qgen": 300,
+    "QF_S/20230329-woorpje-lu": 150,
+    "QF_SLIA/2015-Norn": 300,
+    "QF_SLIA/2019-Jiang": 150,
+    "QF_SLIA/20230329-woorpje-lu": 150
+  },
+  "origins": {
+    "Jiang/SLOG/SLENT": 300,
+    "SyGuS-qgen": 300,
+    "Woorpje": 300,
+    "Norn": 300
+  },
+  "logic_counts": {
+    "QF_S": 600,
+    "QF_SLIA": 600
+  },
+  "archives": {
+    "QF_S": {
+      "url": "https://zenodo.org/records/16740866/files/QF_S.tar.zst?download=1",
+      "size": 3945287,
+      "md5": "22c3c79ddd6bbcb2be5a9cae8b3ffdcf",
+      "sha256": "d20047702648b8f245cad6f10b2ba914c8509e223607084ca57aa0c7ab6e9255"
+    },
+    "QF_SLIA": {
+      "url": "https://zenodo.org/records/16740866/files/QF_SLIA.tar.zst?download=1",
+      "size": 31924163,
+      "md5": "faa6d8dd5ba361b0429429e0e19306ea",
+      "sha256": "b853034d5f957c8d67459fc18bc4a08897ff58382fa250ad8ddf34a4302708a5"
+    }
+  },
+  "release": "https://zenodo.org/records/16740866",
+  "release_version": "2025.08.04",
+  "provenance_sha256": {
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\selection-plan.json": "11ae68d9061dc4b6b2ac2be2cf55212a921068af95aab6cd1b01a1a3a42232ee",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\holdout-sources.txt": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\holdout-selection.csv": "1eece556f5dde57bec0f937a98504f94061abc83cf5d196816f912378ae38522",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\eligibility.csv": "71f390f25467f8510d60638f7daca31abb21eabce141f84d6f9ae4ae39f261b8",
+    "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\summary.json": "78009667795a731d0c12ccf9c3944ec3ed5efeb6433b549c1cb674c487de52d0",
+    "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\inventory.json": "22aba9447e86ad474148ed1b1a31503419e27ff408aa17d40a0317bdcf750eb1",
+    "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidate-audit.json": "ec8dae25174e68f41dd565ff6dbe76bfa803d459897682159632c0182fdd7da8",
+    "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidate-manifest.csv": "b2881820b06d18f43f5c3387154917a6a30b3b4fcf461e0d41babab5da65509e"
+  },
+  "exact_novelty_note": "Exact file SHA256 novelty, not semantic independence."
+}

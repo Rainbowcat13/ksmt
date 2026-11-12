@@ -1,0 +1,4264 @@
+{
+  "run": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\benchmark\\20261106T134247Z-f2ee353d",
+  "complete_pairs": 1200,
+  "attempts": 2400,
+  "settings": {
+    "solve-ms": "10000",
+    "startup-parse-ms": "30000",
+    "validation-ms": "10000",
+    "repeats": "1",
+    "variant": "baseline",
+    "max-automata-states": "100000",
+    "max-automata-storage": "1000000",
+    "max-encoding-constraints": "1000000",
+    "max-membership-pruning-units": "250000",
+    "max-preprocessing-units": "1000000",
+    "max-character-positions": "100000",
+    "max-idle-rounds": "2",
+    "optional-preprocessing": "false",
+    "small-first-search": "false",
+    "adaptive-length-projection": "true",
+    "automata-witness-search": "true",
+    "periodic-length-reasoning": "true"
+  },
+  "metadata": {
+    "repeats": "1",
+    "hybrid-configuration-sha256": "fc7b4b54c24fd063d0447a99bd498060561e3ba751a306541820adb6227eb2bb",
+    "periodic-length-reasoning": "true",
+    "prefix": "",
+    "solve-ms": "10000",
+    "automata-witness-search": "true",
+    "source": "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidates",
+    "available_processors": "16",
+    "git_commit": "983a89e057273c6ffb7bf193a1783de1f7376a1d",
+    "source-list-count": "1200",
+    "limit": "2147483647",
+    "variant": "baseline",
+    "max-encoding-constraints": "1000000",
+    "max-character-positions": "100000",
+    "max-automata-states": "100000",
+    "created_utc": "2026-11-06T13:42:47.870154100Z",
+    "startup-parse-ms": "30000",
+    "source-list": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\holdout-sources.txt",
+    "offset": "0",
+    "manifest_sha256": "9b780cd21eaa23ee0a1567ffabee8ab959234bd5dfd907bcd892cac3f654efd3",
+    "small-first-search": "false",
+    "configuration_sha256": "6563b52e0677e23c7e34de06d9af02658494710deb906223c7dae4f9754944fc",
+    "runtime_sha256": "c6e27a674bb1391f1f8fb8e9cc7c4cdd92e57b262b52c52c206686c30b543627",
+    "adaptive-length-projection": "true",
+    "java_version": "17.0.8",
+    "source-list-sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+    "git_diff_sha256": "6df75d0d988e0d94e48b159b5efbc2e46488c13d3b124c42430fca448394dbd9",
+    "git_worktree_status": "M docs/custom-expressions.md\n M examples/build.gradle.kts\n M examples/src/main/kotlin/CustomExpressions.kt\n M ksmt-core/src/main/kotlin/io/ksmt/utils/library/NativeLibraryLoaderUtils.kt\n M ksmt-noodler/README.md\n M ksmt-noodler/build.gradle.kts\n M ksmt-noodler/docs/overview-and-review.md\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/KNoodlerSolver.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolver.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolverConfiguration.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkData.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkReport.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkVariant.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkWorker.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/core/Noodler.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/core/NoodlerStatements.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/hybrid/CandidateRealization.kt\n M ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/hybrid/StringAbstraction.kt\n M ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerYicesExchangeTest.kt\n M ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSearchPolicyTest.kt\n M ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerYicesStableRefinementTest.kt\n M ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkAblationTest.kt\n M ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/hybrid/CandidateRealizationPruningTest.kt\n?? examples/gradle/\n?? examples/gradlew\n?? examples/gradlew.bat\n?? examples/src/test/\n?? hs_err_pid15384.log\n?? hs_err_pid41448.log\n?? ksmt-bitwuzla/ksmt-bitwuzla-core/out/\n?? ksmt-bitwuzla/ksmt-bitwuzla-native/out/\n?? ksmt-core/out/\n?? ksmt-core/src/test/kotlin/io/ksmt/utils/\n?? ksmt-cvc5/ksmt-cvc5-core/out/\n?? ksmt-cvc5/ksmt-cvc5-native/out/\n?? ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/hybrid/AutomataWitnessSearch.kt\n?? ksmt-noodler/src/main/kotlin/io/ksmt/solver/noodler/hybrid/PeriodicWordEquality.kt\n?? ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerPeriodicLengthTest.kt\n?? ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerYicesAutomataWitnessTest.kt\n?? ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/KNoodlerYicesPeriodicLengthTest.kt\n?? ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/hybrid/AutomataWitnessSearchTest.kt\n?? ksmt-noodler/src/test/kotlin/io/ksmt/solver/noodler/hybrid/PeriodicWordEqualityTest.kt\n?? ksmt-runner/out/\n?? ksmt-symfpu/out/\n?? ksmt-test/left.png\n?? ksmt-test/out/\n?? ksmt-test/right.png\n?? ksmt-yices/ksmt-yices-core/out/\n?? ksmt-yices/ksmt-yices-native/out/\n?? ksmt-z3/ksmt-z3-core/out/\n?? ksmt-z3/ksmt-z3-native/out/\n?? left.png\n?? right.png\n?? tmp_check_0025.smt2\n?? tmp_check_0027.smt2\n?? tmp_check_0063.smt2\n?? tmp_check_0105.smt2\n?? tmp_check_0205.smt2\n?? tmp_check_0236.smt2\n?? tmp_check_0236_after_fix.smt2\n?? tmp_check_0236_ttt.smt2\n?? tmp_check_0245.smt2\n?? tmp_noodler_0025.txt\n?? tmp_noodler_0027.txt\n?? tmp_noodler_0030.txt\n?? tmp_noodler_0059.txt\n?? tmp_noodler_0063.txt\n?? tmp_noodler_0105.txt\n?? tmp_noodler_0205.txt\n?? tmp_noodler_0236.txt\n?? tmp_noodler_0236_after_fix.txt\n?? tmp_noodler_0245.txt\n?? tmp_noodler_0321.txt\n?? tmp_noodler_debug_err.txt\n?? tmp_noodler_debug_out.txt\n?? tmp_noodler_test_summary.txt\n?? tmp_validate_0063__v003__Lehmann-Rabin_sat_non_incre_equiv_init_0_2.smt2\n?? tmp_validate_0105__v003__coffee-can_sat_non_incre_equiv_init_0_2.smt2\n?? tmp_validate_0107__v003__coffee-can_sat_non_incre_equiv_init_0_4.smt2\n?? tmp_validate_0236__v003__one_token_pass_lstar_non_incre_equiv_bad_0_0.smt2\n?? tmp_validate_0241__v003__one_token_pass_sat_non_incre_equiv_bad_0_1.smt2\n?? tmp_validate_0245__v003__one_token_pass_sat_non_incre_equiv_bad_0_5.smt2\n?? tmp_validate_0321__v003__water-jug_lstar_non_incre_equiv_bad_0_0.smt2\n?? tmp_validate_0324__v003__water-jug_sat_non_incre_equiv_bad_0_0.smt2\n?? tmp_validate_0325__v003__water-jug_sat_non_incre_equiv_bad_0_1.smt2\n?? tmp_validate_0326__v003__water-jug_sat_non_incre_equiv_bad_0_2.smt2",
+    "solvers": "noodler-z3,noodler-yices",
+    "schema": "1",
+    "optional-preprocessing": "false",
+    "validation-ms": "10000",
+    "max-membership-pruning-units": "250000",
+    "timing_policy": "fresh sequential process; startup+parse30s default; assertions+check shared solve deadline; independent validation separate",
+    "architecture": "amd64",
+    "os": "Windows 11",
+    "classpath": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\00-main;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\01-ksmt-z3-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\02-ksmt-z3-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\03-com.microsoft.z3.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\04-ksmt-cvc5-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\05-ksmt-cvc5-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\06-cvc5-1.2.0.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\07-ksmt-yices-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\08-ksmt-yices-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\09-com.sri.yices.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\10-ksmt-core-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\11-ksmt-z3-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\12-ksmt-cvc5-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\13-ksmt-yices-native-0.5.29.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\14-kotlin-stdlib-jdk8-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\15-fastutil-core-8.5.11.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\16-kotlin-stdlib-jdk7-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\17-kotlinx-collections-immutable-jvm-0.3.5.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\18-kotlin-stdlib-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\19-kotlin-stdlib-common-1.7.20.jar;C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime\\20-annotations-13.0.jar",
+    "os_version": "10.0",
+    "max-preprocessing-units": "1000000",
+    "max-automata-storage": "1000000",
+    "max-idle-rounds": "2",
+    "java_vendor": "Oracle Corporation"
+  },
+  "selection_audit": {
+    "plan": {
+      "frozen_before_solver_runs": true,
+      "release": "SMT-LIB 2025.08.04, Zenodo 16740866",
+      "candidate_files": 5283,
+      "target_samples": 1200,
+      "seed": "fair-holdout-20261106-v1",
+      "selection": "Within each named family, choose syntax-eligible files with smallest SHA256(seed + newline + relative_path). No solver outcomes are used.",
+      "quotas": {
+        "QF_S/2019-Jiang": 150,
+        "QF_S/2020-sygus-qgen": 300,
+        "QF_S/20230329-woorpje-lu": 150,
+        "QF_SLIA/2015-Norn": 300,
+        "QF_SLIA/2019-Jiang": 150,
+        "QF_SLIA/20230329-woorpje-lu": 150
+      },
+      "budgets": {
+        "solve_ms": 10000,
+        "startup_parse_ms": 30000,
+        "validation_ms": 10000
+      },
+      "backends": [
+        "noodler-z3",
+        "noodler-yices"
+      ],
+      "repeats": 1,
+      "algorithm_policy": "Both combinations use the same PeriodicWordEquality certificate. No algorithm changes are planned after held-out solver results are observed."
+    },
+    "selected_samples": 1200,
+    "eligible_candidates": 4960,
+    "excluded_candidates": 323,
+    "old_exact_content_overlaps": 0,
+    "all_candidate_hashes_checked": true,
+    "old_corpus_files_checked": 3248,
+    "selection_sha256": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+    "families": {
+      "QF_S/2019-Jiang": 150,
+      "QF_S/2020-sygus-qgen": 300,
+      "QF_S/20230329-woorpje-lu": 150,
+      "QF_SLIA/2015-Norn": 300,
+      "QF_SLIA/2019-Jiang": 150,
+      "QF_SLIA/20230329-woorpje-lu": 150
+    },
+    "origins": {
+      "Jiang/SLOG/SLENT": 300,
+      "SyGuS-qgen": 300,
+      "Woorpje": 300,
+      "Norn": 300
+    },
+    "logic_counts": {
+      "QF_S": 600,
+      "QF_SLIA": 600
+    },
+    "archives": {
+      "QF_S": {
+        "url": "https://zenodo.org/records/16740866/files/QF_S.tar.zst?download=1",
+        "size": 3945287,
+        "md5": "22c3c79ddd6bbcb2be5a9cae8b3ffdcf",
+        "sha256": "d20047702648b8f245cad6f10b2ba914c8509e223607084ca57aa0c7ab6e9255"
+      },
+      "QF_SLIA": {
+        "url": "https://zenodo.org/records/16740866/files/QF_SLIA.tar.zst?download=1",
+        "size": 31924163,
+        "md5": "faa6d8dd5ba361b0429429e0e19306ea",
+        "sha256": "b853034d5f957c8d67459fc18bc4a08897ff58382fa250ad8ddf34a4302708a5"
+      }
+    },
+    "release": "https://zenodo.org/records/16740866",
+    "release_version": "2025.08.04",
+    "provenance_sha256": {
+      "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\selection-plan.json": "11ae68d9061dc4b6b2ac2be2cf55212a921068af95aab6cd1b01a1a3a42232ee",
+      "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\holdout-sources.txt": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+      "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\holdout-selection.csv": "1eece556f5dde57bec0f937a98504f94061abc83cf5d196816f912378ae38522",
+      "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\eligibility.csv": "71f390f25467f8510d60638f7daca31abb21eabce141f84d6f9ae4ae39f261b8",
+      "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\eligibility\\summary.json": "78009667795a731d0c12ccf9c3944ec3ed5efeb6433b549c1cb674c487de52d0",
+      "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\inventory.json": "22aba9447e86ad474148ed1b1a31503419e27ff408aa17d40a0317bdcf750eb1",
+      "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidate-audit.json": "ec8dae25174e68f41dd565ff6dbe76bfa803d459897682159632c0182fdd7da8",
+      "C:\\Users\\danii\\smt\\build\\benchmarks\\new-families-20261106\\candidate-manifest.csv": "b2881820b06d18f43f5c3387154917a6a30b3b4fcf461e0d41babab5da65509e"
+    },
+    "exact_novelty_note": "Exact file SHA256 novelty, not semantic independence.",
+    "selection_precedes_run_creation": true
+  },
+  "runtime_audit": {
+    "manifest": "C:\\Users\\danii\\smt\\build\\experiments\\fair-holdout-20261106\\run-20261106T134245Z\\runtime-manifest.json",
+    "manifest_sha256": "5e5a7845141803261876448eda5edfbeb45786347ae51d0602f4c8179909abd8",
+    "verified_files": 286,
+    "external_jars": 20
+  },
+  "run_artifact_sha256": {
+    "raw.csv": "ec919ee960f7b9c041142f50225b56241d134ccfbad97fcdf1c1cda8b786fa11",
+    "manifest.csv": "9b780cd21eaa23ee0a1567ffabee8ab959234bd5dfd907bcd892cac3f654efd3",
+    "metadata.properties": "b01eeb0e9a06ca04492f9483b46e010b7a7db3bda550f3f8657296245dc5379b",
+    "source-list.txt": "9c41e3c0be9729910bf2fbbcde63904ecad80f717ec051ce73fbff3fb0c59ed4",
+    "exclusions.csv": "cb5d6227a89b49b1fa0152864ba486cf1b26fd972d1d87908b0850c5bea22d00"
+  },
+  "backends": {
+    "noodler-z3": {
+      "attempts": 1200,
+      "outcomes": {
+        "UNSAT": 274,
+        "SAT": 857,
+        "TIMEOUT": 69
+      },
+      "solved": 1131,
+      "validated_sat": 857,
+      "sat_validators": {
+        "cvc5": 857
+      },
+      "invalid_witnesses": 0,
+      "unverified_witnesses": 0,
+      "raw_sat_without_verified_witness": 0,
+      "known_status_conflicts": [],
+      "attempt_wall_seconds": 1833.668684,
+      "solve_ms_sum": 948519.344,
+      "failure_phases": {
+        "SOLVE": 69
+      },
+      "unknown_failure_phases": {},
+      "timeout_phases": {
+        "SOLVE": 69
+      },
+      "failure_reasons": [
+        {
+          "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+          "count": 41
+        },
+        {
+          "reason": "External SOLVE watchdog expired",
+          "count": 21
+        },
+        {
+          "reason": "Reported assertion/check duration exceeded the common solve deadline",
+          "count": 7
+        }
+      ],
+      "counters": {
+        "native_realization_checks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "realization_checks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "periodic_length_lemmas": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "membership_pruning_fallbacks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "membership_transitions_considered": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "membership_transitions_encoded": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "automata_witness_attempts": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "automata_witness_successes": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "automata_witness_fallbacks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "generated_constraints": {
+          "sum_reported": 1233,
+          "attempts_reporting": 1179,
+          "attempts_missing": 21
+        },
+        "fresh_constraints": {
+          "sum_reported": 1233,
+          "attempts_reporting": 1179,
+          "attempts_missing": 21
+        }
+      },
+      "sat_counters": {
+        "native_realization_checks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "realization_checks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "periodic_length_lemmas": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "membership_pruning_fallbacks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "membership_transitions_considered": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "membership_transitions_encoded": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "automata_witness_attempts": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "automata_witness_successes": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "automata_witness_fallbacks": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 857
+        },
+        "generated_constraints": {
+          "sum_reported": 827,
+          "attempts_reporting": 857,
+          "attempts_missing": 0
+        },
+        "fresh_constraints": {
+          "sum_reported": 827,
+          "attempts_reporting": 857,
+          "attempts_missing": 0
+        }
+      },
+      "preprocessing_skipped": 425
+    },
+    "noodler-yices": {
+      "attempts": 1200,
+      "outcomes": {
+        "UNSAT": 309,
+        "SAT": 782,
+        "TIMEOUT": 10,
+        "UNKNOWN": 99
+      },
+      "solved": 1091,
+      "validated_sat": 782,
+      "sat_validators": {
+        "z3": 782
+      },
+      "invalid_witnesses": 0,
+      "unverified_witnesses": 0,
+      "raw_sat_without_verified_witness": 0,
+      "known_status_conflicts": [],
+      "attempt_wall_seconds": 1094.527442,
+      "solve_ms_sum": 418578.73099999997,
+      "failure_phases": {
+        "propagate-lengths": 1,
+        "refinement": 96,
+        "SOLVE": 8,
+        "encoding": 3,
+        "candidate-lengths": 1
+      },
+      "unknown_failure_phases": {
+        "refinement": 95,
+        "encoding": 3,
+        "candidate-lengths": 1
+      },
+      "timeout_phases": {
+        "SOLVE": 10
+      },
+      "failure_reasons": [
+        {
+          "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+          "count": 48
+        },
+        {
+          "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+          "count": 47
+        },
+        {
+          "reason": "External SOLVE watchdog expired",
+          "count": 8
+        },
+        {
+          "reason": "Reported assertion/check duration exceeded the common solve deadline",
+          "count": 2
+        },
+        {
+          "reason": "preprocessing resource limit (1000000)",
+          "count": 2
+        },
+        {
+          "reason": "character encoding resource limit (1000000)",
+          "count": 1
+        },
+        {
+          "reason": "character realization resource limit (100000)",
+          "count": 1
+        }
+      ],
+      "counters": {
+        "native_realization_checks": {
+          "sum_reported": 258,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "realization_checks": {
+          "sum_reported": 905,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "periodic_length_lemmas": {
+          "sum_reported": 522,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "membership_pruning_fallbacks": {
+          "sum_reported": 1,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "membership_transitions_considered": {
+          "sum_reported": 1241173,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "membership_transitions_encoded": {
+          "sum_reported": 533330,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "automata_witness_attempts": {
+          "sum_reported": 905,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "automata_witness_successes": {
+          "sum_reported": 644,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "automata_witness_fallbacks": {
+          "sum_reported": 261,
+          "attempts_reporting": 1192,
+          "attempts_missing": 8
+        },
+        "generated_constraints": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        },
+        "fresh_constraints": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 1200
+        }
+      },
+      "sat_counters": {
+        "native_realization_checks": {
+          "sum_reported": 192,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "realization_checks": {
+          "sum_reported": 836,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "periodic_length_lemmas": {
+          "sum_reported": 0,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "membership_pruning_fallbacks": {
+          "sum_reported": 0,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "membership_transitions_considered": {
+          "sum_reported": 893353,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "membership_transitions_encoded": {
+          "sum_reported": 487118,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "automata_witness_attempts": {
+          "sum_reported": 836,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "automata_witness_successes": {
+          "sum_reported": 644,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "automata_witness_fallbacks": {
+          "sum_reported": 192,
+          "attempts_reporting": 782,
+          "attempts_missing": 0
+        },
+        "generated_constraints": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 782
+        },
+        "fresh_constraints": {
+          "sum_reported": 0,
+          "attempts_reporting": 0,
+          "attempts_missing": 782
+        }
+      },
+      "preprocessing_skipped": 0
+    }
+  },
+  "comparison": {
+    "pairs": 1200,
+    "intersection_solved": 1042,
+    "union_solved": 1180,
+    "only_noodler_z3": [
+      "QF_S/2019-Jiang/slog/slog_stranger_2158_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_2970_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3000_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3022_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3408_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3723_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3778_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_4234_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_5319_sink.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_135.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_162.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_42.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_53.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_55.smt2",
+      "QF_S/20230329-woorpje-lu/track02/02_track_5.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_110.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_157.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_167.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_187.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_195.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_196.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_199.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_72.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_74.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_14.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_142.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_15.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_151.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_161.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_165.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_174.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_175.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_177.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_179.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_198.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_26.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_28.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_29.smt2",
+      "QF_S/20230329-woorpje-lu/track04/04_track_63.smt2",
+      "QF_SLIA/2019-Jiang/slent/slent_kaluza_120_sink.smt2",
+      "QF_SLIA/2019-Jiang/slent/slent_kaluza_262_sink.smt2",
+      "QF_SLIA/2019-Jiang/slent/slent_kaluza_74_sink.smt2",
+      "QF_SLIA/2019-Jiang/slent/slent_kaluza_82_sink.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_101.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_102.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_106.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_107.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_11.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_114.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_115.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_116.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_12.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_120.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_122.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_123.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_137.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_14.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_154.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_159.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_16.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_160.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_162.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_167.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_172.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_173.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_174.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_183.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_185.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_188.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_190.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_196.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_197.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_23.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_24.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_25.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_27.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_30.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_4.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_41.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_48.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_5.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_55.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_56.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_61.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_71.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_80.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_81.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_83.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_89.smt2"
+    ],
+    "only_noodler_yices": [
+      "QF_S/2019-Jiang/slog/slog_stranger_3095_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3353_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_3606_sink.smt2",
+      "QF_S/2019-Jiang/slog/slog_stranger_4367_sink.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_131.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_148.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_166.smt2",
+      "QF_S/20230329-woorpje-lu/track01/01_track_96.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_130.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_168.smt2",
+      "QF_S/20230329-woorpje-lu/track03/03_track_183.smt2",
+      "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-18.smt2",
+      "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-21.smt2",
+      "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-26.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1045.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1074.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1077.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1089.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1094.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1152.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-120.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-144.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-15.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-289.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-305.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-389.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-485.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-498.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-54.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-603.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-61.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-612.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-615.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-631.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-700.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-705.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-749.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-840.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-982.smt2",
+      "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-992.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-133.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-145.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-28.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-70.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-76.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-79.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-89.smt2",
+      "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-90.smt2",
+      "QF_SLIA/20230329-woorpje-lu/track05/05_track_75.smt2"
+    ],
+    "decisive_conflicts": [],
+    "raw_status_conflicts": [],
+    "outcome_pairs": {
+      "UNSAT / UNSAT": 272,
+      "SAT / SAT": 770,
+      "SAT / TIMEOUT": 8,
+      "SAT / UNKNOWN": 79,
+      "TIMEOUT / SAT": 12,
+      "TIMEOUT / TIMEOUT": 2,
+      "TIMEOUT / UNKNOWN": 18,
+      "UNSAT / UNKNOWN": 2,
+      "TIMEOUT / UNSAT": 37
+    },
+    "matched_solved_timings": {
+      "pairs": 1042,
+      "median_yices_minus_z3_ms": 110.20150000000001,
+      "z3_ms_sum": 184873.153,
+      "yices_ms_sum": 220234.318,
+      "yices_faster": 102,
+      "z3_faster": 940,
+      "ties": 0,
+      "interpretation": "One fixed-order trial."
+    }
+  },
+  "families": {
+    "QF_S/2019-Jiang": {
+      "samples": 150,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 150,
+          "outcomes": {
+            "UNSAT": 96,
+            "SAT": 46,
+            "TIMEOUT": 8
+          },
+          "solved": 142,
+          "validated_sat": 46,
+          "sat_validators": {
+            "cvc5": 46
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 191.474559,
+          "solve_ms_sum": 98431.982,
+          "failure_phases": {
+            "SOLVE": 8
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 8
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 8
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "generated_constraints": {
+              "sum_reported": 333,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 333,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 46
+            },
+            "generated_constraints": {
+              "sum_reported": 155,
+              "attempts_reporting": 46,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 155,
+              "attempts_reporting": 46,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 6
+        },
+        "noodler-yices": {
+          "attempts": 150,
+          "outcomes": {
+            "UNSAT": 96,
+            "SAT": 41,
+            "TIMEOUT": 6,
+            "UNKNOWN": 7
+          },
+          "solved": 137,
+          "validated_sat": 41,
+          "sat_validators": {
+            "z3": 41
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 184.83479200000002,
+          "solve_ms_sum": 101415.057,
+          "failure_phases": {
+            "propagate-lengths": 1,
+            "refinement": 6,
+            "SOLVE": 5,
+            "encoding": 1
+          },
+          "unknown_failure_phases": {
+            "refinement": 6,
+            "encoding": 1
+          },
+          "timeout_phases": {
+            "SOLVE": 6
+          },
+          "failure_reasons": [
+            {
+              "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+              "count": 5
+            },
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 5
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 1
+            },
+            {
+              "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+              "count": 1
+            },
+            {
+              "reason": "character encoding resource limit (1000000)",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 22,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "realization_checks": {
+              "sum_reported": 44,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 522,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 1,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 617970,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 289113,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 44,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "automata_witness_successes": {
+              "sum_reported": 21,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 23,
+              "attempts_reporting": 145,
+              "attempts_missing": 5
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 20,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 41,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 270150,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 242901,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 41,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 21,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 20,
+              "attempts_reporting": 41,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 41
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 41
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 150,
+        "intersection_solved": 133,
+        "union_solved": 146,
+        "only_noodler_z3": [
+          "QF_S/2019-Jiang/slog/slog_stranger_2158_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_2970_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3000_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3022_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3408_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3723_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3778_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_4234_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_5319_sink.smt2"
+        ],
+        "only_noodler_yices": [
+          "QF_S/2019-Jiang/slog/slog_stranger_3095_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3353_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3606_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_4367_sink.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "UNSAT / UNSAT": 96,
+          "SAT / SAT": 37,
+          "SAT / TIMEOUT": 5,
+          "SAT / UNKNOWN": 4,
+          "TIMEOUT / SAT": 4,
+          "TIMEOUT / TIMEOUT": 1,
+          "TIMEOUT / UNKNOWN": 3
+        },
+        "matched_solved_timings": {
+          "pairs": 133,
+          "median_yices_minus_z3_ms": 107.72800000000001,
+          "z3_ms_sum": 7624.355,
+          "yices_ms_sum": 29226.748,
+          "yices_faster": 1,
+          "z3_faster": 132,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "QF_S/2020-sygus-qgen": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 300
+          },
+          "solved": 300,
+          "validated_sat": 300,
+          "sat_validators": {
+            "cvc5": 300
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 264.63543599999997,
+          "solve_ms_sum": 15805.651,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 293
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 300
+          },
+          "solved": 300,
+          "validated_sat": 300,
+          "sat_validators": {
+            "z3": 300
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 226.19135500000002,
+          "solve_ms_sum": 51351.907,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 300,
+        "union_solved": 300,
+        "only_noodler_z3": [],
+        "only_noodler_yices": [],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 300
+        },
+        "matched_solved_timings": {
+          "pairs": 300,
+          "median_yices_minus_z3_ms": 123.45100000000001,
+          "z3_ms_sum": 15805.651,
+          "yices_ms_sum": 51351.907,
+          "yices_faster": 1,
+          "z3_faster": 299,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "QF_S/20230329-woorpje-lu": {
+      "samples": 150,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 94,
+            "TIMEOUT": 23,
+            "UNSAT": 33
+          },
+          "solved": 127,
+          "validated_sat": 94,
+          "sat_validators": {
+            "cvc5": 94
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 400.393045,
+          "solve_ms_sum": 290353.29,
+          "failure_phases": {
+            "SOLVE": 23
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 23
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 10
+            },
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 7
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 6
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "generated_constraints": {
+              "sum_reported": 158,
+              "attempts_reporting": 143,
+              "attempts_missing": 7
+            },
+            "fresh_constraints": {
+              "sum_reported": 158,
+              "attempts_reporting": 143,
+              "attempts_missing": 7
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 94
+            },
+            "generated_constraints": {
+              "sum_reported": 101,
+              "attempts_reporting": 94,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 101,
+              "attempts_reporting": 94,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 36
+        },
+        "noodler-yices": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 72,
+            "UNKNOWN": 45,
+            "TIMEOUT": 1,
+            "UNSAT": 32
+          },
+          "solved": 104,
+          "validated_sat": 72,
+          "sat_validators": {
+            "z3": 72
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 166.972793,
+          "solve_ms_sum": 82174.297,
+          "failure_phases": {
+            "refinement": 45,
+            "encoding": 1
+          },
+          "unknown_failure_phases": {
+            "refinement": 44,
+            "encoding": 1
+          },
+          "timeout_phases": {
+            "SOLVE": 1
+          },
+          "failure_reasons": [
+            {
+              "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+              "count": 25
+            },
+            {
+              "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+              "count": 19
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 1
+            },
+            {
+              "reason": "preprocessing resource limit (1000000)",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 77,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 128,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 128,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 50,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 78,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 54,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 104,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 104,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 50,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 54,
+              "attempts_reporting": 72,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 72
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 72
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 150,
+        "intersection_solved": 97,
+        "union_solved": 134,
+        "only_noodler_z3": [
+          "QF_S/20230329-woorpje-lu/track01/01_track_135.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_162.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_42.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_53.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_55.smt2",
+          "QF_S/20230329-woorpje-lu/track02/02_track_5.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_110.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_157.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_167.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_187.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_195.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_196.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_199.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_72.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_74.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_14.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_142.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_15.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_151.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_161.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_165.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_174.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_175.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_177.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_179.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_198.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_26.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_28.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_29.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_63.smt2"
+        ],
+        "only_noodler_yices": [
+          "QF_S/20230329-woorpje-lu/track01/01_track_131.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_148.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_166.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_96.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_130.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_168.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_183.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 65,
+          "TIMEOUT / SAT": 7,
+          "SAT / UNKNOWN": 29,
+          "TIMEOUT / UNKNOWN": 15,
+          "TIMEOUT / TIMEOUT": 1,
+          "UNSAT / UNSAT": 32,
+          "UNSAT / UNKNOWN": 1
+        },
+        "matched_solved_timings": {
+          "pairs": 97,
+          "median_yices_minus_z3_ms": 88.43299999999999,
+          "z3_ms_sum": 31477.309,
+          "yices_ms_sum": 22154.184,
+          "yices_faster": 21,
+          "z3_faster": 76,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "QF_SLIA/2015-Norn": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "TIMEOUT": 37,
+            "UNSAT": 61,
+            "SAT": 202
+          },
+          "solved": 263,
+          "validated_sat": 202,
+          "sat_validators": {
+            "cvc5": 202
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 609.76036,
+          "solve_ms_sum": 398591.776,
+          "failure_phases": {
+            "SOLVE": 37
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 37
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 23
+            },
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 14
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 3,
+              "attempts_reporting": 286,
+              "attempts_missing": 14
+            },
+            "fresh_constraints": {
+              "sum_reported": 3,
+              "attempts_reporting": 286,
+              "attempts_missing": 14
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 23
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "UNSAT": 98,
+            "SAT": 202
+          },
+          "solved": 300,
+          "validated_sat": 202,
+          "sat_validators": {
+            "z3": 202
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 225.609428,
+          "solve_ms_sum": 61845.73,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 27,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 220,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 484546,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 215264,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 220,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 193,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 27,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 27,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 220,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 484546,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 215264,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 220,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 193,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 27,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 263,
+        "union_solved": 300,
+        "only_noodler_z3": [],
+        "only_noodler_yices": [
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-18.smt2",
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-21.smt2",
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-26.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1045.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1074.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1077.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1089.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1094.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1152.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-120.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-144.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-15.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-289.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-305.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-389.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-485.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-498.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-54.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-603.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-61.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-612.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-615.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-631.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-700.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-705.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-749.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-840.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-982.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-992.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-133.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-145.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-28.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-70.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-76.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-79.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-89.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-90.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "TIMEOUT / UNSAT": 37,
+          "UNSAT / UNSAT": 61,
+          "SAT / SAT": 202
+        },
+        "matched_solved_timings": {
+          "pairs": 263,
+          "median_yices_minus_z3_ms": 120.84700000000001,
+          "z3_ms_sum": 28591.775999999998,
+          "yices_ms_sum": 56299.142,
+          "yices_faster": 5,
+          "z3_faster": 258,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "QF_SLIA/2019-Jiang": {
+      "samples": 150,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 86,
+            "UNSAT": 64
+          },
+          "solved": 150,
+          "validated_sat": 86,
+          "sat_validators": {
+            "cvc5": 86
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 134.115678,
+          "solve_ms_sum": 30268.619,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "generated_constraints": {
+              "sum_reported": 508,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 508,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 86
+            },
+            "generated_constraints": {
+              "sum_reported": 357,
+              "attempts_reporting": 86,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 357,
+              "attempts_reporting": 86,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 13
+        },
+        "noodler-yices": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 82,
+            "UNSAT": 64,
+            "TIMEOUT": 3,
+            "UNKNOWN": 1
+          },
+          "solved": 146,
+          "validated_sat": 82,
+          "sat_validators": {
+            "z3": 82
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 152.62410999999997,
+          "solve_ms_sum": 69107.76,
+          "failure_phases": {
+            "SOLVE": 3,
+            "candidate-lengths": 1
+          },
+          "unknown_failure_phases": {
+            "candidate-lengths": 1
+          },
+          "timeout_phases": {
+            "SOLVE": 3
+          },
+          "failure_reasons": [
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 3
+            },
+            {
+              "reason": "character realization resource limit (100000)",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 40,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "realization_checks": {
+              "sum_reported": 82,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 138657,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 28953,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 82,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "automata_witness_successes": {
+              "sum_reported": 42,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 40,
+              "attempts_reporting": 147,
+              "attempts_missing": 3
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 40,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 82,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 138657,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 28953,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 82,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 42,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 40,
+              "attempts_reporting": 82,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 82
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 82
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 150,
+        "intersection_solved": 146,
+        "union_solved": 150,
+        "only_noodler_z3": [
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_120_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_262_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_74_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_82_sink.smt2"
+        ],
+        "only_noodler_yices": [],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 82,
+          "UNSAT / UNSAT": 64,
+          "SAT / TIMEOUT": 3,
+          "SAT / UNKNOWN": 1
+        },
+        "matched_solved_timings": {
+          "pairs": 146,
+          "median_yices_minus_z3_ms": 56.232,
+          "z3_ms_sum": 27889.143,
+          "yices_ms_sum": 38892.304000000004,
+          "yices_faster": 31,
+          "z3_faster": 115,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "QF_SLIA/20230329-woorpje-lu": {
+      "samples": 150,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 129,
+            "UNSAT": 20,
+            "TIMEOUT": 1
+          },
+          "solved": 149,
+          "validated_sat": 129,
+          "sat_validators": {
+            "cvc5": 129
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 233.289606,
+          "solve_ms_sum": 115068.026,
+          "failure_phases": {
+            "SOLVE": 1
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 1
+          },
+          "failure_reasons": [
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "generated_constraints": {
+              "sum_reported": 231,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 231,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 129
+            },
+            "generated_constraints": {
+              "sum_reported": 214,
+              "attempts_reporting": 129,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 214,
+              "attempts_reporting": 129,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 54
+        },
+        "noodler-yices": {
+          "attempts": 150,
+          "outcomes": {
+            "SAT": 85,
+            "UNKNOWN": 46,
+            "UNSAT": 19
+          },
+          "solved": 104,
+          "validated_sat": 85,
+          "sat_validators": {
+            "z3": 85
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 138.294964,
+          "solve_ms_sum": 52683.98,
+          "failure_phases": {
+            "refinement": 45,
+            "encoding": 1
+          },
+          "unknown_failure_phases": {
+            "refinement": 45,
+            "encoding": 1
+          },
+          "timeout_phases": {},
+          "failure_reasons": [
+            {
+              "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+              "count": 28
+            },
+            {
+              "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+              "count": 17
+            },
+            {
+              "reason": "preprocessing resource limit (1000000)",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 92,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 131,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 131,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 38,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 93,
+              "attempts_reporting": 150,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 150
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 51,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 89,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 89,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 38,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 51,
+              "attempts_reporting": 85,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 85
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 85
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 150,
+        "intersection_solved": 103,
+        "union_solved": 150,
+        "only_noodler_z3": [
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_101.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_102.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_106.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_107.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_11.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_114.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_115.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_116.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_12.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_120.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_122.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_123.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_137.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_14.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_154.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_159.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_16.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_160.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_162.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_167.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_172.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_173.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_174.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_183.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_185.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_188.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_190.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_196.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_197.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_23.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_24.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_25.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_27.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_30.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_4.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_41.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_48.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_5.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_55.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_56.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_61.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_71.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_80.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_81.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_83.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_89.smt2"
+        ],
+        "only_noodler_yices": [
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_75.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 84,
+          "SAT / UNKNOWN": 45,
+          "UNSAT / UNSAT": 19,
+          "UNSAT / UNKNOWN": 1,
+          "TIMEOUT / SAT": 1
+        },
+        "matched_solved_timings": {
+          "pairs": 103,
+          "median_yices_minus_z3_ms": 44.212999999999994,
+          "z3_ms_sum": 73484.919,
+          "yices_ms_sum": 22310.033,
+          "yices_faster": 43,
+          "z3_faster": 60,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    }
+  },
+  "origins": {
+    "Jiang/SLOG/SLENT": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "UNSAT": 160,
+            "SAT": 132,
+            "TIMEOUT": 8
+          },
+          "solved": 292,
+          "validated_sat": 132,
+          "sat_validators": {
+            "cvc5": 132
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 325.590237,
+          "solve_ms_sum": 128700.601,
+          "failure_phases": {
+            "SOLVE": 8
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 8
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 8
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 841,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 841,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 132
+            },
+            "generated_constraints": {
+              "sum_reported": 512,
+              "attempts_reporting": 132,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 512,
+              "attempts_reporting": 132,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 19
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "UNSAT": 160,
+            "SAT": 123,
+            "TIMEOUT": 9,
+            "UNKNOWN": 8
+          },
+          "solved": 283,
+          "validated_sat": 123,
+          "sat_validators": {
+            "z3": 123
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 337.458902,
+          "solve_ms_sum": 170522.817,
+          "failure_phases": {
+            "propagate-lengths": 1,
+            "refinement": 6,
+            "SOLVE": 8,
+            "encoding": 1,
+            "candidate-lengths": 1
+          },
+          "unknown_failure_phases": {
+            "refinement": 6,
+            "encoding": 1,
+            "candidate-lengths": 1
+          },
+          "timeout_phases": {
+            "SOLVE": 9
+          },
+          "failure_reasons": [
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 8
+            },
+            {
+              "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+              "count": 5
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 1
+            },
+            {
+              "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+              "count": 1
+            },
+            {
+              "reason": "character encoding resource limit (1000000)",
+              "count": 1
+            },
+            {
+              "reason": "character realization resource limit (100000)",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 62,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "realization_checks": {
+              "sum_reported": 126,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 522,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 1,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 756627,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 318066,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 126,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "automata_witness_successes": {
+              "sum_reported": 63,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 63,
+              "attempts_reporting": 292,
+              "attempts_missing": 8
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 60,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 123,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 408807,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 271854,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 123,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 63,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 60,
+              "attempts_reporting": 123,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 123
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 123
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 279,
+        "union_solved": 296,
+        "only_noodler_z3": [
+          "QF_S/2019-Jiang/slog/slog_stranger_2158_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_2970_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3000_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3022_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3408_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3723_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3778_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_4234_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_5319_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_120_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_262_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_74_sink.smt2",
+          "QF_SLIA/2019-Jiang/slent/slent_kaluza_82_sink.smt2"
+        ],
+        "only_noodler_yices": [
+          "QF_S/2019-Jiang/slog/slog_stranger_3095_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3353_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_3606_sink.smt2",
+          "QF_S/2019-Jiang/slog/slog_stranger_4367_sink.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "UNSAT / UNSAT": 160,
+          "SAT / SAT": 119,
+          "SAT / TIMEOUT": 8,
+          "SAT / UNKNOWN": 5,
+          "TIMEOUT / SAT": 4,
+          "TIMEOUT / TIMEOUT": 1,
+          "TIMEOUT / UNKNOWN": 3
+        },
+        "matched_solved_timings": {
+          "pairs": 279,
+          "median_yices_minus_z3_ms": 97.19200000000001,
+          "z3_ms_sum": 35513.498,
+          "yices_ms_sum": 68119.052,
+          "yices_faster": 32,
+          "z3_faster": 247,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "Norn": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "TIMEOUT": 37,
+            "UNSAT": 61,
+            "SAT": 202
+          },
+          "solved": 263,
+          "validated_sat": 202,
+          "sat_validators": {
+            "cvc5": 202
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 609.76036,
+          "solve_ms_sum": 398591.776,
+          "failure_phases": {
+            "SOLVE": 37
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 37
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 23
+            },
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 14
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 3,
+              "attempts_reporting": 286,
+              "attempts_missing": 14
+            },
+            "fresh_constraints": {
+              "sum_reported": 3,
+              "attempts_reporting": 286,
+              "attempts_missing": 14
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 23
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "UNSAT": 98,
+            "SAT": 202
+          },
+          "solved": 300,
+          "validated_sat": 202,
+          "sat_validators": {
+            "z3": 202
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 225.609428,
+          "solve_ms_sum": 61845.73,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 27,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 220,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 484546,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 215264,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 220,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 193,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 27,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 27,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 220,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 484546,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 215264,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 220,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 193,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 27,
+              "attempts_reporting": 202,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 202
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 263,
+        "union_solved": 300,
+        "only_noodler_z3": [],
+        "only_noodler_yices": [
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-18.smt2",
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-21.smt2",
+          "QF_SLIA/2015-Norn/ChunkSplit/norn-benchmark-26.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1045.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1074.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1077.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1089.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1094.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-1152.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-120.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-144.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-15.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-289.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-305.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-389.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-485.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-498.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-54.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-603.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-61.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-612.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-615.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-631.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-700.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-705.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-749.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-840.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-982.smt2",
+          "QF_SLIA/2015-Norn/HammingDistance/norn-benchmark-992.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-133.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-145.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-28.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-70.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-76.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-79.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-89.smt2",
+          "QF_SLIA/2015-Norn/StringReplace/norn-benchmark-90.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "TIMEOUT / UNSAT": 37,
+          "UNSAT / UNSAT": 61,
+          "SAT / SAT": 202
+        },
+        "matched_solved_timings": {
+          "pairs": 263,
+          "median_yices_minus_z3_ms": 120.84700000000001,
+          "z3_ms_sum": 28591.775999999998,
+          "yices_ms_sum": 56299.142,
+          "yices_faster": 5,
+          "z3_faster": 258,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "SyGuS-qgen": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 300
+          },
+          "solved": 300,
+          "validated_sat": 300,
+          "sat_validators": {
+            "cvc5": 300
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 264.63543599999997,
+          "solve_ms_sum": 15805.651,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 293
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 300
+          },
+          "solved": 300,
+          "validated_sat": 300,
+          "sat_validators": {
+            "z3": 300
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 226.19135500000002,
+          "solve_ms_sum": 51351.907,
+          "failure_phases": {},
+          "unknown_failure_phases": {},
+          "timeout_phases": {},
+          "failure_reasons": [],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 300,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 300,
+        "union_solved": 300,
+        "only_noodler_z3": [],
+        "only_noodler_yices": [],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 300
+        },
+        "matched_solved_timings": {
+          "pairs": 300,
+          "median_yices_minus_z3_ms": 123.45100000000001,
+          "z3_ms_sum": 15805.651,
+          "yices_ms_sum": 51351.907,
+          "yices_faster": 1,
+          "z3_faster": 299,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    },
+    "Woorpje": {
+      "samples": 300,
+      "backends": {
+        "noodler-z3": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 223,
+            "TIMEOUT": 24,
+            "UNSAT": 53
+          },
+          "solved": 276,
+          "validated_sat": 223,
+          "sat_validators": {
+            "cvc5": 223
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 633.682651,
+          "solve_ms_sum": 405421.316,
+          "failure_phases": {
+            "SOLVE": 24
+          },
+          "unknown_failure_phases": {},
+          "timeout_phases": {
+            "SOLVE": 24
+          },
+          "failure_reasons": [
+            {
+              "reason": "assertion/check deadline expired External SOLVE watchdog expired",
+              "count": 10
+            },
+            {
+              "reason": "External SOLVE watchdog expired",
+              "count": 7
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 7
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "generated_constraints": {
+              "sum_reported": 389,
+              "attempts_reporting": 293,
+              "attempts_missing": 7
+            },
+            "fresh_constraints": {
+              "sum_reported": 389,
+              "attempts_reporting": 293,
+              "attempts_missing": 7
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "realization_checks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "automata_witness_successes": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 223
+            },
+            "generated_constraints": {
+              "sum_reported": 315,
+              "attempts_reporting": 223,
+              "attempts_missing": 0
+            },
+            "fresh_constraints": {
+              "sum_reported": 315,
+              "attempts_reporting": 223,
+              "attempts_missing": 0
+            }
+          },
+          "preprocessing_skipped": 90
+        },
+        "noodler-yices": {
+          "attempts": 300,
+          "outcomes": {
+            "SAT": 157,
+            "UNKNOWN": 91,
+            "TIMEOUT": 1,
+            "UNSAT": 51
+          },
+          "solved": 208,
+          "validated_sat": 157,
+          "sat_validators": {
+            "z3": 157
+          },
+          "invalid_witnesses": 0,
+          "unverified_witnesses": 0,
+          "raw_sat_without_verified_witness": 0,
+          "known_status_conflicts": [],
+          "attempt_wall_seconds": 305.26775699999996,
+          "solve_ms_sum": 134858.277,
+          "failure_phases": {
+            "refinement": 90,
+            "encoding": 2
+          },
+          "unknown_failure_phases": {
+            "refinement": 89,
+            "encoding": 2
+          },
+          "timeout_phases": {
+            "SOLVE": 1
+          },
+          "failure_reasons": [
+            {
+              "reason": "automata resource limit: Symbolic automata storage/work exceeds 1000000 entries",
+              "count": 47
+            },
+            {
+              "reason": "automata resource limit: Symbolic automaton exceeds 100000 states",
+              "count": 42
+            },
+            {
+              "reason": "preprocessing resource limit (1000000)",
+              "count": 2
+            },
+            {
+              "reason": "Reported assertion/check duration exceeded the common solve deadline",
+              "count": 1
+            }
+          ],
+          "counters": {
+            "native_realization_checks": {
+              "sum_reported": 169,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 259,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 259,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 88,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 171,
+              "attempts_reporting": 300,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 300
+            }
+          },
+          "sat_counters": {
+            "native_realization_checks": {
+              "sum_reported": 105,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "realization_checks": {
+              "sum_reported": 193,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "periodic_length_lemmas": {
+              "sum_reported": 0,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "membership_pruning_fallbacks": {
+              "sum_reported": 0,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "membership_transitions_considered": {
+              "sum_reported": 0,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "membership_transitions_encoded": {
+              "sum_reported": 0,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "automata_witness_attempts": {
+              "sum_reported": 193,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "automata_witness_successes": {
+              "sum_reported": 88,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "automata_witness_fallbacks": {
+              "sum_reported": 105,
+              "attempts_reporting": 157,
+              "attempts_missing": 0
+            },
+            "generated_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 157
+            },
+            "fresh_constraints": {
+              "sum_reported": 0,
+              "attempts_reporting": 0,
+              "attempts_missing": 157
+            }
+          },
+          "preprocessing_skipped": 0
+        }
+      },
+      "comparison": {
+        "pairs": 300,
+        "intersection_solved": 200,
+        "union_solved": 284,
+        "only_noodler_z3": [
+          "QF_S/20230329-woorpje-lu/track01/01_track_135.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_162.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_42.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_53.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_55.smt2",
+          "QF_S/20230329-woorpje-lu/track02/02_track_5.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_110.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_157.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_167.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_187.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_195.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_196.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_199.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_72.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_74.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_14.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_142.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_15.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_151.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_161.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_165.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_174.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_175.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_177.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_179.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_198.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_26.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_28.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_29.smt2",
+          "QF_S/20230329-woorpje-lu/track04/04_track_63.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_101.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_102.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_106.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_107.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_11.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_114.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_115.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_116.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_12.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_120.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_122.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_123.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_137.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_14.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_154.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_159.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_16.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_160.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_162.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_167.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_172.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_173.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_174.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_183.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_185.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_188.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_190.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_196.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_197.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_23.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_24.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_25.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_27.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_30.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_4.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_41.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_48.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_5.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_55.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_56.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_61.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_71.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_80.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_81.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_83.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_89.smt2"
+        ],
+        "only_noodler_yices": [
+          "QF_S/20230329-woorpje-lu/track01/01_track_131.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_148.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_166.smt2",
+          "QF_S/20230329-woorpje-lu/track01/01_track_96.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_130.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_168.smt2",
+          "QF_S/20230329-woorpje-lu/track03/03_track_183.smt2",
+          "QF_SLIA/20230329-woorpje-lu/track05/05_track_75.smt2"
+        ],
+        "decisive_conflicts": [],
+        "raw_status_conflicts": [],
+        "outcome_pairs": {
+          "SAT / SAT": 149,
+          "TIMEOUT / SAT": 8,
+          "SAT / UNKNOWN": 74,
+          "TIMEOUT / UNKNOWN": 15,
+          "TIMEOUT / TIMEOUT": 1,
+          "UNSAT / UNSAT": 51,
+          "UNSAT / UNKNOWN": 2
+        },
+        "matched_solved_timings": {
+          "pairs": 200,
+          "median_yices_minus_z3_ms": 71.9335,
+          "z3_ms_sum": 104962.228,
+          "yices_ms_sum": 44464.217,
+          "yices_faster": 64,
+          "z3_faster": 136,
+          "ties": 0,
+          "interpretation": "One fixed-order trial."
+        }
+      }
+    }
+  },
+  "interpretation": "Both backends use the same frozen runtime and common-power certificate. This is one fixed-order trial on a syntax-eligible, hash-selected held-out sample, not a statistical speed ranking or a claim about unsupported operations. SAT witnesses are checked by the other native backend; UNSAT claims have no proof certificates. Parsing is shared. Missing counters are unavailable, not zero; wrapper counters need not expose every periodic lemma. Exact hash novelty does not imply semantic independence of instances.",
+  "performance_interpretation_blocked_by_correctness_findings": false
+}

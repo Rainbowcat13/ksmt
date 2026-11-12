@@ -67,7 +67,7 @@ class KNoodlerYicesSearchPolicyTest {
             val stats = requireNotNull(solver.lastCheckStatistics)
             assertEquals(listOf(0, 1, 2, 4), stats.boundedSearchBounds)
             assertEquals("3", stats.lastCandidateTotalLength)
-            assertEquals(1, stats.nativeRealizationChecks)
+            assertEquals(1, stats.nativeRealizationChecks + stats.automataWitnessSuccesses)
         }
     }
 
