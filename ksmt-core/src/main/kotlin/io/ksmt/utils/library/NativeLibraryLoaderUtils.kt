@@ -3,7 +3,12 @@ package io.ksmt.utils.library
 import java.io.IOException
 import java.io.InputStream
 import java.net.URL
+import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
+import java.util.Comparator
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
 import kotlin.io.path.Path
 import kotlin.io.path.createDirectories
 import kotlin.io.path.createFile
@@ -65,15 +70,27 @@ object NativeLibraryLoaderUtils {
                 val osLibName = loader.osSpecificLibraryName(libName)
                 val resourceName = loader.resolveLibraryResourceName(libName)
                 val libraryResource = findResource(resourceName)
+                val localLibrary = if (libraryResource == null) {
+                    findLocalLibrary(loader, osLibName, this)
+                } else {
+                    null
+                }
+
+                if (localLibrary != null) {
+                    System.load(localLibrary.toAbsolutePath().toString())
+                    continue
+                }
+
+                val resolvedResource = libraryResource
                     ?: error("Can't find native library $osLibName")
 
-                val libUri = libraryResource.toURI()
+                val libUri = resolvedResource.toURI()
                 if (libUri.scheme == "file") {
                     System.load(libUri.path)
                     continue
                 }
 
-                val libFile = libraryResource.openStream().use { libResourceStream ->
+                val libFile = resolvedResource.openStream().use { libResourceStream ->
                     unpackLibrary(
                         name = osLibName,
                         libraryData = libResourceStream
@@ -95,6 +112,99 @@ object NativeLibraryLoaderUtils {
         NativeLibraryLoaderUtils::class.java.classLoader
             .getResource(resourceName)
 
+    private fun findLocalLibrary(loader: NativeLibraryLoader, libraryName: String, unpacker: TmpDirLibraryUnpacker): Path? {
+        val codeSource = loader.javaClass.protectionDomain?.codeSource?.location ?: return null
+        val location = Paths.get(codeSource.toURI())
+        val searchRoot = if (Files.isRegularFile(location)) {
+            location.parent
+        } else {
+            location
+        } ?: return null
+
+        return findLibraryInDirectories(searchRoot, libraryName)
+            ?: extractLibraryFromArchives(searchRoot, libraryName, unpacker)
+    }
+
+    private fun findLibraryInDirectory(directory: Path, libraryName: String): Path? =
+        Files.walk(directory).use { paths ->
+            paths
+                .filter { Files.isRegularFile(it) && it.fileName.toString() == libraryName }
+                .min(Comparator.comparingInt(Path::getNameCount))
+                .orElse(null)
+        }
+
+    internal fun findLibraryInDirectories(searchRoot: Path, libraryName: String): Path? =
+        localDistributionRoots(searchRoot).firstNotNullOfOrNull { distDir ->
+            findLibraryInDirectory(distDir, libraryName)
+        }
+
+    internal fun extractLibraryFromArchives(searchRoot: Path, libraryName: String, outputDirectory: Path): Path? =
+        localDistributionRoots(searchRoot).firstNotNullOfOrNull { distDir ->
+            findLibraryInArchives(distDir, libraryName) { libraryData ->
+                val extracted = outputDirectory.resolve(libraryName)
+                extracted.outputStream().use { libraryData.copyTo(it) }
+                extracted
+            }
+        }
+
+    private fun extractLibraryFromArchives(
+        searchRoot: Path,
+        libraryName: String,
+        unpacker: TmpDirLibraryUnpacker
+    ): Path? = localDistributionRoots(searchRoot).firstNotNullOfOrNull { distDir ->
+        findLibraryInArchives(distDir, libraryName) { libraryData ->
+            unpacker.unpackLibrary(libraryName, libraryData)
+        }
+    }
+
+    private fun localDistributionRoots(searchRoot: Path): Sequence<Path> =
+        generateSequence(searchRoot) { it.parent }
+            .flatMap { root -> sequenceOf(root.resolve("build").resolve("dist"), root.resolve("dist")) }
+            .filter { it.exists() }
+
+    private fun findLibraryInArchives(
+        directory: Path,
+        libraryName: String,
+        unpackLibrary: (InputStream) -> Path
+    ): Path? =
+        Files.list(directory).use { files ->
+            files
+                .filter { Files.isRegularFile(it) && it.fileName.toString().endsWith(".zip") }
+                .sorted(Comparator.comparingInt(Path::getNameCount))
+                .map { archive -> extractLibraryFromArchive(archive, libraryName, unpackLibrary) }
+                .filter { it != null }
+                .findFirst()
+                .orElse(null)
+        }
+
+    private fun extractLibraryFromArchive(
+        archive: Path,
+        libraryName: String,
+        unpackLibrary: (InputStream) -> Path
+    ): Path? =
+        ZipFile(archive.toFile()).use { zip ->
+            val matchingEntry = bestMatchingEntry(zip, libraryName) ?: return null
+            zip.getInputStream(matchingEntry).use { libraryData ->
+                unpackLibrary(libraryData)
+            }
+        }
+
+    private fun bestMatchingEntry(zip: ZipFile, libraryName: String): ZipEntry? {
+        val entries = zip.entries()
+        var bestMatch: ZipEntry? = null
+        while (entries.hasMoreElements()) {
+            val entry = entries.nextElement()
+            if (entry.isDirectory || Paths.get(entry.name).fileName.toString() != libraryName) {
+                continue
+            }
+
+            if (bestMatch == null || entry.name.count { it == '/' || it == '\\' } < bestMatch.name.count { it == '/' || it == '\\' }) {
+                bestMatch = entry
+            }
+        }
+        return bestMatch
+    }
+
     private inline fun withLibraryUnpacker(body: TmpDirLibraryUnpacker.() -> Unit) {
         val unpacker = TmpDirLibraryUnpacker()
         try {
@@ -112,7 +222,7 @@ object NativeLibraryLoaderUtils {
             createDirectories()
         }
 
-        private val libUnpackDirectory = createTempDirectory(unpackedLibrariesRoot, "ksmt")
+        val libUnpackDirectory = createTempDirectory(unpackedLibrariesRoot, "ksmt")
         private val unpackedFiles = mutableListOf<Path>()
 
         fun unpackLibrary(name: String, libraryData: InputStream): Path {
