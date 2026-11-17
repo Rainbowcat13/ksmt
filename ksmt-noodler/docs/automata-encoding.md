@@ -1,5 +1,7 @@
 # Batched regex compilation and positional transition pruning
 
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/automata-encoding.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
 This experiment compares the saved runtime before these two changes with the newly built runtime at identical solver settings and resource caps. It measures the combined change; separate attribution requires an additional ablation.
 
 The regex compiler change targets repeated NFA-to-DFA conversions inside concatenation, union, and repetition. Complement and Boolean language operations remain exact boundaries. The character encoder change targets the old expansion of every automaton edge at every character position: forward reachability and backward reachability from the appropriate final states can exclude impossible transitions before constructing Yices formulas. Negative membership must use rejecting final states.
@@ -35,36 +37,11 @@ Its copied module entries remain separate from the mutable build outputs. Other 
 
 Run the baseline before rebuilding, or use its saved classpath afterward:
 
-```powershell
-$java = 'C:\Program Files\Java\jdk-17\bin\java.exe'
-$baselineClasspath = (Get-Content -Raw build/experiments/automata-encoding-20261027T160355Z/baseline-classpath.txt).Trim()
-& $java -Xss8m -cp $baselineClasspath io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt run `
-    --source ksmt-noodler/benchmarks/automata-encoding `
-    --solvers noodler-yices --repeats 1 `
-    --output build/reports/noodler-automata-encoding/baseline-synthetic
-& $java -Xss8m -cp $baselineClasspath io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt run `
-    --source ksmt-test/testData/string-data/37c6cd5d98edb46057f30cef35ba7c7250fe0161 `
-    --source-list ksmt-noodler/benchmarks/automata-encoding/sources.txt `
-    --solvers noodler-yices `
-    --output build/reports/noodler-automata-encoding/baseline-corpus
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/automata-encoding.md) preserves the original commands as provenance.
 
 After the implementation is ready:
 
-```powershell
-$env:JAVA_HOME = 'C:\Program Files\Java\jdk-17'
-.\gradlew.bat :ksmt-noodler:test :ksmt-noodler:writeNoodlerBenchmarkClasspath
-$finalClasspath = (Get-Content -Raw ksmt-noodler/build/noodler-benchmark-classpath.txt).Trim()
-& $java -Xss8m -cp $finalClasspath io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt run `
-    --source ksmt-noodler/benchmarks/automata-encoding `
-    --solvers noodler-yices --repeats 1 `
-    --output build/reports/noodler-automata-encoding/final-synthetic
-& $java -Xss8m -cp $finalClasspath io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt run `
-    --source ksmt-test/testData/string-data/37c6cd5d98edb46057f30cef35ba7c7250fe0161 `
-    --source-list ksmt-noodler/benchmarks/automata-encoding/sources.txt `
-    --solvers noodler-yices `
-    --output build/reports/noodler-automata-encoding/final-corpus
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/automata-encoding.md) preserves the original commands as provenance.
 
 Check pairwise manifests, effective settings, environment, attempt completeness, expected statuses, witness validation, and failure phases. Runtime fingerprints are expected to differ because this compares two builds. A single trial demonstrates outcome changes and catches regressions; repeated matched trials are needed for speed claims.
 

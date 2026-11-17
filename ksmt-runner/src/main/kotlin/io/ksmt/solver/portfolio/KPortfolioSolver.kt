@@ -204,8 +204,11 @@ class KPortfolioSolver(
         lastSuccessfulSolver.get()?.reasonOfUnknownAsync()
             ?: throw KSolverException("No check-sat result available")
 
-    override suspend fun interruptAsync() = solverOperation {
-        interruptAsync()
+    override suspend fun interruptAsync() {
+        // A worker's protocol thread can be occupied by a blocking native check. Queuing an
+        // interrupt behind that check cannot cancel it. Use the runner's existing process
+        // termination/recovery path, preserving the journal for the next query.
+        activeSolvers.forEach { _, state -> state.solver.terminateSolverIfBusy() }
     }
 
     override fun close() = try {

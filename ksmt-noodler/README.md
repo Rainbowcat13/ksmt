@@ -1,158 +1,70 @@
-# Noodler and Yices
+﻿# KSMT Noodler hybrid solver
 
-`KNoodlerYicesSolver` combines regular-language reasoning with arithmetic search in Yices. One Yices context searches Boolean choices and integer lengths. Prepared variable automata first try to supply strings at those lengths, which must satisfy the original assertions jointly. If that attempt fails, a second Yices context realizes the proposed choice using integer characters and automaton transitions. Repeated occurrences of a variable share the same characters.
+This module is our Kotlin implementation of automata-based string reasoning. It
+is separate from the official Z3-Noodler solver.
 
-The existing `KNoodlerSolver(ctx, baseSolver)` wrappers for Z3 and cvc5 remain available. The Yices combination is a separate solver: it does not forward string expressions to Yices and does not fall back to Z3 or cvc5.
-
-## Use
+`KNoodlerHybridSolver` runs one shared Boolean/length-search and fixed-length
+character-realization algorithm with Z3, cvc5 or Yices. Assert ordinary KSMT
+formulas; the wrapper translates supported string operations before invoking its
+backends. `KNoodlerYicesSolver(ctx)` remains the Yices compatibility entry point.
+`KNoodlerSolver(ctx, nativeStringSolver)` remains the distinct native-string
+preprocessing strategy.
 
 ```kotlin
-import io.ksmt.KContext
-import io.ksmt.solver.KSolverStatus
-import io.ksmt.solver.noodler.KNoodlerYicesSolver
-import kotlin.time.Duration.Companion.seconds
-
 KContext().use { ctx ->
-    with(ctx) {
-        val x = mkConst("x", stringSort)
-        KNoodlerYicesSolver(this).use { solver ->
-            solver.configure {
-                maxIdleRounds = 2
-                maxCharacterPositions = 100_000
-                maxEncodingConstraints = 1_000_000
-                maxMembershipPruningUnits = 250_000
-                maxPreprocessingUnits = 1_000_000
-                maxAutomataStates = 100_000
-                maxAutomataStorage = 1_000_000
-                optionalPreprocessing = false
-                smallFirstSearch = false
-                adaptiveLengthProjection = true
-                automataWitnessSearch = true
-                periodicLengthReasoning = true
-            }
-            solver.assert(mkStringInRegex(x, mkRegexStar(mkStringToRegex(mkStringLiteral("ab")))))
-            solver.assert(mkEq(mkStringLen(x), mkIntNum(4)))
-
-            when (solver.check(10.seconds)) {
-                KSolverStatus.SAT -> solver.model().use { println(it.eval(x)) } // "abab"
-                KSolverStatus.UNSAT -> println("unsatisfiable")
-                KSolverStatus.UNKNOWN -> println(solver.reasonOfUnknown())
-            }
-            println(solver.lastCheckStatistics)
-        }
+    KNoodlerHybridSolver(ctx, KNoodlerBackend.Z3).use { solver ->
+        solver.configure { encodingTarget = NoodlerEncodingTarget.BV }
+        val text = ctx.mkConst("text", ctx.stringSort)
+        solver.assert(ctx.mkEq(text, ctx.mkStringLiteral("hello")))
+        check(solver.check() == KSolverStatus.SAT)
+        solver.model().use { println(it.eval(text)) }
     }
 }
 ```
 
-Configure the solver before its first check. A check uses one overall timeout across search, automata processing, and candidate realization. `interrupt()` cancels an active check.
+Configure before the first check. Backend selection is independent of generated
+encoding: `INT` is the default; `BV` uses unsigned 18-bit character values and
+sufficient widths for automaton states. String lengths and mathematical integer
+arithmetic remain unbounded. Original native BV input is supported independently
+of that encoding setting and retains its widths and modular semantics.
 
-## Supported formulas and results
+The supported fragment includes Boolean structure, string variables/literals,
+concatenation, string ITE, equality/disequality, ground regex membership, integer
+length constraints and the documented native BV operations/conversions. SAT
+requires a complete assignment validated against the original assertions.
+Resource exhaustion, unsupported syntax and inconclusive bounded search never
+establish UNSAT. The algorithm is incomplete for unrestricted word equations
+with lengths.
 
-The supported fragment is quantifier-free Boolean formulas over string variables, literals, concatenation, string-valued `ite`, string equality/disequality, ground regex membership, and linear integer arithmetic including string lengths. Boolean structure and negative regex membership are preserved. The syntax boundary requires literal multiplication coefficients and nonzero literal divisors, plus literal operands for `str.to_re` and `re.range`; the context may simplify constant expressions into these forms.
+The wrapper buffers scopes and assertions. Selected necessary-conjunct
+contradictions can finish in preflight with zero backend constructions,
+assertions or checks. Search and realization otherwise use separately owned
+backend instances. Models expose original declarations and hide generated
+symbols. See the following references for the exact contracts:
 
-Regex reasoning derives accepted-length constraints, including periodic lengths such as the even lengths of `(ab)*`. Candidate realization checks characters jointly; equal lengths alone never prove string equality. Proven infeasible combinations of atom choices and lengths produce guarded constraints for the next search round.
+- [Public hybrid API and lifecycle](docs/hybrid-api.md).
+- [Configuration and migration](docs/hybrid-configuration.md).
+- [Internal finite-domain BV encoding](docs/bit-vector-encoding.md).
+- [Original mixed string/BV fragment](docs/mixed-bitvectors.md).
+- [Solver-free UNSAT guarantees and counters](docs/solver-free-preflight.md).
+- [Existing KSMT portfolio integration](docs/hybrid-portfolio.md).
+- [Runnable library examples](../examples/README.md).
 
-The default `adaptiveLengthProjection` first extracts shortest/longest accepted lengths and modular residues from the useful automaton graph. It then attempts exact periodic projection within 256 reachable subsets; exceeding this allowance retains both the graph constraints and the already certified finite prefix of accepted lengths, allowing Yices to reject impossible short candidates before character realization. A bounded check-local cache reuses projections. Setting it to `false` restores exhaustive length projection for comparison. Common prefixes/suffixes in positive word equations are cancelled before regular propagation. See the [length-projection experiment](docs/length-projection.md) for examples, controls, and measurements.
-
-Regex compilation batches concatenation, union, and repetition into a shared epsilon-NFA before determinization; complement, intersection, and difference remain exact compilation boundaries. Temporary barrier automata are released after their last consumer. Exact candidate encoding prunes transitions by position and membership polarity, including known literal segments. Check statistics expose batched determinizations, retained intermediate automata, unpruned/emitted transition counts, and charged encoding units. See the [compiler and positional-pruning experiment](docs/automata-encoding.md) for measured coverage changes, counter definitions, and explanations of the proposed worklist and conflict-core improvements.
-
-- **SAT** includes a joint model validated against the original assertions.
-- **UNSAT** follows from sound constraints in the unbounded search problem.
-- **UNKNOWN** reports unsupported operations, a timeout, interruption, exhausted resources, or the configured number of idle rounds. There is no completeness guarantee for unrestricted word equations with lengths.
-
-Stable regular-language branches reuse their published consequences across different length candidates. A full sweep that changes no language marks that check-local branch as stable; later candidates can skip the same refinement and projection work. `refinementSweeps` and `refinementSkips` expose this behavior. See the [full comparison run](docs/combined-comparison.md) for its regression test, live benchmark status, and final table locations.
-
-`periodicLengthReasoning` (default `true`) handles disequalities whose participating languages consist of powers of one common nonempty word. For example, strings in `a*` or, separately, in `(ab)*` are determined by their lengths. The solver certifies containment in a common power language using exact DFA reachability, then learns that a selected disequality requires unequal lengths. If both sides have identical length expressions, this excludes the entire Boolean branch. The consequence is guarded by the choices that justify the variable languages. A failed or resource-limited proof adds no constraint. `periodicLengthLemmas` records the learned consequences. The optional proof uses at most 100,000 preprocessing units and one eighth of its parent's remaining allowance.
-
-The Z3 and cvc5 `KNoodlerSolver` wrappers use the same `PeriodicWordEquality` certificate. Their preprocessing extracts only unconditional conjuncts and sends certified length disequalities to the native string solver together with the regular-language refinements. It does not extract a disequality from an arbitrary disjunction. Constructor option `periodicLengthReasoning=false` disables this rule for a wrapper; the benchmark's `--periodic-length-reasoning` flag applies to both wrappers and the Yices combination. The Yices combination can additionally use its selected Boolean branch to justify a guarded certificate.
-
-The [new-family holdout](benchmarks/results/fair-holdout-20261106/README.md) compares the shared rule on 1,200 preselected SMT-LIB cases at a 10-second solve deadline. Z3 + Noodler solved 1,131 cases and Yices + Noodler 1,091. Yices solved all 300 Norn cases, but the new rule itself showed no coverage benefit on this sample. The report includes syntax exclusions, frozen selection, paired results and independent model checks.
-
-`maxMembershipPruningUnits` defaults to 250,000, increased from the former fixed 100,000 allowance. Each positional transition analysis also remains limited to one quarter of the remaining preprocessing budget. The total preprocessing and character-encoding limits are unchanged. Set this option to 100,000 and disable `periodicLengthReasoning` to compare with the preceding algorithm.
-
-Before encoding characters in Yices, `automataWitnessSearch` (default `true`) tries to obtain one accepted word of each proposed length from the prepared variable automata. These independently chosen words are only a candidate assignment: they must satisfy the complete original formula before the solver returns SAT. If this optional attempt does not produce a validated model, the solver falls back to exact character realization without learning a constraint from the failed attempt. Path search and validation together use at most 50,000 preprocessing units and one eighth of the remaining preprocessing allowance. The attempt requires an already prepared branch, so the early realization step of `optionalPreprocessing` remains available without automata preparation. `automataWitnessAttempts`, `automataWitnessSuccesses`, and `automataWitnessFallbacks` record the outcome; a success needs no native character-realization query. Set `automataWitnessSearch=false` to compare with character realization alone. The archived `full-defaults` and `fourfold-caps` results predate this path and do not measure its effect.
-
-`maxIdleRounds` defaults to 2. An idle round has no fresh justified constraint or proven refinement. `maxCharacterPositions` defaults to 100,000 and limits the size of one realization query. `maxEncodingConstraints` defaults to 1,000,000 and limits materialized character equalities and automaton transition cases. `maxPreprocessingUnits` defaults to 1,000,000 and budgets syntax expansion, code-point copies, and refinement work. Exceeding a resource limit returns UNKNOWN; it never removes lengths from the search problem or proves UNSAT.
-
-Substring, replacement, conversions, symbolic regexes, nonlinear arithmetic, and quantifiers are outside this fragment. `lastCheckStatistics` reports rounds, learned constraints, realization checks, phase timings, and the termination reason.
-
-`maxAutomataStates` and `maxAutomataStorage` configure the hybrid's automata, including derived operations and model validation. Storage is an accounting allowance for entries/work, not bytes of RAM. These settings do not alter the Z3/cvc5 wrappers' defaults. The experimental `optionalPreprocessing` policy attempts exact realization before optional length/refinement analysis and caps optional work separately within the overall preprocessing budget. The `smallFirstSearch` policy tries temporary total-length bounds `0, 1, 2, 4, ...`; only an unbounded contradiction establishes UNSAT. Both policies default to `false`. See the [policy and cap ablation](docs/ablation-run.md) for configuration, the experiment matrix, and results.
-
-## Unicode and solver state
-
-String semantics use code points in the SMT-LIB range `0..0x2FFFF`, including NUL. Kotlin text is accepted by `mkStringLiteral(String)`. To distinguish explicit surrogate code points from a supplementary character, use the integer-array overload:
-
-```kotlin
-val supplementary = ctx.mkStringLiteral(intArrayOf(0x1F600)) // length 1
-val surrogateSequence = ctx.mkStringLiteral(intArrayOf(0xD83D, 0xDE00)) // length 2
-```
-
-Use `KStringLiteralExpr.codePoints` for exact values. Its `.value` property is a compatibility text projection and throws if UTF-16 would merge distinct surrogate characters. SMT-LIB printing and serialization preserve exact code points.
-
-`push`, `pop`, `assertAndTrack`, and `checkWithAssumptions` follow the `KSolver` interface. Learned constraints are local to a check. Models expose original declarations and hide generated symbols. Assertion-stack changes invalidate subsequent `solver.model()` access. Both Noodler integrations already return detached snapshots, so previously retrieved models remain usable across solver changes or closure while their `KContext` remains open. Hybrid unsat cores are conservative and may contain all original tracked assertions and assumptions from that check; legacy `KNoodlerSolver` does not support unsat cores.
-
-## Tests and benchmarks
-
-Build this repository with JDK 17. Its Kotlin 1.7 compiler has existing compatibility problems with newer JDK APIs. On this Windows workspace:
+Build and test with JDK 17 from the repository root:
 
 ```powershell
 $env:JAVA_HOME = 'C:\Program Files\Java\jdk-17'
-.\gradlew.bat :ksmt-noodler:test
-.\gradlew.bat :ksmt-noodler:benchmarkNoodlerSolvers
+.\gradlew.bat :ksmt-noodler:test --console=plain
 ```
 
-The comparison runs five explicit backends: `z3`, `cvc5`, `noodler-z3`, `noodler-cvc5`, and `noodler-yices`. Each sample/backend/trial starts a fresh JVM, sequentially. The defaults are one trial, 30 seconds for startup plus parsing, 10 seconds shared by assertion and solving, and 10 seconds for independent witness validation. The parent also enforces phase deadlines and drains stdout/stderr continuously.
+Executable benchmark orchestration, analysis code, raw new measurements and logs
+live in [the sibling experiments workspace](../../ksmt-noodler-experiments/README.md),
+at `C:\Users\danii\ksmt-noodler-experiments`. Its composite Gradle build consumes
+the current solver checkout. The solver repository no longer provides benchmark
+launch tasks, diagnostic runners or Python experiment scripts.
 
-The source defaults to the local `ksmt-test/testData/string-data` corpus. Every selected `.smt2` file is hashed into the manifest; the shared hybrid syntax checker records unsupported formulas in `exclusions.csv` instead of silently filtering them out. Standalone Yices and Bitwuzla do not support the string fragment and are not comparison backends.
-
-SAT witnesses fix **every original Boolean, integer, and string constant** before checking the original formula with another solver: cvc5 validates Z3-based backends, and Z3 validates the others. All backends share the Z3 SMT-LIB frontend, and validation reuses the parsed KSMT assertions; parsing itself is not independently checked. Raw solver status is retained separately from invalid/unverified witnesses, native UNKNOWN, external timeout, unsupported operations, parsing errors, and worker crashes. An external solve timeout records `NOT_RETURNED` when the backend never returned a status. Different satisfying assignments are not disagreements.
-
-Each invocation creates `build/reports/noodler-benchmarks/<run-id>/` containing `manifest.csv`, `exclusions.csv`, `metadata.properties`, `raw.csv`, `summary.md`, per-attempt logs, and immutable checkpoint records. Timings separate JVM startup, parsing, setup, assertion/check, validation, and total wall time. Legacy preprocessing skip flags and reasons are included. Metadata identifies the exact runtime binaries, source hashes, JVM, OS, Git state, and configuration. Existing corpus files and historical results are preserved.
-
-For a bounded smoke run or an interrupted full run:
-
-```powershell
-.\gradlew.bat :ksmt-noodler:benchmarkNoodlerSolvers -PnoodlerBenchmarkMaxJobs=25
-.\gradlew.bat :ksmt-noodler:benchmarkNoodlerSolvers '-PnoodlerBenchmarkResume=C:\path\to\run-id' -PnoodlerBenchmarkMaxJobs=500
-```
-
-`MaxJobs` and `MaxWallMs` limit only the current invocation; resume processes the remaining jobs without repeating completed attempts. These invocation limits are checked between attempts, so an active worker can finish after `MaxWallMs`. Resume requires identical binaries, source contents, solver selection, repetitions, and timeouts. A process interruption before checkpoint commit may retry that unfinished attempt, retaining its previous log. CSVs and summaries can be reconstructed from committed records.
-
-All Gradle options use the `noodlerBenchmark` prefix:
-
-| Suffix | Purpose / default |
-|---|---|
-| `Source`, `Output` | Corpus directory; parent report directory |
-| `Resume` | Existing run directory |
-| `Solvers` | Comma-separated IDs; all five |
-| `SolveMs`, `StartupParseMs`, `ValidationMs` | 10000, 30000, 10000 |
-| `Repeats` | Trials per sample/backend; 1 |
-| `Prefix`, `Offset`, `Limit` | Deterministic selection from sorted source paths |
-| `MaxJobs`, `MaxWallMs` | Stop after completed jobs or elapsed invocation budget |
-| `Variant` | `baseline`, individual `states/storage/encoding/preprocessing/positions-2x/4x`, `optional`, `small-first`, `combined` |
-| `SourceList` | UTF-8 file of exact relative corpus paths, one per line; cannot combine with offset/limit |
-| `MaxAutomataStates`, `MaxAutomataStorage` | Hybrid automata state/storage overrides |
-| `MaxEncodingConstraints`, `MaxPreprocessingUnits`, `MaxCharacterPositions`, `MaxIdleRounds` | Hybrid resource/progress overrides |
-| `OptionalPreprocessing`, `SmallFirstSearch` | Explicit `true`/`false` policy overrides |
-| `AdaptiveLengthProjection` | Graph constraints with bounded exact projection (`true`); exhaustive exact projection (`false`) |
-| `AutomataWitnessSearch` | Try validated fixed-length paths from prepared automata before character encoding (`true`); disable for comparison (`false`) |
-| `PeriodicLengthReasoning` | Learn guarded length disequalities for certified common-word power languages (`true`); disable for comparison (`false`) |
-| `MaxMembershipPruningUnits` | Optional positional transition-analysis allowance; 250000, also limited by remaining preprocessing |
-
-The direct entry point is `io.ksmt.solver.noodler.benchmark.NoodlerBenchmarkRunnerKt`: `run` accepts corresponding kebab-case flags (for example `--solve-ms`), and `summarize --resume PATH` refreshes a report without rerunning solvers.
-
-To repeat the best configuration from the policy/cap matrix and export a white-background PNG table, see [the repeat and table commands](docs/ablation-run.md#repeat-the-best-measured-variant-and-save-the-table). The exporter also writes SVG, CSV, and Markdown copies and audits completeness before publishing a final table.
-
-`runNoodlerQfSimpleTests` and `launchNoodlerQfSimpleTests` remain compatibility aliases, using the prepared corpus and the new isolated harness. Preparation reuses an existing manifest and preserves historical files. The old `run-single --backend z3|cvc5|yices` diagnostic remains available. The historical `NoodlerStringBenchmarksBasedTest` recorder is disabled because its thread timeout cannot terminate native solver work. Its saved timings are not comparative performance evidence; use the subprocess task above.
-
-See [the architecture overview and review](docs/overview-and-review.md) for implementation details, known limits, and the assessment of historical results. One trial establishes coverage and detects regressions; it does not establish a statistical speed ranking.
-
-### Comparing a run with an explicitly recorded rerun
-
-If a host interruption invalidates a measurement, preserve the original run and rerun the affected case across all five backends with identical binaries and budgets. The standalone Python 3.9+ analyzer verifies complete groups and comparable configurations before substituting only explicitly named cases:
-
-```powershell
-python ksmt-noodler/scripts/analyze_benchmark.py --primary C:\path\to\primary-run --supplemental C:\path\to\rerun --replace-case QF_S/family/case.smt2 --replacement-reason "Recorded host interruption" --output C:\path\to\new-analysis
-```
-
-The separate output contains `comparison.csv`, `analysis.md`, and `provenance.json`. Source run IDs and hashes identify every replacement; original inputs remain unchanged. The report includes family coverage, correctness checks, paired timings, coverage gains and losses, and resource-limit reasons. Publication fails on incomplete or incomparable inputs. Run `python ksmt-noodler/scripts/analyze_benchmark.py --self-test` for its synthetic validation checks. See [the full-corpus run record](docs/benchmark-run.md) for this workspace's measurements.
+[Migration details](docs/benchmark-migration.md) list the removed and preserved
+components and the hash manifests. Existing local corpora, correctness fixtures,
+historical measurements and provenance remain intact. The
+[historical evidence archive](benchmarks/results/README.md) predates the shared
+hybrid implementation; its measurements are not results for the final build.

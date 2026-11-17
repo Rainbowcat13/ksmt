@@ -6,7 +6,7 @@ import io.ksmt.solver.noodler.hybrid.HybridSyntax
 import io.ksmt.sort.KBoolSort
 
 /** Returns null for the supported syntax, or its exclusion reason, without creating solver state. */
-fun checkNoodlerYicesSupport(assertions: List<KExpr<KBoolSort>>): String? = try {
+fun checkNoodlerHybridSupport(assertions: List<KExpr<KBoolSort>>): String? = try {
     val seen = hashSetOf<KExpr<*>>()
     val pending = ArrayDeque<KExpr<*>>()
     pending.addAll(assertions)
@@ -18,3 +18,6 @@ fun checkNoodlerYicesSupport(assertions: List<KExpr<KBoolSort>>): String? = try 
 } catch (ex: KSolverUnsupportedFeatureException) {
     ex.message ?: "unsupported expression"
 }
+
+/** Compatibility name for the shared hybrid syntax check. */
+fun checkNoodlerYicesSupport(assertions: List<KExpr<KBoolSort>>): String? = checkNoodlerHybridSupport(assertions)

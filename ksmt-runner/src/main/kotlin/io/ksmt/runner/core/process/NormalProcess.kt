@@ -13,7 +13,9 @@ class NormalProcess private constructor(private val process: Process) : ProcessW
 
     companion object {
         fun start(entrypoint: KClass<*>, args: List<String>, jvmArgs: List<String> = emptyList()): ProcessWrapper {
-            val classPath = System.getProperty("java.class.path") ?: error("No class path")
+            // Embedders such as Gradle isolate runtime dependencies from java.class.path.
+            val classPath = System.getProperty("ksmt.runner.classpath")
+                ?: System.getProperty("java.class.path") ?: error("No class path")
             val entrypointClassName = entrypoint.qualifiedName ?: error("Entrypoint class name is not available")
             val javaHome = System.getProperty("java.home")
             val javaExecutable = Path(javaHome).resolve("bin").resolve("java")

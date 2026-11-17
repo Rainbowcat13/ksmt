@@ -3,6 +3,54 @@ package io.ksmt.solver.noodler.hybrid
 import io.ksmt.expr.KAddArithExpr
 import io.ksmt.expr.KAndExpr
 import io.ksmt.expr.KApp
+import io.ksmt.expr.KBitVecValue
+import io.ksmt.expr.KBv2IntExpr
+import io.ksmt.expr.KBvAddExpr
+import io.ksmt.expr.KBvAddNoOverflowExpr
+import io.ksmt.expr.KBvAddNoUnderflowExpr
+import io.ksmt.expr.KBvAndExpr
+import io.ksmt.expr.KBvArithShiftRightExpr
+import io.ksmt.expr.KBvConcatExpr
+import io.ksmt.expr.KBvDivNoOverflowExpr
+import io.ksmt.expr.KBvExtractExpr
+import io.ksmt.expr.KBvLogicalShiftRightExpr
+import io.ksmt.expr.KBvMulExpr
+import io.ksmt.expr.KBvMulNoOverflowExpr
+import io.ksmt.expr.KBvMulNoUnderflowExpr
+import io.ksmt.expr.KBvNAndExpr
+import io.ksmt.expr.KBvNegNoOverflowExpr
+import io.ksmt.expr.KBvNegationExpr
+import io.ksmt.expr.KBvNorExpr
+import io.ksmt.expr.KBvNotExpr
+import io.ksmt.expr.KBvOrExpr
+import io.ksmt.expr.KBvReductionAndExpr
+import io.ksmt.expr.KBvReductionOrExpr
+import io.ksmt.expr.KBvRepeatExpr
+import io.ksmt.expr.KBvRotateLeftExpr
+import io.ksmt.expr.KBvRotateLeftIndexedExpr
+import io.ksmt.expr.KBvRotateRightExpr
+import io.ksmt.expr.KBvRotateRightIndexedExpr
+import io.ksmt.expr.KBvShiftLeftExpr
+import io.ksmt.expr.KBvSignExtensionExpr
+import io.ksmt.expr.KBvSignedDivExpr
+import io.ksmt.expr.KBvSignedGreaterExpr
+import io.ksmt.expr.KBvSignedGreaterOrEqualExpr
+import io.ksmt.expr.KBvSignedLessExpr
+import io.ksmt.expr.KBvSignedLessOrEqualExpr
+import io.ksmt.expr.KBvSignedModExpr
+import io.ksmt.expr.KBvSignedRemExpr
+import io.ksmt.expr.KBvSubExpr
+import io.ksmt.expr.KBvSubNoOverflowExpr
+import io.ksmt.expr.KBvSubNoUnderflowExpr
+import io.ksmt.expr.KBvUnsignedDivExpr
+import io.ksmt.expr.KBvUnsignedGreaterExpr
+import io.ksmt.expr.KBvUnsignedGreaterOrEqualExpr
+import io.ksmt.expr.KBvUnsignedLessExpr
+import io.ksmt.expr.KBvUnsignedLessOrEqualExpr
+import io.ksmt.expr.KBvUnsignedRemExpr
+import io.ksmt.expr.KBvXNorExpr
+import io.ksmt.expr.KBvXorExpr
+import io.ksmt.expr.KBvZeroExtensionExpr
 import io.ksmt.expr.KConst
 import io.ksmt.expr.KDistinctExpr
 import io.ksmt.expr.KDivArithExpr
@@ -45,6 +93,7 @@ import io.ksmt.expr.KTrue
 import io.ksmt.expr.KUnaryMinusArithExpr
 import io.ksmt.expr.KXorExpr
 import io.ksmt.sort.KBoolSort
+import io.ksmt.sort.KBvSort
 import io.ksmt.sort.KIntSort
 import io.ksmt.sort.KRegexSort
 import io.ksmt.sort.KSort
@@ -62,7 +111,7 @@ internal object HybridSyntax {
         }
         if (expr is KConst<*> && isValueSort(expr.sort)) return emptyList()
         when (expr) {
-            is KStringLiteralExpr, is KIntNumExpr, is KTrue, is KFalse -> return emptyList()
+            is KStringLiteralExpr, is KIntNumExpr, is KBitVecValue<*>, is KTrue, is KFalse -> return emptyList()
             is KStringConcatExpr -> return listOf(expr.arg0, expr.arg1)
             is KStringLenExpr -> return listOf(expr.arg)
             is KStringInRegexExpr -> return listOf(expr.arg0, expr.arg1)
@@ -71,11 +120,12 @@ internal object HybridSyntax {
             }
             else -> Unit
         }
-        if (expr.sort !is KIntSort && expr.sort !is KBoolSort) unsupported(expr)
+        if (expr.sort !is KIntSort && expr.sort !is KBoolSort && expr.sort !is KBvSort) unsupported(expr)
         val app = expr as? KApp<*, *> ?: unsupported(expr)
         if (expr is KEqExpr<*> || expr is KDistinctExpr<*>) {
             if (app.args.any { !isValueSort(it.sort) }) unsupported(expr)
         }
+        if (isBitVectorOperation(expr)) return app.args
         when (expr) {
             is KAndExpr, is KOrExpr, is KNotExpr, is KImpliesExpr, is KXorExpr,
             is KEqExpr<*>, is KDistinctExpr<*>, is KIteExpr<*>,
@@ -120,14 +170,36 @@ internal object HybridSyntax {
         else -> unsupported(regex)
     }
 
+    /** Native BV operations retain their original sorts, parameters and modular semantics. */
+    @Suppress("ComplexMethod")
+    private fun isBitVectorOperation(expr: KExpr<*>): Boolean = when (expr) {
+        is KBvNotExpr<*>, is KBvReductionAndExpr<*>, is KBvReductionOrExpr<*>,
+        is KBvAndExpr<*>, is KBvOrExpr<*>, is KBvXorExpr<*>,
+        is KBvNAndExpr<*>, is KBvNorExpr<*>, is KBvXNorExpr<*>,
+        is KBvNegationExpr<*>, is KBvAddExpr<*>, is KBvSubExpr<*>,
+        is KBvMulExpr<*>, is KBvUnsignedDivExpr<*>, is KBvSignedDivExpr<*>,
+        is KBvUnsignedRemExpr<*>, is KBvSignedRemExpr<*>, is KBvSignedModExpr<*>,
+        is KBvUnsignedLessExpr<*>, is KBvSignedLessExpr<*>, is KBvUnsignedLessOrEqualExpr<*>,
+        is KBvSignedLessOrEqualExpr<*>, is KBvUnsignedGreaterOrEqualExpr<*>, is KBvSignedGreaterOrEqualExpr<*>,
+        is KBvUnsignedGreaterExpr<*>, is KBvSignedGreaterExpr<*>, is KBvConcatExpr,
+        is KBvExtractExpr, is KBvSignExtensionExpr, is KBvZeroExtensionExpr,
+        is KBvRepeatExpr, is KBvShiftLeftExpr<*>, is KBvLogicalShiftRightExpr<*>,
+        is KBvArithShiftRightExpr<*>, is KBvRotateLeftExpr<*>, is KBvRotateLeftIndexedExpr<*>,
+        is KBvRotateRightExpr<*>, is KBvRotateRightIndexedExpr<*>, is KBv2IntExpr,
+        is KBvAddNoOverflowExpr<*>, is KBvAddNoUnderflowExpr<*>, is KBvSubNoOverflowExpr<*>,
+        is KBvSubNoUnderflowExpr<*>, is KBvDivNoOverflowExpr<*>, is KBvNegNoOverflowExpr<*>,
+        is KBvMulNoOverflowExpr<*>, is KBvMulNoUnderflowExpr<*> -> true
+        else -> false
+    }
+
     private fun requireConstantDivisor(expr: KExpr<*>) {
         if (expr !is KIntNumExpr || expr.bigIntegerValue.signum() == 0) unsupported(expr)
     }
 
     private fun isValueSort(sort: KSort): Boolean =
-        sort is KBoolSort || sort is KIntSort || sort is KStringSort
+        sort is KBoolSort || sort is KIntSort || sort is KStringSort || sort is KBvSort
 
     private fun unsupported(expr: KExpr<*>): Nothing = throw KSolverUnsupportedFeatureException(
-        "unsupported expression: ${expr::class.simpleName}; expected QF strings, LIA and ground regex"
+        "unsupported expression: ${expr::class.simpleName}; expected QF strings, LIA, native BV and ground regex"
     )
 }

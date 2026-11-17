@@ -3,13 +3,12 @@ package io.ksmt.solver.noodler.hybrid
 import io.ksmt.KContext
 import io.ksmt.decl.KDecl
 import io.ksmt.expr.KExpr
-import io.ksmt.expr.KIntNumExpr
 import io.ksmt.solver.KModel
-import io.ksmt.solver.yices.KYicesSolver
+import io.ksmt.solver.KSolver
 import io.ksmt.sort.KBoolSort
-import io.ksmt.sort.KIntSort
+import io.ksmt.sort.KSort
 import io.ksmt.sort.KStringSort
-import io.ksmt.utils.ArithUtils.bigIntegerValue
+import io.ksmt.solver.noodler.NoodlerEncodingTarget
 
 internal const val DEFAULT_MEMBERSHIP_PRUNING_UNITS: Int = 250_000
 
@@ -17,15 +16,17 @@ internal const val DEFAULT_MEMBERSHIP_PRUNING_UNITS: Int = 250_000
 @Suppress("LongParameterList") // The independent resource allowances belong to their surrounding check.
 internal class CandidateRealization(
     private val ctx: KContext,
-    private val solver: KYicesSolver,
+    private val solver: KSolver<*>,
     lengths: Map<KDecl<KStringSort>, Int>,
     private val checkpoint: () -> Unit,
     private val maxPositions: Int,
     private val maxEncodingConstraints: Int,
     private val preprocessing: PreprocessingBudget = PreprocessingBudget(checkpoint = checkpoint),
     private val maxMembershipPruningUnits: Int = DEFAULT_MEMBERSHIP_PRUNING_UNITS,
+    private val encodingTarget: NoodlerEncodingTarget = NoodlerEncodingTarget.INT,
 ) {
-    private val characters = linkedMapOf<KDecl<KStringSort>, List<KExpr<KIntSort>>>()
+    private val characterEncoding = finiteDomainEncoding(ctx, encodingTarget, MAX_STRING_CODE_POINT)
+    private val characters = linkedMapOf<KDecl<KStringSort>, List<KExpr<KSort>>>()
     var encodedConstraints = 0L
         private set
     var membershipTransitionsConsidered = 0L
@@ -42,9 +43,8 @@ internal class CandidateRealization(
             reserve(2L * length)
             characters[declaration] = List(length) {
                 checkpoint()
-                ctx.mkFreshConst("noodler.character", ctx.intSort).also { character ->
-                    solver.assert(ctx.mkArithGe(character, ctx.mkIntNum(0)))
-                    solver.assert(ctx.mkArithLe(character, ctx.mkIntNum(MAX_STRING_CODE_POINT)))
+                characterEncoding.freshVariable("noodler.character").also { character ->
+                    solver.assert(characterEncoding.range(character, 0, MAX_STRING_CODE_POINT))
                 }
             }
         }
@@ -62,7 +62,7 @@ internal class CandidateRealization(
                     reserve(left.size.toLong())
                     ctx.mkAnd(left.zip(right) { one, two ->
                         checkpoint()
-                        ctx.mkEq(one, two)
+                        characterEncoding.equal(one, two)
                     })
                 }
                 if (positive) equality else ctx.mkNot(equality)
@@ -72,7 +72,7 @@ internal class CandidateRealization(
         solver.assert(constraint)
     }
 
-    private fun positions(term: List<StringTermPart>): List<KExpr<KIntSort>> {
+    private fun positions(term: List<StringTermPart>): List<KExpr<KSort>> {
         val size = term.sumOf {
             checkpoint()
             when (it) {
@@ -86,13 +86,13 @@ internal class CandidateRealization(
             checkpoint()
             when (it) {
                 is StringTermPart.Variable -> characters.getValue(it.declaration)
-                is StringTermPart.Literal -> it.codePoints.map(ctx::mkIntNum)
+                is StringTermPart.Literal -> it.codePoints.map(characterEncoding::value)
             }
         }
     }
 
     private fun membership(
-        word: List<KExpr<KIntSort>>, language: SymbolicDfa, positive: Boolean,
+        word: List<KExpr<KSort>>, language: SymbolicDfa, positive: Boolean,
     ): KExpr<KBoolSort> {
         val fullTransitions = language.transitions.sumOf { it.size.toLong() }
         membershipTransitionsConsidered += fullTransitions * word.size
@@ -107,15 +107,16 @@ internal class CandidateRealization(
             return if (positive) accepts else ctx.mkNot(accepts)
         }
         if (!plan.possible) return ctx.falseExpr
-        var state: KExpr<KIntSort> = ctx.mkIntNum(language.initialState)
+        val stateEncoding = finiteDomainEncoding(ctx, encodingTarget, language.transitions.lastIndex)
+        var state = stateEncoding.value(language.initialState)
         for ((position, edges) in plan.steps.withIndex()) {
             checkpoint()
             reserve(edges.size.toLong() * CONSTRAINTS_PER_EDGE + 1)
-            val next = ctx.mkFreshConst("noodler.dfa.state", ctx.intSort)
+            val next = stateEncoding.freshVariable("noodler.dfa.state")
             val character = word[position]
             val cases = edges.map { (source, edge) ->
                 checkpoint()
-                transitionCase(state, next, character, source, edge)
+                transitionCase(stateEncoding, state, next, character, source, edge)
             }
             membershipTransitionsEncoded += edges.size
             solver.assert(ctx.mkOr(cases))
@@ -128,7 +129,7 @@ internal class CandidateRealization(
 
     @Suppress("SwallowedException") // Exhausting optional analysis deliberately selects the exact full encoder.
     private fun transitionPlan(
-        word: List<KExpr<KIntSort>>, language: SymbolicDfa, positive: Boolean,
+        word: List<KExpr<KSort>>, language: SymbolicDfa, positive: Boolean,
     ): MembershipTransitionPlan? {
         val allowance = minOf(preprocessing.remaining / PRUNING_BUDGET_SHARE, maxMembershipPruningUnits)
         // Avoid allocating the character array when even the sparse layer containers cannot fit.
@@ -141,7 +142,7 @@ internal class CandidateRealization(
             budget.reserve(word.size.toLong())
             val known = IntArray(word.size) { index ->
                 checkpoint()
-                (word[index] as? KIntNumExpr)?.bigIntegerValue?.intValueExact() ?: -1
+                characterEncoding.knownValue(word[index]) ?: -1
             }
             language.planMembershipTransitions(known, positive, budget, checkpoint)
         } catch (ex: PreprocessingLimitException) {
@@ -152,17 +153,18 @@ internal class CandidateRealization(
         }
     }
 
-    private fun completeMembership(word: List<KExpr<KIntSort>>, language: SymbolicDfa): KExpr<KBoolSort> {
-        var state: KExpr<KIntSort> = ctx.mkIntNum(language.initialState)
+    private fun completeMembership(word: List<KExpr<KSort>>, language: SymbolicDfa): KExpr<KBoolSort> {
+        val stateEncoding = finiteDomainEncoding(ctx, encodingTarget, language.transitions.lastIndex)
+        var state = stateEncoding.value(language.initialState)
         val stepCost = language.transitions.sumOf { it.size.toLong() } * CONSTRAINTS_PER_EDGE + 1L
         reserve(stepCost * word.size + language.acceptingStates.size)
         for (character in word) {
             checkpoint()
-            val next = ctx.mkFreshConst("noodler.dfa.state", ctx.intSort)
+            val next = stateEncoding.freshVariable("noodler.dfa.state")
             val cases = language.transitions.flatMapIndexed { source, transitions ->
                 transitions.map { edge ->
                     checkpoint()
-                    transitionCase(state, next, character, source, edge)
+                    transitionCase(stateEncoding, state, next, character, source, edge)
                 }
             }
             membershipTransitionsEncoded += cases.size
@@ -170,16 +172,16 @@ internal class CandidateRealization(
             solver.assert(ctx.mkOr(cases))
             state = next
         }
-        return ctx.mkOr(language.acceptingStates.map { ctx.mkEq(state, ctx.mkIntNum(it)) })
+        return ctx.mkOr(language.acceptingStates.map { stateEncoding.equal(state, stateEncoding.value(it)) })
     }
 
     private fun transitionCase(
-        state: KExpr<KIntSort>, next: KExpr<KIntSort>, character: KExpr<KIntSort>, source: Int, edge: Transition,
+        stateEncoding: FiniteDomainEncoding<KSort>,
+        state: KExpr<KSort>, next: KExpr<KSort>, character: KExpr<KSort>, source: Int, edge: Transition,
     ): KExpr<KBoolSort> = ctx.mkAnd(
-        ctx.mkEq(state, ctx.mkIntNum(source)),
-        ctx.mkArithGe(character, ctx.mkIntNum(edge.lower)),
-        ctx.mkArithLe(character, ctx.mkIntNum(edge.upper)),
-        ctx.mkEq(next, ctx.mkIntNum(edge.target)),
+        stateEncoding.equal(state, stateEncoding.value(source)),
+        characterEncoding.range(character, edge.lower, edge.upper),
+        stateEncoding.equal(next, stateEncoding.value(edge.target)),
     )
 
     private fun reserve(count: Long) {
@@ -193,9 +195,7 @@ internal class CandidateRealization(
     fun strings(model: KModel): Map<KDecl<KStringSort>, IntArray> = characters.mapValues { (_, positions) ->
         IntArray(positions.size) { index ->
             checkpoint()
-            val value = model.eval(positions[index], isComplete = true) as? KIntNumExpr
-                ?: throw HybridIncomplete("Yices did not assign a character")
-            value.bigIntegerValue.intValueExact()
+            characterEncoding.decode(model, positions[index])
         }
     }
 

@@ -1,5 +1,7 @@
 # Full comparison with all current improvements
 
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/combined-comparison.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
 The full five-backend benchmark is complete: **752 formulas, 3,760 fresh solver attempts**. Measurement ran on 2026-10-27 from 17:26 to 22:11 UTC. The committed [PNG table](../benchmarks/results/full-defaults/comparison.png), [table CSV](../benchmarks/results/full-defaults/comparison.csv), and [detailed summary](../benchmarks/results/full-defaults/summary.md) contain only this fresh run. The [evidence archive](../benchmarks/results/README.md) describes the preserved files and their checksums.
 
 ## Results

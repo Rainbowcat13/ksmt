@@ -1,5 +1,7 @@
 # Noodler integration and correctness review
 
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/overview-and-review.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
 `ksmt-noodler` provides regular-language propagation for string equations and combines it with native SMT solvers. The integrations have two different responsibilities:
 
 | Integration | Regular-language reasoning | Final decision and model |
@@ -21,8 +23,8 @@ The review reproduced the first five failures below against the previous compile
 | Finding | Reproduction / consequence | Repair |
 | --- | --- | --- |
 | Legacy Kleene star reused an accepting start incorrectly | `(a* b)*` accepted `"a"`; its complement could reject a satisfiable formula | Give the independently usable NFA closure a fresh accepting start; use the symbolic Unicode compiler for solver preprocessing |
-| Legacy segmentation discarded cyclic paths | `x ∈ (ab)*`, `y ∈ {ab}`, `t = xy`, `x = y` was rejected despite `x = y = ab, t = abab` | Replace simple-path segmentation with full boundary reachability and quotient propagation |
-| An inferred finite alphabet was used as the SMT string universe | `x ∈ re.allchar`, `x ∈ {Ā}` was rejected; even unconstrained variables without Unicode literals could be restricted incorrectly | Share full-domain interval automata and key variables by declaration identity |
+| Legacy segmentation discarded cyclic paths | `x в€€ (ab)*`, `y в€€ {ab}`, `t = xy`, `x = y` was rejected despite `x = y = ab, t = abab` | Replace simple-path segmentation with full boundary reachability and quotient propagation |
+| An inferred finite alphabet was used as the SMT string universe | `x в€€ re.allchar`, `x в€€ {ДЂ}` was rejected; even unconstrained variables without Unicode literals could be restricted incorrectly | Share full-domain interval automata and key variables by declaration identity |
 | Legacy wrapper discarded the backend model | For `i = 1`, checking returned SAT but the wrapper model evaluated `i` to zero and the assertion to false | Return the backend's complete joint model, detached before temporary scopes are removed |
 | Recursive hybrid translation overflowed the stack | A 10,000-level concatenation threw `StackOverflowError` | Iterative traversal, shared term DAGs, and preprocessing limits checked before expansion |
 | Timeout and interruption excluded legacy preprocessing | The backend received a fresh full timeout after potentially unbounded automata work | One check-wide deadline and cancellation signal, with the remaining time passed to the backend |
@@ -31,7 +33,7 @@ The review reproduced the first five failures below against the previous compile
 
 The direct `Noodler` core is a propagator, not a source of joint models. Its compatibility `solve()` result means either a proven contradiction or that propagation did not find one. Query a `KSolver` after SAT to obtain a model. The deprecated `Noodler.model()` now throws an unsupported-feature exception. This changes the direct-core API: the former string-to-NFA diagnostic maps are replaced by `inputRegularConstraints` and `derivedRegularConstraints`, declaration-to-regex snapshots populated by `propagate()` or `solve()`. The legacy alphabet argument must not narrow SMT-LIB semantics.
 
-Z3/cvc5 wrappers use one propagation sweep before the backend check. They do not seek an unlimited local fixed point: equations such as `x = xy`, with `y ∈ a+`, can repeatedly increase inferred minimum lengths without reaching an empty language. Unsupported or resource-limited preprocessing may be skipped while the original backend formula remains intact. Deadline expiration and cancellation are reported as UNKNOWN.
+Z3/cvc5 wrappers use one propagation sweep before the backend check. They do not seek an unlimited local fixed point: equations such as `x = xy`, with `y в€€ a+`, can repeatedly increase inferred minimum lengths without reaching an empty language. Unsupported or resource-limited preprocessing may be skipped while the original backend formula remains intact. Deadline expiration and cancellation are reported as UNKNOWN.
 
 Preprocessing cooperatively observes cancellation. Prompt cancellation inside a native check still depends on the backend: the current cvc5 adapter's `interrupt()` is a no-op. The benchmark subprocess watchdog is therefore required to enforce a hard deadline even when native code cannot be interrupted.
 
@@ -39,7 +41,7 @@ Preprocessing cooperatively observes cancellation. Prompt cancellation inside a 
 
 The completed checks passed 157 `ksmt-noodler` tests, 19 core string/native-loader tests, six native conversion/serialization tests, and four custom-expression example tests (186 JVM tests total). This includes subprocess watchdog, recovery, report classification, and independent model-validation regressions. The standalone comparison analyzer also passes 13 synthetic checks covering complete groups, comparable configurations, explicit replacements, Unicode metadata, and publication after successful writes. The `ksmt-test` test sources also compile. The module's Detekt task still fails on 38 existing findings in legacy automata, compatibility runners, and the deprecated analyzer; the new benchmark and hybrid files have no findings. `git diff --check` passes.
 
-The former `NoodlerStringBenchmarksBasedTest` recorder is disabled because cancelling a JVM thread cannot stop an unresponsive native solver. Its supported replacement is `:ksmt-noodler:benchmarkNoodlerSolvers`, which terminates the worker process on timeout.
+The former `NoodlerStringBenchmarksBasedTest` recorder is disabled because cancelling a JVM thread cannot stop an unresponsive native solver. Its supported replacement is the external process harness, which terminates the worker process on timeout.
 
 ## How to read the benchmark results
 

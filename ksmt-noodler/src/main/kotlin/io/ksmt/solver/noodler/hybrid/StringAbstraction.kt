@@ -8,6 +8,9 @@ import io.ksmt.expr.KAddArithExpr
 import io.ksmt.expr.KAndExpr
 import io.ksmt.expr.KApp
 import io.ksmt.expr.KConst
+import io.ksmt.expr.KBitVecValue
+import io.ksmt.expr.KBvRotateLeftExpr
+import io.ksmt.expr.KBvRotateRightExpr
 import io.ksmt.expr.KDistinctExpr
 import io.ksmt.expr.KEqExpr
 import io.ksmt.expr.KExpr
@@ -23,10 +26,11 @@ import io.ksmt.expr.KStringLiteralExpr
 import io.ksmt.expr.KSubArithExpr
 import io.ksmt.expr.KTrue
 import io.ksmt.sort.KBoolSort
+import io.ksmt.sort.KBvSort
 import io.ksmt.sort.KIntSort
 import io.ksmt.sort.KStringSort
 
-/** Keeps the Boolean skeleton intact; no string expression can cross the Yices boundary. */
+/** Keeps the Boolean skeleton intact; no string expression can cross the native backend boundary. */
 internal class StringAbstraction(
     private val ctx: KContext,
     private val regex: RegexAutomata,
@@ -96,13 +100,17 @@ internal class StringAbstraction(
                 is StringTermPart.Literal -> ctx.mkIntNum(part.codePoints.size)
             }
         }
-        return if (summands.isEmpty()) ctx.mkIntNum(0) else ctx.mkArithAddNoSimplify(summands)
+        return when (summands.size) {
+            0 -> ctx.mkIntNum(0)
+            1 -> summands.single()
+            else -> ctx.mkArithAddNoSimplify(summands)
+        }
     }
 
     private fun translateReady(expr: KExpr<*>): KExpr<*> = when {
         expr is KStringLenExpr -> terms.getValue(expr.arg).length
         expr is KEqExpr<*> && expr.lhs.sort is KStringSort -> equality(expr)
-        expr is KDistinctExpr<*> && expr.args.first().sort is KStringSort -> distinct(expr)
+        expr is KDistinctExpr<*> && expr.args.firstOrNull()?.sort is KStringSort -> distinct(expr)
         expr is KStringInRegexExpr -> {
             val stringTerm = flatten(terms.getValue(expr.arg0))
             val language = regex.compile(expr.arg1)
@@ -116,7 +124,7 @@ internal class StringAbstraction(
             originalDeclarations += expr.decl
             expr
         }
-        expr is KIntNumExpr || expr is KTrue || expr is KFalse -> expr
+        expr is KIntNumExpr || expr is KBitVecValue<*> || expr is KTrue || expr is KFalse -> expr
         else -> translateApplication(expr as KApp<*, *>)
     }
 
@@ -142,13 +150,36 @@ internal class StringAbstraction(
         // Generic declaration application simplifies and flattens n-ary parents. Retaining
         // their shape avoids copying every prefix of a deep Boolean/arithmetic chain.
         return when (app) {
-            is KAndExpr -> ctx.mkAndNoSimplify(args as List<KExpr<KBoolSort>>)
-            is KOrExpr -> ctx.mkOrNoSimplify(args as List<KExpr<KBoolSort>>)
-            is KAddArithExpr<*> -> ctx.mkArithAddNoSimplify(args as List<KExpr<KIntSort>>)
-            is KSubArithExpr<*> -> ctx.mkArithSubNoSimplify(args as List<KExpr<KIntSort>>)
-            is KMulArithExpr<*> -> ctx.mkArithMulNoSimplify(args as List<KExpr<KIntSort>>)
+            is KAndExpr -> when (args.size) {
+                0 -> ctx.trueExpr
+                1 -> args.single()
+                else -> ctx.mkAndNoSimplify(args as List<KExpr<KBoolSort>>)
+            }
+            is KOrExpr -> when (args.size) {
+                0 -> ctx.falseExpr
+                1 -> args.single()
+                else -> ctx.mkOrNoSimplify(args as List<KExpr<KBoolSort>>)
+            }
+            is KAddArithExpr<*> -> if (args.size == 1) args.single() else ctx.mkArithAddNoSimplify(args as List<KExpr<KIntSort>>)
+            is KSubArithExpr<*> -> if (args.size == 1) args.single() else ctx.mkArithSubNoSimplify(args as List<KExpr<KIntSort>>)
+            is KMulArithExpr<*> -> if (args.size == 1) args.single() else ctx.mkArithMulNoSimplify(args as List<KExpr<KIntSort>>)
+            is KBvRotateLeftExpr<*> -> rotate(args, left = true)
+            is KBvRotateRightExpr<*> -> rotate(args, left = false)
             else -> app.decl.apply(args)
         }
+    }
+
+    /** cvc5 lacks native variable rotations; this identity is exact for every positive width. */
+    private fun rotate(args: List<KExpr<*>>, left: Boolean): KExpr<KBvSort> {
+        budget.reserve(6)
+        val value = args[0] as KExpr<KBvSort>
+        val rotation = args[1] as KExpr<KBvSort>
+        val width = ctx.mkBv(value.sort.sizeBits.toInt(), value.sort.sizeBits)
+        val amount = ctx.mkBvUnsignedRemExpr(rotation, width)
+        val complement = ctx.mkBvSubExpr(width, amount)
+        val high = ctx.mkBvShiftLeftExpr(value, if (left) amount else complement)
+        val low = ctx.mkBvLogicalShiftRightExpr(value, if (left) complement else amount)
+        return ctx.mkBvOrExpr(high, low)
     }
 
     private fun equality(expr: KEqExpr<*>): KExpr<KBoolSort> {

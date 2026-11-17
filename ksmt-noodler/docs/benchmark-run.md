@@ -1,5 +1,7 @@
 # Completed corpus comparison
 
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/benchmark-run.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
 The comparison is complete. Start with the [detailed analysis](../../build/reports/noodler-benchmarks/20260920-curated-comparison/analysis.md) and [comparison CSV](../../build/reports/noodler-benchmarks/20260920-curated-comparison/comparison.csv). The [provenance file](../../build/reports/noodler-benchmarks/20260920-curated-comparison/provenance.json) identifies every input and replacement.
 
 All **3,248** local source files were inspected and hashed. **752** fit the common supported syntax: 552 `hornstr-equiv` and 200 `negated-predicates` cases. The other **2,496** were explicitly excluded for unsupported syntax, including replacement, containment, index-of, and unsupported equality operands. Eligibility was determined by syntax, not solver success. Every eligible case has one completed attempt from each of five backends: **3,760 comparative attempts**.
@@ -26,7 +28,7 @@ All **663 SAT answers** passed independent witness checks. There were **zero inv
 
 **The negated-predicate family remains unsolved.** All five backends were inconclusive on all 200 eligible cases. For example, `diseq-1-3-5-0.smt2` requires `XYZXX != XYXZX` while `X,Y,Z` all belong to `a*`. Both words must equal `a^(3|X|+|Y|+|Z|)`, so the formula is UNSAT. The hybrid can reject individual length candidates, but currently lacks the general equality argument that excludes every length vector at once. That explanation follows from the source and implementation; the watchdog-killed worker did not provide a trace of its rounds. This illustrates the documented incompleteness of the combination.
 
-The four Noodler+Z3 losses are `muzzle_sat_non_incre_equiv_trans_0_{5,12,13,14}.smt2`. Plain Z3 returned UNSAT in about 10–16 ms. For cases 13 and 14, saved statistics show 463/826 ms of preprocessing followed by about 9.54/9.17 seconds in the backend after a resource-limit fallback with zero generated lemmas. The other two were killed before phase statistics were reported. Thus preprocessing alone does not explain the losses. The wrapper also introduces an incremental scope; this is a plausible influence on Z3 search, not a demonstrated root cause from these logs.
+The four Noodler+Z3 losses are `muzzle_sat_non_incre_equiv_trans_0_{5,12,13,14}.smt2`. Plain Z3 returned UNSAT in about 10вЂ“16 ms. For cases 13 and 14, saved statistics show 463/826 ms of preprocessing followed by about 9.54/9.17 seconds in the backend after a resource-limit fallback with zero generated lemmas. The other two were killed before phase statistics were reported. Thus preprocessing alone does not explain the losses. The wrapper also introduces an incremental scope; this is a plausible influence on Z3 search, not a demonstrated root cause from these logs.
 
 The evidence supports better coverage in these two families, not a broad performance or completeness claim. This is one trial in fixed solver order, on Windows 11 with JDK 17.0.8 and an Intel i7-11800H (8 cores / 16 threads). Repeated runs would be needed to estimate timing variability. The excluded families require additional supported operations before they can inform this comparison.
 
@@ -44,15 +46,10 @@ Both runs use runtime SHA256 `a3afd1fe9a7ea19c78a6c770da86949366a5347d548bbd295e
 
 From the repository root:
 
-```powershell
-$env:JAVA_HOME = 'C:\Program Files\Java\jdk-17'
-.\gradlew.bat :ksmt-noodler:benchmarkNoodlerSolvers
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/benchmark-run.md) preserves the original commands as provenance.
 
 Regenerate the curated report in a new output directory:
 
-```powershell
-python ksmt-noodler/scripts/analyze_benchmark.py --primary build/reports/noodler-benchmarks/20260918T220735Z-1fadbe96 --supplemental build/reports/noodler-benchmarks/20260920T115059Z-234ef838 --replace-case QF_S/20250411-hornstr-equiv/dining-cryptographers_sat_non_incre_equiv_trans_59_0.smt2 --replace-case QF_S/20250411-negated-predicates/diseq-1-3-5-109.smt2 --replace-case QF_S/20250411-negated-predicates/diseq-1-3-5-11.smt2 --replacement-reason "Recorded Windows sleep/hibernation; all five backends remeasured for each affected case" --output build/reports/noodler-benchmarks/new-curated-comparison
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/benchmark-run.md) preserves the original commands as provenance.
 
 The analyzer refuses incomplete groups, mismatched binaries/budgets/source hashes, or an existing output directory. See the [implementation overview and fixed bugs](overview-and-review.md) and [benchmark options](../README.md).

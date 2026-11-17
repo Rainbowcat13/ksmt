@@ -1,6 +1,8 @@
 # Noodler + Yices with fourfold resource allowances
 
-The full-corpus rerun is complete for **Noodler + Yices only**, with all five public resource allowances multiplied by four: **752/752 attempts**, 22:31–23:08 UTC on 2026-10-27 (01:31–02:08 Moscow time on 2026-10-28). The complete pipeline took approximately **36 minutes 47 seconds**. The committed [final comparison PNG](../benchmarks/results/fourfold-caps/comparison.png), [CSV](../benchmarks/results/fourfold-caps/comparison.csv), and [paired case data](../benchmarks/results/fourfold-caps/paired-cases.csv) contain the measured results. The [evidence archive](../benchmarks/results/README.md) describes the preserved files and their checksums.
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/resource-caps-4x.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
+The full-corpus rerun is complete for **Noodler + Yices only**, with all five public resource allowances multiplied by four: **752/752 attempts**, 22:31вЂ“23:08 UTC on 2026-10-27 (01:31вЂ“02:08 Moscow time on 2026-10-28). The complete pipeline took approximately **36 minutes 47 seconds**. The committed [final comparison PNG](../benchmarks/results/fourfold-caps/comparison.png), [CSV](../benchmarks/results/fourfold-caps/comparison.csv), and [paired case data](../benchmarks/results/fourfold-caps/paired-cases.csv) contain the measured results. The [evidence archive](../benchmarks/results/README.md) describes the preserved files and their checksums.
 
 ## Settings
 

@@ -1,5 +1,7 @@
 # Noodler/Yices policy and resource ablation
 
+This document records historical algorithms and measurements. It does not describe the final shared-hybrid comparison. Executable orchestration lives in the [sibling experiments workspace](../../../ksmt-noodler-experiments/README.md); [the exact original document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) and all historical evidence were preserved. See the [current hybrid API](hybrid-api.md) for library usage.
+
 Workspace run: [live analysis](../../build/reports/noodler-ablation/20260920-policy-ablation/analysis.md), [derived comparison CSV](../../build/reports/noodler-ablation/20260920-policy-ablation/comparison.csv), [progress and audit status](../../build/reports/noodler-ablation/20260920-policy-ablation/status.json), and [suite configuration](../../build/reports/noodler-ablation/20260920-policy-ablation/suite.json). The report explicitly identifies whether the matrix is complete.
 
 The experiment compares **14 variants** on the **114 historical SAT misses**, then reruns the matrix on **all 752 eligible cases**. All **3,248** corpus files are source-hash checked; the **2,496** unsupported-syntax exclusions from the reference inventory remain explicit. The diagnostic selection is biased toward historical hybrid failures and must not be used as an overall coverage estimate.
@@ -34,36 +36,17 @@ Validation before measurement: **183 Noodler JVM tests passed**, including 26 ne
 
 For a single variant through Gradle:
 
-```powershell
-$env:JAVA_HOME = 'C:\Program Files\Java\jdk-17'
-.\gradlew.bat :ksmt-noodler:benchmarkNoodlerSolvers `
-  -PnoodlerBenchmarkSolvers=noodler-yices `
-  -PnoodlerBenchmarkVariant=combined `
-  -PnoodlerBenchmarkLimit=10
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
-Variant presets and effective settings are defined in [BenchmarkVariant.kt](../src/main/kotlin/io/ksmt/solver/noodler/benchmark/BenchmarkVariant.kt). The policies are in [KNoodlerYicesSolver.kt](../src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolver.kt), and their public configuration is in [KNoodlerYicesSolverConfiguration.kt](../src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolverConfiguration.kt). Every effective setting is recorded in metadata and immutable attempt records; changing settings or binaries requires a new run.
+Variant presets and effective settings are defined in [BenchmarkVariant.kt](../../../ksmt-noodler-experiments/archive/original-source/benchmark/BenchmarkVariant.kt). The policies are in [KNoodlerYicesSolver.kt](../src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolver.kt), and their public configuration is in [KNoodlerYicesSolverConfiguration.kt](../src/main/kotlin/io/ksmt/solver/noodler/KNoodlerYicesSolverConfiguration.kt). Every effective setting is recorded in metadata and immutable attempt records; changing settings or binaries requires a new run.
 
 For the complete matrix, first build/test and write the resolved runtime classpath:
 
-```powershell
-.\gradlew.bat :ksmt-noodler:test :ksmt-noodler:writeNoodlerBenchmarkClasspath
-python -m unittest discover -s ksmt-noodler/scripts -p test_ablation.py
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
 Prepare a new suite. This snapshots the runtime so subsequent local builds cannot change an active experiment:
 
-```powershell
-python ksmt-noodler/scripts/run_ablation.py prepare `
-  --source ksmt-test/testData/string-data/37c6cd5d98edb46057f30cef35ba7c7250fe0161 `
-  --reference build/reports/noodler-benchmarks/20260920-curated-comparison/comparison.csv `
-  --manifest build/reports/noodler-benchmarks/20260918T220735Z-1fadbe96/manifest.csv `
-  --classpath-file ksmt-noodler/build/noodler-benchmark-classpath.txt `
-  --java 'C:\Program Files\Java\jdk-17\bin\java.exe' `
-  --output build/reports/noodler-ablation/NEW-SUITE
-
-python ksmt-noodler/scripts/run_ablation.py run --suite build/reports/noodler-ablation/NEW-SUITE
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
 The same `run --suite` command resumes completed checkpoints. The controller finishes every diagnostic variant before starting the full set. It stops for witness failures, decisive disagreements, or suspicious wall-time outliers, preserving the raw evidence for investigation. It never silently retries and substitutes an unfavorable result.
 
@@ -81,9 +64,7 @@ The fresh diagnostic baseline found 11 validated SAT cases among the 114 histori
 
 Refresh an existing report without invoking solvers:
 
-```powershell
-python ksmt-noodler/scripts/analyze_ablation.py --suite build/reports/noodler-ablation/NEW-SUITE
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
 ## Repeat the best measured variant and save the table
 
@@ -93,28 +74,15 @@ The follow-up job is under `build/reports/noodler-best-comparison/20260920-best-
 
 Create the plotting environment once, using the pinned packages tested with Python 3.12:
 
-```powershell
-python -m venv build/noodler-report-venv
-build/noodler-report-venv/Scripts/python.exe -m pip install -r ksmt-noodler/scripts/requirements-benchmark-table.txt
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
-```powershell
-python ksmt-noodler/scripts/run_best_comparison.py `
-  --ablation-suite build/reports/noodler-ablation/20260920-policy-ablation `
-  --output build/reports/noodler-best-comparison/20260920-best-repeat `
-  --render-python build/noodler-report-venv/Scripts/python.exe
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
 The same command resumes the job after interruption. Do not launch a second controller while its lock is held. The rendering environment is separate from the benchmark JVMs; it uses Matplotlib for an exact numeric table. On successful completion, `benchmark-table.png` is the white-background image, `benchmark-table.svg` is the vector copy, and `.csv` and `.md` contain the table values and context. Raw records and worker logs remain under `runs/`.
 
 To render an already completed run again:
 
-```powershell
-build/noodler-report-venv/Scripts/python.exe ksmt-noodler/scripts/render_benchmark_table.py `
-  --run build/reports/noodler-best-comparison/20260920-best-repeat/runs/RUN-ID `
-  --output-prefix build/reports/noodler-best-comparison/20260920-best-repeat/benchmark-table `
-  --overwrite
-```
+Experiment launch commands moved to the [external workspace README](../../../ksmt-noodler-experiments/README.md). The [exact historical document](../../../ksmt-noodler-experiments/archive/docs/ablation-run.md) preserves the original commands as provenance.
 
 The exporter rejects incomplete or inconsistent final results. Its explicit `--allow-partial` option produces a visibly labeled preview; such a preview is not a final benchmark comparison. One repeat can expose coverage variation, but cannot establish a reliable speed ranking or eliminate selection bias from choosing a winner on this same corpus.
 
